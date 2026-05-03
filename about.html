@@ -6,44 +6,51 @@
   <title>About — Jorg Sowa</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <header>
-      <a href="index.html" class="site-name">Jorg Sowa</a>
-      <nav><a href="about.html">About</a></nav>
-    </header>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="sidebar-inner">
+        <div class="logo-row">
+          <a href="index.html" aria-label="Home" class="logo">J</a>
+          <h1 class="site-title"><a href="index.html">Jorg Sowa</a></h1>
+        </div>
+        <nav class="primary">
+          <div class="nav-item"><span class="dot"></span><a href="index.html">Writing</a></div>
+          <div class="nav-item active"><span class="dot"></span><a href="about.html">About</a></div>
+        </nav>
+      </div>
+    </aside>
 
     <main>
-      <article>
-        <h1>About</h1>
+      <h1 class="page-heading"><a href="index.html">Jorg Sowa</a></h1>
+      <div class="content">
+        <article>
+          <h3>Hi there, wanderer 👋</h3>
 
-        <p>I'm a software engineer who's built payment systems, money platforms, and enterprise infrastructure across the US, UK, Switzerland, and Poland. Right now I'm at Frontify, working on product and keeping up with what's new.</p>
-        <p>I'm learning about agentic coding and how AI tools are changing the way we write code. There's a lot happening in that space, and I'm excited to explore it.</p>
-        <p>Beyond screens, I'm into open source work, contributing to projects that make life easier for developers. I also keep my coding muscles sharp by helping on Stack Overflow (7k+ reputation) and maintaining stuff on GitHub.</p>
+          <p>I'm an Open Source, Open Tech, and Open Source DIY enthusiast.</p>
 
-        <h2>What I'm Up To</h2>
-        <ul>
-          <li><strong>Payment &amp; money systems</strong> — Built infrastructure that actually handles real transactions at scale</li>
-          <li><strong>Agentic coding</strong> — Exploring how AI agents and modern tooling reshape development workflows</li>
-          <li><strong>Keeping current</strong> — Always learning what's next in tech</li>
-        </ul>
+          <p>Interested in contributing to the:</p>
+          <ul>
+            <li>PHP Core 🐘</li>
+            <li>Static Analysis tools (such as <a href="https://github.com/jorgsowa/mir">Mir</a>, Psalm, PHPStan)</li>
+            <li>Security tools, and strengthening the OS ecosystem security</li>
+          </ul>
 
-        <h2>Connect</h2>
-        <p>
-          <a href="https://github.com/jorgsowa">GitHub</a> ·
-          <a href="https://stackoverflow.com/users/7082164/jsowa">Stack Overflow</a> ·
+          <p>You can reach out to me: <a href="mailto:jorg.sowa@gmail.com">jorg.sowa@gmail.com</a></p>
+        </article>
+      </div>
+
+      <footer class="site">
+        <div>&copy; 2026 Jorg Sowa.</div>
+        <div class="links">
+          <a href="https://github.com/jorgsowa">GitHub</a>
           <a href="mailto:jorg.sowa@gmail.com">Email</a>
-        </p>
-      </article>
+        </div>
+      </footer>
     </main>
-
-    <footer>
-      <a href="https://github.com/jorgsowa">GitHub</a> ·
-      <a href="mailto:jorg.sowa@gmail.com">Email</a>
-    </footer>
   </div>
 </body>
 </html>
