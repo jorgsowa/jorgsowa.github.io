@@ -196,10 +196,29 @@ main {
 
 .post-list li {
   position: relative;
-  border-bottom: 1px solid var(--rule);
 }
 
-.post-list li:first-child { border-top: 1px solid var(--rule); }
+.post-list li::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--rule) 15%, var(--rule) 85%, transparent);
+}
+
+.post-list li::before {
+  content: '◆';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  font-size: 0.42rem;
+  line-height: 1;
+  color: var(--accent);
+  background: var(--bg);
+  padding: 0 0.4rem;
+  z-index: 2;
+}
 
 /* Full-row link */
 .post-list a.post-link {
