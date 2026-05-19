@@ -59,7 +59,7 @@ const aboutActive   = path === '/about' || path === '/about/';
   <script is:inline>try{if(localStorage.getItem('theme')==='dark')document.documentElement.setAttribute('data-theme','dark')}catch(e){}</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&family=JetBrains+Mono:wght@400;500&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&family=Spectral:ital,wght@0,400;0,500;1,400;1,500&family=JetBrains+Mono:wght@400;500&display=swap">
   <link rel="stylesheet" href="/styles/global.css">
 </head>
 <body>
@@ -67,7 +67,11 @@ const aboutActive   = path === '/about' || path === '/about/';
   <div class="layout">
     <header class="site-header">
       <div class="header-left">
-        <a href="/" class="wordmark">Jorg Sowa</a>
+        <a href="/" class="wordmark">
+          <svg class="logo-emblem" width="8" height="8" viewBox="0 0 12 12" fill="none" aria-hidden="true" shape-rendering="geometricPrecision">
+            <path d="M6 0.5L11.5 6L6 11.5L0.5 6Z" fill="currentColor"/>
+          </svg>Jorg Sowa
+        </a>
         <nav>
           <a href="/" class:list={[{ active: writingActive }]}>Writing</a>
           <a href="/about" class:list={[{ active: aboutActive }]}>About</a>
