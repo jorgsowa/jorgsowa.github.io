@@ -134,27 +134,39 @@ a {
   background: none;
   border: none;
   cursor: pointer;
-  padding: 0.3rem;
+  padding: 0.5rem;
+  overflow: visible;
   display: flex;
   align-items: center;
   color: var(--ink-dim);
   transition: color 0.15s;
-  margin-left: 0.75rem;
+  margin-left: 0.5rem;
 }
 
 .theme-toggle:hover { color: var(--ink-mid); }
 
 .theme-icon {
   display: block;
-  width: 11px; height: 11px;
+  width: 16px; height: 16px;
   border-radius: 50%;
-  border: 1.5px solid currentColor;
-  background: conic-gradient(var(--ink) 0deg 180deg, var(--bg) 180deg 360deg);
-  transition: transform 0.35s ease;
+  background:
+    linear-gradient(135deg,
+      rgba(255,255,255,0.28) 0%,
+      rgba(255,255,255,0.06) 40%,
+      transparent 50%,
+      color-mix(in srgb, var(--accent) 35%, transparent) 100%
+    ),
+    conic-gradient(var(--ink) 0deg 180deg, var(--bg) 180deg 360deg);
+  box-shadow: 0 0 0 1.5px currentColor;
+  will-change: transform;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transition: transform 0.4s ease, box-shadow 0.3s ease;
 }
 
 .theme-toggle:hover .theme-icon {
-  transform: rotate(180deg);
+  transform: rotate(180deg) scale(1.2);
+  box-shadow: 0 0 0 1.5px currentColor, 0 0 5px 1px color-mix(in srgb, var(--accent) 40%, transparent);
 }
 
 /* ── Main ─────────────────────────────────────────── */
