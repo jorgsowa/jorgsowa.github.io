@@ -280,9 +280,9 @@ article h1 {
   font-family: "Newsreader", Georgia, serif;
   font-style: italic;
   font-weight: 500;
-  font-size: clamp(2.25rem, 6vw, 3.75rem);
-  line-height: 1.12;
-  letter-spacing: -0.015em;
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
   color: var(--ink);
   margin: 0 0 0.5rem;
 }
@@ -291,9 +291,9 @@ article h2 {
   font-family: "Newsreader", Georgia, serif;
   font-style: italic;
   font-weight: 500;
-  font-size: 2rem;
-  line-height: 1.2;
-  letter-spacing: -0.01em;
+  font-size: 1.6rem;
+  line-height: 1.25;
+  letter-spacing: -0.005em;
   margin: 2.75rem 0 0.75rem;
   color: var(--ink);
 }
