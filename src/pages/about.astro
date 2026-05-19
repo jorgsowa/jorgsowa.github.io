@@ -1,9 +1,22 @@
 ---
 import Base from '../layouts/Base.astro';
+
+const description = 'Open Source, Open Tech, and DIY enthusiast. Contributing to PHP Core, static analysis tools like Psalm and PHPStan, and security tools.';
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Jorg Sowa",
+  "url": "https://jorgsowa.github.io",
+  "email": "jorg.sowa@gmail.com",
+  "sameAs": ["https://github.com/jorgsowa"],
+  "description": description,
+};
 ---
-<Base title="About — Jorg Sowa">
+<Base title="About — Jorg Sowa" description={description} ogType="profile" jsonLd={jsonLd}>
+  <p class="section-label">About</p>
   <article>
-    <h3>Hi there, wanderer 👋</h3>
+    <h1>Hi there, wanderer 👋</h1>
 
     <p>I'm an Open Source, Open Tech, and Open Source DIY enthusiast.</p>
 

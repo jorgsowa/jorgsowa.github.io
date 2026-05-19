@@ -368,6 +368,37 @@ article blockquote {
   font-style: italic;
 }
 
+article hr {
+  border: none;
+  border-top: 1px solid var(--rule);
+  margin: 2.5rem 0;
+}
+
+article img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 3px;
+  display: block;
+  margin: 1.75rem auto;
+}
+
+article figure {
+  margin: 2rem 0;
+}
+
+article figure img {
+  margin: 0 0 0.75rem;
+  width: 100%;
+}
+
+article figcaption {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  color: var(--ink-dim);
+  text-align: center;
+}
+
 /* ── Footer ───────────────────────────────────────── */
 
 footer.site {
