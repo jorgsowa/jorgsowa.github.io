@@ -6,29 +6,43 @@
   <title>Hello World — Jorg Sowa</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap">
   <link rel="stylesheet" href="../style.css">
 </head>
 <body>
-  <div class="container">
-    <header>
-      <a href="../index.html" class="site-name">Jorg Sowa</a>
-      <nav><a href="../about.html">About</a></nav>
-    </header>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="sidebar-inner">
+        <div class="logo-row">
+          <a href="../index.html" aria-label="Home" class="logo">J</a>
+          <h1 class="site-title"><a href="../index.html">Jorg Sowa</a></h1>
+        </div>
+        <nav class="primary">
+          <div class="nav-item active"><span class="dot"></span><a href="../index.html">Writing</a></div>
+          <div class="nav-item"><span class="dot"></span><a href="../about.html">About</a></div>
+        </nav>
+      </div>
+    </aside>
 
     <main>
-      <article>
-        <h1>Hello World</h1>
-        <time class="meta" datetime="2026-03-25">March 25, 2026</time>
+      <h1 class="page-heading"><a href="../index.html">Jorg Sowa</a></h1>
+      <div class="content">
+        <article>
+          <h1>Hello World</h1>
+          <time class="meta" datetime="2026-03-25">March 25, 2026</time>
 
-        <p>This is a test post. Writing here is simple — just edit this HTML file and duplicate it for new posts.</p>
-      </article>
+          <p>This is a test post. Writing here is simple — just edit this HTML file and duplicate it for new posts.</p>
+        </article>
+      </div>
+
+      <footer class="site">
+        <div>&copy; 2026 Jorg Sowa.</div>
+        <div class="links">
+          <a href="https://github.com/jorgsowa">GitHub</a>
+          <a href="mailto:jorg.sowa@gmail.com">Email</a>
+        </div>
+      </footer>
     </main>
-
-    <footer>
-      <a href="https://github.com/jorgsowa">GitHub</a> ·
-      <a href="mailto:jorg.sowa@gmail.com">Email</a>
-    </footer>
   </div>
 </body>
 </html>
