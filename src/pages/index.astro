@@ -1,0 +1,28 @@
+---
+import Base from '../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+const posts = await getCollection('posts');
+posts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+function formatDate(date: Date) {
+  return date.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+}
+
+function isoDate(date: Date) {
+  return date.toISOString().split('T')[0];
+}
+---
+<Base title="Jorg Sowa">
+  <p class="section-label">Writing</p>
+  <ul class="post-list">
+    {posts.map(post => (
+      <li>
+        <a href={`/posts/${post.slug}`} class="post-link">
+          <span class="post-title">{post.data.title}</span>
+          <time datetime={isoDate(post.data.date)}>{formatDate(post.data.date)}</time>
+        </a>
+      </li>
+    ))}
+  </ul>
+</Base>
