@@ -1,0 +1,90 @@
+---
+import Base from '../../layouts/Base.astro';
+import { contributions } from '../../data/projects.js';
+---
+<Base title="Others — Jorg Sowa" description="Open source contributions to projects I don't own — php-src, Psalm, Composer, and more.">
+  <a href="/projects" class="back-link">← Projects</a>
+  <article>
+    <h1>Others</h1>
+    <p>Selected contributions to projects I don't own.</p>
+    <div class="contrib-grid">
+      {contributions.map(c => (
+        <a href={c.url} class="plate">
+          <div class="plate-top">
+            <span class="plate-name">{c.name}</span>
+            <span class="plate-meta">{c.meta}</span>
+          </div>
+          <p class="plate-desc">{c.desc}</p>
+        </a>
+      ))}
+    </div>
+  </article>
+</Base>
+
+<style>
+  .contrib-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+    margin-top: 2rem;
+  }
+
+  .plate {
+    border: 1px solid var(--rule);
+    padding: 1rem 1.1rem;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    transition: border-color 0.15s;
+  }
+
+  .plate:hover {
+    border-color: var(--accent);
+  }
+
+  .plate-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 0.5rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .plate-name {
+    font-family: "Manrope", system-ui, sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: -0.015em;
+    color: var(--ink);
+    transition: color 0.15s;
+    line-height: 1.2;
+  }
+
+  .plate:hover .plate-name {
+    color: var(--accent);
+  }
+
+  .plate-meta {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-dim);
+    white-space: nowrap;
+    flex-shrink: 0;
+    padding-top: 0.1em;
+  }
+
+  .plate-desc {
+    font-size: 0.82rem;
+    line-height: 1.55;
+    color: var(--ink-mid);
+    margin: 0;
+  }
+
+  @media (max-width: 560px) {
+    .contrib-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

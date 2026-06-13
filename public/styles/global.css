@@ -39,9 +39,9 @@ html { scroll-behavior: smooth; font-optical-sizing: auto; }
 }
 
 body {
-  font-family: "Spectral", Georgia, serif;
-  font-size: 1.3rem;
-  line-height: 1.8;
+  font-family: "Manrope", system-ui, sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.75;
   color: var(--ink);
   background: var(--bg);
   margin: 0; padding: 0;
@@ -85,9 +85,9 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 3rem 0 1.5rem;
+  padding: 1.75rem 0 1.25rem;
   border-bottom: 1px solid var(--rule);
-  margin-bottom: 4.5rem;
+  margin-bottom: 3rem;
 }
 
 .header-left {
@@ -97,11 +97,11 @@ a {
 }
 
 .wordmark {
-  font-family: "Newsreader", Georgia, serif;
-  font-style: italic;
-  font-weight: 400;
-  font-size: 1.3rem;
-  letter-spacing: 0.01em;
+  font-family: "Manrope", system-ui, sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.05rem;
+  letter-spacing: -0.02em;
   color: var(--ink);
   text-decoration: none;
   display: inline-flex;
@@ -253,10 +253,11 @@ main {
 }
 
 .post-title {
-  font-family: "Newsreader", Georgia, serif;
-  font-style: italic;
-  font-size: 1.3rem;
-  font-weight: 400;
+  font-family: "Manrope", system-ui, sans-serif;
+  font-style: normal;
+  font-size: 1.05rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
   color: var(--ink);
   transition: color 0.15s;
 }
@@ -293,23 +294,23 @@ main {
 /* ── Article ──────────────────────────────────────── */
 
 article h1 {
-  font-family: "Newsreader", Georgia, serif;
-  font-style: italic;
-  font-weight: 500;
-  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  font-family: "Manrope", system-ui, sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: clamp(1.5rem, 4vw, 1.9rem);
   line-height: 1.2;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.025em;
   color: var(--ink);
   margin: 0 0 0.5rem;
 }
 
 article h2 {
-  font-family: "Newsreader", Georgia, serif;
-  font-style: italic;
-  font-weight: 500;
-  font-size: 1.6rem;
-  line-height: 1.25;
-  letter-spacing: -0.005em;
+  font-family: "Manrope", system-ui, sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.2rem;
+  line-height: 1.3;
+  letter-spacing: -0.015em;
   margin: 2.75rem 0 0.75rem;
   color: var(--ink);
 }
@@ -335,8 +336,8 @@ article .meta {
 }
 
 article p, article ul, article ol {
-  font-size: 1.3rem;
-  line-height: 1.85;
+  font-size: 1.05rem;
+  line-height: 1.8;
   margin: 0 0 1.4rem;
 }
 
@@ -413,6 +414,61 @@ article figcaption {
   letter-spacing: 0.1em;
   color: var(--ink-dim);
   text-align: center;
+}
+
+/* ── Work list (projects / contributions) ─────────── */
+
+.work-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem;
+}
+
+.work-list li {
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.work-list li:last-child { border-bottom: none; }
+
+.work-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1.5rem;
+  text-decoration: none;
+}
+
+.work-name {
+  font-family: "Manrope", system-ui, sans-serif;
+  font-style: normal;
+  font-size: 1.05rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  transition: color 0.15s;
+}
+
+.work-head:hover .work-name { color: var(--accent); }
+
+.work-meta {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  color: var(--ink-dim);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.work-desc {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--ink-mid);
+  margin: 0.5rem 0 0;
+}
+
+@media (max-width: 560px) {
+  .work-head { flex-direction: column; gap: 0.25rem; }
 }
 
 /* ── Footer ───────────────────────────────────────── */

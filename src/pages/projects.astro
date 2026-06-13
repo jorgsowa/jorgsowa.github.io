@@ -1,0 +1,110 @@
+---
+import Base from '../layouts/Base.astro';
+import { projects } from '../data/projects.js';
+
+const description = 'Open-source projects and contributions by Jorg Sowa: php-lsp (a Rust language server for PHP), PHP core session-security work, Psalm, and Composer.';
+---
+<Base title="Projects — Jorg Sowa" description={description}>
+  <p class="section-label">Projects</p>
+  <article>
+    <div class="projects-intro">
+      <p class="projects-sub">I focus mostly on PHP ecosystem surface: static analysis, PHP internals, security of PHP applications. My open source work started a few years before AI agents became part of the picture; they've since become a useful accelerant, but the direction was already set. Below you can see some of my projects or the projects that I contribute to.</p>
+    </div>
+    <div class="project-grid">
+      {projects.map(p => (
+        <a href={p.href ?? `/projects/${p.slug}`} class="plate" target={p.href ? '_blank' : undefined} rel={p.href ? 'noopener noreferrer' : undefined}>
+          <div class="plate-top">
+            <span class="plate-name">{p.name}</span>
+            <span class="plate-lang">{p.lang}</span>
+          </div>
+          <p class="plate-desc">{p.desc}</p>
+        </a>
+      ))}
+      <a href="/projects/various" class="plate">
+        <div class="plate-top">
+          <span class="plate-name">Various</span>
+        </div>
+        <p class="plate-desc">Psalm, Rector, nikic/PHP-Parser, Composer, and more.</p>
+      </a>
+    </div>
+  </article>
+</Base>
+
+<style>
+  .projects-intro {
+    margin-bottom: 2.25rem;
+  }
+
+  .projects-sub {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--ink-mid);
+    margin: 0;
+  }
+
+  .project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+    margin-bottom: 3rem;
+  }
+
+  .plate {
+    border: 1px solid var(--rule);
+    padding: 1rem 1.1rem;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    transition: border-color 0.15s;
+  }
+
+  .plate:hover {
+    border-color: var(--accent);
+  }
+
+  .plate-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 0.5rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .plate-name {
+    font-family: "Manrope", system-ui, sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: -0.015em;
+    color: var(--ink);
+    transition: color 0.15s;
+    line-height: 1.2;
+  }
+
+  .plate:hover .plate-name {
+    color: var(--accent);
+  }
+
+  .plate-lang {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-dim);
+    white-space: nowrap;
+    flex-shrink: 0;
+    padding-top: 0.1em;
+  }
+
+  .plate-desc {
+    font-size: 0.82rem;
+    line-height: 1.55;
+    color: var(--ink-mid);
+    margin: 0;
+  }
+
+  @media (max-width: 560px) {
+    .project-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

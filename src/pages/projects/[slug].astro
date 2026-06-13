@@ -1,0 +1,259 @@
+---
+import Base from '../../layouts/Base.astro';
+import { projects, commitLog } from '../../data/projects.js';
+
+export function getStaticPaths() {
+  return projects.map(p => ({ params: { slug: p.slug }, props: { project: p } }));
+}
+
+const { project } = Astro.props;
+const commits = project.repo ? commitLog.filter(c => c.repo === project.repo) : [];
+---
+<Base title={`${project.name} — Jorg Sowa`} description={project.desc}>
+  <a href="/projects" class="back-link">← Projects</a>
+  <article>
+    <div class="project-header">
+      <h1>{project.name}</h1>
+      <span class="project-lang">{project.lang}</span>
+    </div>
+    <p>{project.desc}</p>
+    {project.detail && <p>{project.detail}</p>}
+    {project.extensions && (
+      <div class="extensions">
+        <p class="extensions-label">Editor extensions</p>
+        <ul class="extensions-list">
+          {project.extensions.map(ext => (
+            <li>
+              {ext.url
+                ? <a href={ext.url} target="_blank" rel="noopener noreferrer">{ext.name}</a>
+                : <span>{ext.name}</span>
+              }
+            </li>
+          ))}
+        </ul>
+      </div>
+    )}
+    {project.url && (
+      <a href={project.url} class="github-link" target={project.slug === 'stackoverflow' ? '_blank' : undefined} rel={project.slug === 'stackoverflow' ? 'noopener noreferrer' : undefined}>
+        {project.slug === 'stackoverflow' ? 'View on Stack Overflow →' : 'View on GitHub →'}
+      </a>
+    )}
+    {commits.length > 0 && (
+      <details class="commits-details">
+        <summary class="commits-summary">
+          <span class="commits-summary-label">Commits</span>
+          <span class="commits-summary-count">{commits.length}</span>
+        </summary>
+        <div class="log-table">
+          <div class="log-header">
+            <span>ref</span>
+            <span>title</span>
+          </div>
+          {commits.map(c => (
+            <a
+              href={c.sha ? `https://github.com/${c.repo}/commit/${c.sha}` : `https://github.com/${c.repo}/pull/${c.num}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              class:list={["log-row", { "log-row--uncredited": c.uncredited }]}
+            >
+              <span class="log-ref">{c.sha ? c.sha.slice(0, 7) : `#${c.num}`}</span>
+              <span class="log-title">{c.title}</span>
+            </a>
+          ))}
+        </div>
+      </details>
+    )}
+  </article>
+</Base>
+
+<style>
+  .project-header {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .project-header h1 {
+    margin: 0;
+  }
+
+  .project-lang {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-dim);
+    flex-shrink: 0;
+  }
+
+  .extensions {
+    margin: 1.5rem 0;
+  }
+
+  .extensions-label {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--ink-dim);
+    margin: 0 0 0.75rem;
+  }
+
+  .extensions-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .extensions-list li a,
+  .extensions-list li span {
+    display: inline-block;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    padding: 0.3rem 0.7rem;
+    border: 1px solid var(--rule);
+    color: var(--ink-mid);
+    text-decoration: none;
+    transition: border-color 0.15s, color 0.15s;
+  }
+
+  .extensions-list li a:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  .extensions-list li span {
+    color: var(--ink-dim);
+  }
+
+  .github-link {
+    display: inline-block;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+
+  .github-link:hover {
+    color: var(--accent-alt);
+  }
+
+  /* ── Commits ── */
+
+  .commits-details {
+    margin-top: 2.5rem;
+  }
+
+  .commits-summary {
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
+    padding: 0.5rem 0;
+  }
+
+  .commits-summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .commits-summary::before {
+    content: '▶';
+    font-size: 0.55rem;
+    color: var(--ink-dim);
+    transition: transform 0.15s;
+    display: inline-block;
+  }
+
+  details[open] .commits-summary::before {
+    transform: rotate(90deg);
+  }
+
+  .commits-summary-label {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-dim);
+  }
+
+  .commits-summary-count {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.6rem;
+    color: var(--ink-dim);
+    opacity: 0.6;
+  }
+
+  .log-table {
+    border-top: 1px solid var(--rule);
+    margin-top: 0.5rem;
+  }
+
+  .log-header,
+  .log-row {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 0;
+    padding: 0.45rem 0;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .log-header {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-dim);
+    padding-bottom: 0.5rem;
+  }
+
+  .log-row {
+    text-decoration: none;
+    transition: background 0.1s;
+    margin: 0 -0.5rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  .log-row:hover {
+    background: color-mix(in srgb, var(--accent) 5%, transparent);
+  }
+
+  .log-row:hover .log-ref,
+  .log-row:hover .log-title {
+    color: var(--ink);
+  }
+
+  .log-ref {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.72rem;
+    color: var(--accent);
+    white-space: nowrap;
+    overflow: hidden;
+    align-self: center;
+  }
+
+  .log-title {
+    font-size: 0.82rem;
+    color: var(--ink-mid);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    align-self: center;
+  }
+
+  .log-row--uncredited .log-ref,
+  .log-row--uncredited .log-title {
+    color: var(--ink-dim);
+    font-style: italic;
+  }
+</style>

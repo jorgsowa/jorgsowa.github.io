@@ -1,15 +1,17 @@
 ---
 import Base from '../layouts/Base.astro';
 
-const description = 'Open Source, Open Tech, and DIY enthusiast. Contributing to PHP Core, static analysis tools like Psalm and PHPStan, and security tools.';
+const description = 'PHP internals and tooling. Contributor to PHP core (session extension security), Psalm, and Composer. Author of php-lsp, a Rust language server for PHP.';
 
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "Jorg Sowa",
-  "url": "https://jorgsowa.github.io",
+  "url": "https://jorgsowa.me",
   "email": "jorg.sowa@gmail.com",
   "sameAs": ["https://github.com/jorgsowa"],
+  "jobTitle": "Software Engineer",
+  "knowsAbout": ["PHP internals", "Static analysis", "Rust", "Software security", "Language servers"],
   "description": description,
 };
 ---
@@ -20,13 +22,16 @@ const jsonLd = {
 
     <p>I'm an Open Source, Open Tech, and Open Source DIY enthusiast.</p>
 
-    <p>Interested in contributing to the:</p>
-    <ul>
-      <li>PHP Core 🐘</li>
-      <li>Static Analysis tools (such as <a href="https://github.com/jorgsowa/mir">Mir</a>, Psalm, PHPStan)</li>
-      <li>Security tools, and strengthening the OS ecosystem security</li>
-    </ul>
+    <p>I contribute to PHP core, where most of my work has been hardening the
+    state and cohesion of PHP langauge. I also contribute to the other projects strengthing the ecosystem of PHP tooling landscape like:.
+    Psalm, PHPStan, php-parser, Rector and others.</p>
 
-    <p>You can reach out to me: <a href="mailto:jorg.sowa@gmail.com">jorg.sowa@gmail.com</a></p>
+    <p>On my own time I build PHP tooling in Rust — most notably
+    <a href="https://github.com/jorgsowa/php-lsp">php-lsp</a>, a language server
+    with modern mir - static analyzer. See
+    <a href="/projects">everything I'm working on</a>.</p>
+
+    <p>You can reach me at <a href="mailto:jorg.sowa@gmail.com">jorg.sowa@gmail.com</a>
+    or on <a href="https://github.com/jorgsowa" rel="me">GitHub</a>.</p>
   </article>
 </Base>

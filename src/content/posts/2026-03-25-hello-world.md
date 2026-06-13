@@ -3,4 +3,4 @@ title: Hello World
 date: 2026-03-25
 ---
 
-This is a test post. Writing here is simple — create a new `.md` file in `src/content/posts/` and it appears automatically in the list.
+Most of the work I do ends up as a pull request somewhere. This blog is a place to write about what I'm building and why and some other thoughts about the future of Software Engineering and Open Source.

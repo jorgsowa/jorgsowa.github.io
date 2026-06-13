@@ -1,0 +1,234 @@
+---
+import Base from '../../layouts/Base.astro';
+import { contributions, commitLog } from '../../data/projects.js';
+---
+<Base title="Various — Jorg Sowa" description="Notable commits and contributions to open source projects.">
+  <a href="/projects" class="back-link">← Projects</a>
+  <article>
+    <h1>Various</h1>
+    <p>My full contribution to the various projects.</p>
+    <ul class="commit-list">
+      {contributions.map(c => {
+        const commits = commitLog.filter(e => e.repo === c.name);
+        return (
+          <li>
+            <div class="contribution-row">
+              <a href={c.url} target="_blank" rel="noopener noreferrer" class="commit-repo">{c.name}</a>
+              <span class="commit-meta">{commits.length} contr.</span>
+              <span class="commit-desc">{c.desc}</span>
+            </div>
+            {commits.length > 0 && (
+              <details class="commits-details">
+                <summary class="commits-summary">
+                  <span class="commits-summary-label">Commits</span>
+                  <span class="commits-summary-count">{commits.length}</span>
+                </summary>
+                <div class="log-table">
+                  <div class="log-header">
+                    <span>ref</span>
+                    <span>title</span>
+                  </div>
+                  {commits.map(e => (
+                    <a
+                      href={e.sha ? `https://github.com/${e.repo}/commit/${e.sha}` : `https://github.com/${e.repo}/pull/${e.num}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class:list={["log-row", { "log-row--uncredited": e.uncredited }]}
+                    >
+                      <span class="log-ref">{e.sha ? e.sha.slice(0, 7) : `#${e.num}`}</span>
+                      <span class="log-title">
+                        {e.title}
+                        {e.uncredited && <span class="log-uncredited-note">reported through security process</span>}
+                      </span>
+                    </a>
+                  ))}
+                </div>
+              </details>
+            )}
+          </li>
+        );
+      })}
+    </ul>
+  </article>
+</Base>
+
+<style>
+  .commit-list {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0 0;
+  }
+
+  .commit-list li {
+    padding: 0.7rem 0;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .commit-list li:last-child {
+    border-bottom: none;
+  }
+
+  .contribution-row {
+    display: grid;
+    grid-template-columns: 220px 80px 1fr;
+    align-items: baseline;
+    gap: 0;
+  }
+
+  .commit-repo {
+    font-family: "Manrope", system-ui, sans-serif;
+    font-weight: 500;
+    font-size: 0.9rem;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    text-decoration: none;
+    white-space: nowrap;
+    transition: color 0.15s;
+  }
+
+  .commit-repo:hover {
+    color: var(--accent);
+  }
+
+  .commit-meta {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+    color: var(--ink-dim);
+    white-space: nowrap;
+  }
+
+  .commit-desc {
+    font-size: 0.88rem;
+    line-height: 1.5;
+    color: var(--ink-mid);
+  }
+
+  /* ── Per-contribution commit log ── */
+
+  .commits-details {
+    margin-top: 0.6rem;
+  }
+
+  .commits-summary {
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
+    padding: 0.3rem 0;
+  }
+
+  .commits-summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .commits-summary::before {
+    content: '▶';
+    font-size: 0.55rem;
+    color: var(--ink-dim);
+    transition: transform 0.15s;
+    display: inline-block;
+  }
+
+  details[open] .commits-summary::before {
+    transform: rotate(90deg);
+  }
+
+  .commits-summary-label {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-dim);
+  }
+
+  .commits-summary-count {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.58rem;
+    color: var(--ink-dim);
+    opacity: 0.6;
+  }
+
+  .log-table {
+    border-top: 1px solid var(--rule);
+    margin-top: 0.4rem;
+  }
+
+  .log-header,
+  .log-row {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 0;
+    padding: 0.4rem 0;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .log-header {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-dim);
+    padding-bottom: 0.45rem;
+  }
+
+  .log-row {
+    text-decoration: none;
+    transition: background 0.1s;
+    margin: 0 -0.5rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  .log-row:hover {
+    background: color-mix(in srgb, var(--accent) 5%, transparent);
+  }
+
+  .log-row:hover .log-ref,
+  .log-row:hover .log-title {
+    color: var(--ink);
+  }
+
+  .log-ref {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.72rem;
+    color: var(--accent);
+    white-space: nowrap;
+    overflow: hidden;
+    align-self: center;
+  }
+
+  .log-title {
+    font-size: 0.82rem;
+    color: var(--ink-mid);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    align-self: center;
+  }
+
+  .log-row--uncredited .log-ref,
+  .log-row--uncredited .log-title {
+    color: var(--ink-dim);
+    font-style: italic;
+  }
+
+  .log-uncredited-note {
+    font-style: normal;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.06em;
+    color: var(--ink-dim);
+    margin-left: 0.6rem;
+    opacity: 0.7;
+  }
+
+  @media (max-width: 560px) {
+    .contribution-row {
+      grid-template-columns: 1fr;
+      gap: 0.2rem;
+    }
+  }
+</style>
