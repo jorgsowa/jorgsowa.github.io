@@ -377,6 +377,59 @@ article pre {
 
 article pre code { background: none; padding: 0; color: var(--ink); }
 
+/* Shiki dual-theme tokens: pick light/dark colors to match the manual toggle */
+article pre.astro-code,
+article pre.astro-code span {
+  color: var(--shiki-light);
+}
+
+[data-theme="dark"] article pre.astro-code,
+[data-theme="dark"] article pre.astro-code span {
+  color: var(--shiki-dark);
+}
+
+/* ── Tables ───────────────────────────────────────── */
+
+article table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 0 1.75rem;
+  font-size: 0.95rem;
+}
+
+article th,
+article td {
+  padding: 0.65rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--rule);
+}
+
+article th:first-child,
+article td:first-child { padding-left: 0; }
+
+article th:last-child,
+article td:last-child { padding-right: 0; }
+
+article thead th {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+  border-bottom: 1px solid var(--ink-dim);
+  vertical-align: bottom;
+}
+
+article td { color: var(--ink-mid); }
+
+article tbody tr:last-child th,
+article tbody tr:last-child td { border-bottom: none; }
+
+@media (max-width: 560px) {
+  article table { display: block; overflow-x: auto; }
+}
+
 article blockquote {
   margin: 1.75rem 0;
   padding: 0 0 0 1.25rem;
