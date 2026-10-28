@@ -469,6 +469,50 @@ article figcaption {
   text-align: center;
 }
 
+/* ── Diagrams (inline SVG in posts) ───────────────── */
+
+article figure.diagram {
+  margin: 2.25rem 0;
+  overflow-x: auto;
+}
+
+/* Keeps diagram text legible on phones; the figure scrolls instead of shrinking */
+article figure.diagram svg {
+  display: block;
+  width: 100%;
+  min-width: 540px;
+  height: auto;
+  margin: 0 0 0.75rem;
+}
+
+.diagram text {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 13px;
+  font-variant-ligatures: none;
+  fill: var(--ink);
+}
+
+.diagram .label { font-size: 10px; letter-spacing: 0.16em; fill: var(--ink-dim); }
+.diagram .note  { font-size: 11px; fill: var(--ink-mid); }
+.diagram .small { font-size: 12px; }
+.diagram .dim   { fill: var(--ink-mid); }
+.diagram .hot   { fill: var(--accent); }
+
+.diagram .node      { fill: var(--bg-subtle); stroke: var(--ink-dim); stroke-width: 1; }
+.diagram .node-src  { fill: var(--bg-subtle); stroke: var(--accent); stroke-width: 1.5; }
+.diagram .node-sink { fill: color-mix(in srgb, var(--accent) 14%, var(--bg)); stroke: var(--accent); stroke-width: 1.5; }
+.diagram .node-safe { fill: none; stroke: var(--ink-dim); stroke-width: 1; stroke-dasharray: 4 3; }
+.diagram .node-sum  { fill: none; stroke: var(--accent); stroke-width: 1.25; stroke-dasharray: 5 3; }
+
+.diagram .flow { fill: none; stroke: var(--accent); stroke-width: 1.5; }
+.diagram .edge { fill: none; stroke: var(--ink-mid); stroke-width: 1.25; }
+.diagram .rule { fill: none; stroke: var(--ink-dim); stroke-width: 1; }
+.diagram .head-flow { fill: var(--accent); }
+.diagram .head-edge { fill: var(--ink-mid); }
+
+.diagram .bit-on  { fill: var(--accent); }
+.diagram .bit-off { fill: none; stroke: var(--ink-dim); stroke-width: 1; }
+
 /* ── Work list (projects / contributions) ─────────── */
 
 .work-list {
