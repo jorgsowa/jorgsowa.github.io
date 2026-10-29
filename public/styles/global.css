@@ -513,6 +513,47 @@ article figure.diagram svg {
 .diagram .bit-on  { fill: var(--accent); }
 .diagram .bit-off { fill: none; stroke: var(--ink-dim); stroke-width: 1; }
 
+/* ── Stat tiles ───────────────────────────────────── */
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  margin: 2rem 0 2.5rem;
+  background: var(--rule);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.stat {
+  padding: 1rem 1rem 0.9rem;
+  background: var(--bg);
+}
+
+.stat strong {
+  display: block;
+  font-family: "Manrope", system-ui, sans-serif;
+  font-size: 1.7rem;
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+.stat span {
+  display: block;
+  margin-top: 0.35rem;
+  font-size: 0.8rem;
+  line-height: 1.4;
+  color: var(--ink-mid);
+}
+
+@media (max-width: 560px) {
+  .stats { grid-template-columns: repeat(2, 1fr); }
+  .stat strong { font-size: 1.45rem; }
+}
+
 /* ── Work list (projects / contributions) ─────────── */
 
 .work-list {

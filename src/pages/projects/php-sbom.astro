@@ -1,0 +1,242 @@
+---
+import Base from '../../layouts/Base.astro';
+import sbom from '../../data/php-sbom.json';
+import DependencyGraph from '../../components/DependencyGraph.astro';
+
+const description = 'Software bill of materials for six PHP 8.5 builds: who builds and distributes each, the code bundled in php-src, and the OS packages it links. CycloneDX download.';
+const { arch: primary, otherArch: other } = sbom;
+const builds = sbom.builds.filter((b) => sbom.sboms[b.id]);
+---
+<Base title="PHP SBOM — Jorg Sowa" description={description}>
+  <a href="/projects" class="back-link">← Projects</a>
+  <article>
+    <h1>PHP SBOM</h1>
+    <p class="lead">A software bill of materials for six common PHP 8.5 builds. For each one: who builds it, the code bundled in php-src, the OS packages the binary and its extensions load, and who ships the fix for each.</p>
+
+    <form class="picker" id="sbom-picker">
+      <fieldset>
+        <legend>Build</legend>
+        <div class="options">
+          {builds.map((b, i) => (
+            <label>
+              <input type="radio" name="build" value={b.id} checked={i === 0} />
+              <span><strong>{b.label}</strong><small>{b.variant}</small></span>
+            </label>
+          ))}
+        </div>
+      </fieldset>
+    </form>
+
+    {builds.map((build, i) => {
+      const s = sbom.sboms[build.id];
+      const { onlyPrimary = [], onlyOther = [] } = s.archDiff ?? {};
+      const official = build.id.startsWith('docker-');
+      const linked = new Set(s.graph.nodes.filter((n) => n.kind === 'external').flatMap((n) => n.packages.map((p) => p.name))).size;
+      return (
+        <section class="panel" data-key={build.id} hidden={i !== 0}>
+          <p class="meta">PHP {s.php} · {s.os}</p>
+          <p class="about">{s.about} <a href={s.source.url}>{s.source.label}</a> · <a href={s.changelog}>PHP {s.php} changelog</a></p>
+          <dl class="origin">
+            <dt>Built by</dt><dd>{build.builtBy}</dd>
+            <dt>Distributed</dt><dd>{build.channel}</dd>
+          </dl>
+          <pre class="install"><code>{build.install}</code></pre>
+
+          <div class="stats">
+            <div class="stat"><strong>{s.bundled.length}</strong><span>components bundled in php-src</span></div>
+            <div class="stat"><strong>{linked}</strong><span>OS packages linked directly</span></div>
+            <div class="stat"><strong>{s.packages.length}</strong><span>OS packages loaded, with indirect ones</span></div>
+            <div class="stat"><strong>{s.extensions.length}</strong><span>extensions</span></div>
+          </div>
+
+          <p class="download">
+            <a href={s.cyclonedx} download>CycloneDX 1.6</a> ({primary})
+          </p>
+          {s.archDiff && <p class="arch">
+            {onlyPrimary.length === 0 && onlyOther.length === 0
+              ? `${primary} and ${other} load the same packages at the same versions.`
+              : `${primary} and ${other} are the same apart from ${[
+                  onlyPrimary.length ? `${onlyPrimary.join(', ')}, loaded only on ${primary}` : '',
+                  onlyOther.length ? `${onlyOther.join(', ')}, loaded only on ${other}` : '',
+                ].filter(Boolean).join(', and ')}. The graph and SBOM show ${primary}.`}
+          </p>}
+
+          <h2>Dependency graph</h2>
+          {official
+            ? <p>Every extension in the middle. On the left, code compiled from php-src: a fix arrives only with a new PHP release and a rebuilt image. On the right, OS packages: a fix arrives with a package update. Hover or tap a box for details.</p>
+            : <p>Every extension in the middle. On the left, code compiled from php-src: a fix arrives with a new <code>{s.binaryPackage?.name}</code> package, from a new PHP release or a backport. On the right, OS packages: a fix arrives with that package's update. Hover or tap a box for details.</p>}
+          <DependencyGraph id={build.id} graph={s.graph} fix={official ? 'Fixed by a new PHP release and a rebuilt image.' : `Fixed by a new ${s.binaryPackage?.name} package: a PHP release or a backport.`} />
+
+        </section>
+      );
+    })}
+
+  </article>
+</Base>
+
+<script is:inline>
+  (function () {
+    var form = document.getElementById('sbom-picker');
+    if (!form) return;
+    function show(key) {
+      var found = false;
+      document.querySelectorAll('.panel').forEach(function (p) {
+        var match = p.getAttribute('data-key') === key;
+        p.hidden = !match;
+        found = found || match;
+      });
+      return found;
+    }
+    form.addEventListener('change', function () {
+      var key = form.elements.build.value;
+      if (show(key)) history.replaceState(null, '', '#' + key);
+    });
+    // Older links carry an architecture suffix, e.g. #fedora-44-arm64.
+    var hash = location.hash.slice(1).replace(/-(amd64|arm64)$/, '');
+    if (hash && show(hash)) {
+      form.querySelectorAll('input').forEach(function (i) { i.checked = i.value === hash; });
+    }
+  })();
+</script>
+
+<style>
+  .lead {
+    color: var(--ink-mid);
+  }
+
+  .picker {
+    margin: 2rem 0 2.25rem;
+  }
+
+  fieldset {
+    border: 0;
+    margin: 0 0 1rem;
+    padding: 0;
+  }
+
+  legend {
+    margin-bottom: 0.5rem;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-mid);
+  }
+
+  .options {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(12.5rem, 1fr));
+    gap: 0.5rem;
+  }
+
+  .options label {
+    cursor: pointer;
+  }
+
+  .options input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .options span {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    height: 100%;
+    padding: 0.6rem 0.8rem;
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    transition: border-color 0.15s;
+  }
+
+  .options strong {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .options small {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.72rem;
+    color: var(--ink-mid);
+  }
+
+  .options label:hover span {
+    border-color: var(--ink-dim);
+  }
+
+  .options input:checked + span {
+    border-color: var(--accent);
+    background: color-mix(in srgb, var(--accent) 8%, var(--bg));
+  }
+
+  .options input:focus-visible + span {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+
+  .meta {
+    margin-bottom: 0.75rem;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.8rem;
+    color: var(--ink-mid);
+  }
+
+  .about {
+    margin-bottom: 0.75rem;
+  }
+
+  .origin {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 0.35rem 1rem;
+    margin: 0 0 1.25rem;
+    font-size: 0.88rem;
+  }
+
+  .origin dt {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-mid);
+    padding-top: 0.2rem;
+  }
+
+  .origin dd {
+    margin: 0;
+  }
+
+  @media (max-width: 560px) {
+    .origin {
+      grid-template-columns: 1fr;
+      gap: 0.15rem;
+    }
+
+    .origin dd {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  .install {
+    margin: 0 0 0.5rem;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+
+  .stats {
+    margin: 1.5rem 0 1rem;
+  }
+
+  .download {
+    margin-bottom: 0.35rem;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.8rem;
+  }
+
+  .arch {
+    font-size: 0.85rem;
+    color: var(--ink-mid);
+  }
+</style>

@@ -3,7 +3,7 @@ import Base from '../../layouts/Base.astro';
 import { projects, commitLog } from '../../data/projects.js';
 
 export function getStaticPaths() {
-  return projects.map(p => ({ params: { slug: p.slug }, props: { project: p } }));
+  return projects.filter(p => !p.page).map(p => ({ params: { slug: p.slug }, props: { project: p } }));
 }
 
 const { project } = Astro.props;

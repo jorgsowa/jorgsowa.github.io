@@ -1,0 +1,462 @@
+---
+interface Node { id: string; label: string; kind: string; swappable?: boolean; shared?: boolean; core?: boolean; version?: string | null; note?: string | null; libs?: string[]; packages?: { name: string; version: string }[]; url?: string | null; copy?: string | null }
+interface Props { id: string; fix: string; graph: { nodes: Node[]; edges: [string, string][]; runtime: { name: string; version: string }[] } }
+
+const { id, fix, graph } = Astro.props;
+const H = 26, STEP = 32, TOP = 44, PAD = 10, CHAR = 7.8, GAP = 150, BAND_GAP = 20;
+const IN_PHP = ['internal', 'bundled', 'patched'];
+const side = (n: Node) => (n.kind === 'extension' ? 1 : IN_PHP.includes(n.kind) ? 0 : 2);
+
+// Package revisions are long; the box shows the upstream part and the card the full version.
+const shortVersion = (n: Node) => {
+  if (!n.version) return '';
+  if (n.kind !== 'external') return n.version;
+  // Debian marks a downgrade as <newer>+really<actual>.
+  const v = n.version.replace(/^\d+:/, '').replace(/^0~/, '');
+  return (v.match(/\+really([^-+~]+)/)?.[1] ?? v.split(/[-+~]/)[0]);
+};
+const label = (n: Node) => n.label + (n.swappable ? ' *' : '') + (n.note && /archived/i.test(n.note) ? ' †' : '');
+
+const neighbours = new Map(graph.nodes.map((n) => [n.id, [] as string[]]));
+for (const [a, b] of graph.edges) {
+  neighbours.get(a)!.push(b);
+  neighbours.get(b)!.push(a);
+}
+const byId = new Map(graph.nodes.map((n) => [n.id, n]));
+const linked = graph.nodes.filter((n) => neighbours.get(n.id)!.length > 0);
+const selfContained = graph.nodes.filter((n) => n.kind === 'extension' && !neighbours.get(n.id)!.length);
+const cols: Node[][] = [[], [], []];
+for (const n of linked) cols[side(n)].push(n);
+
+// Bands: extensions using only php-src code, then both, then only OS packages.
+const band = (n: Node) => {
+  const sides = new Set(neighbours.get(n.id)!.map((i) => side(byId.get(i)!)));
+  return sides.has(0) && sides.has(2) ? 1 : sides.has(0) ? 0 : 2;
+};
+
+const y = new Map<string, number>();
+const avg = (n: Node) => {
+  const ys = neighbours.get(n.id)!.filter((i) => y.has(i)).map((i) => y.get(i)!);
+  return ys.length ? ys.reduce((s, v) => s + v, 0) / ys.length : 0;
+};
+const stack = (nodes: Node[]) => nodes.forEach((n, i) => y.set(n.id, TOP + i * STEP));
+const stackExtensions = () => {
+  const sorted = [...cols[1]].sort((a, b) => band(a) - band(b) || Number(Boolean(b.core)) - Number(Boolean(a.core)) || avg(a) - avg(b) || a.label.localeCompare(b.label));
+  let at = TOP;
+  sorted.forEach((n, i) => {
+    if (i > 0 && band(n) !== band(sorted[i - 1])) at += BAND_GAP;
+    y.set(n.id, at);
+    at += STEP;
+  });
+  cols[1] = sorted;
+};
+// Libraries sit level with the extensions that use them, pushed apart so boxes never overlap.
+const follow = (nodes: Node[]) => {
+  let next = TOP;
+  for (const { n, w } of nodes.map((n) => ({ n, w: avg(n) })).sort((a, b) => a.w - b.w || a.n.label.localeCompare(b.n.label))) {
+    const at = Math.max(next, Math.round(w));
+    y.set(n.id, at);
+    next = at + STEP;
+  }
+};
+
+const order = ['internal', 'bundled', 'patched', 'external'];
+stack([...cols[0], ...cols[2]].sort((a, b) => order.indexOf(a.kind) - order.indexOf(b.kind) || a.label.localeCompare(b.label)));
+// A few alternating passes untangle most crossings.
+for (let pass = 0; pass < 4; pass++) {
+  stackExtensions();
+  follow(cols[0]);
+  follow(cols[2]);
+}
+
+const widths = cols.map((nodes) => Math.max(150, ...nodes.map((n) => Math.ceil((label(n).length + shortVersion(n).length + 2) * CHAR) + PAD * 2)));
+const xs = [0, widths[0] + GAP, widths[0] + widths[1] + GAP * 2];
+const pos = (n: Node) => ({ x: xs[side(n)], w: widths[side(n)], y: y.get(n.id)! });
+const width = xs[2] + widths[2] + 2;
+const height = Math.max(...[...y.values()]) + H + 4;
+
+const edges = graph.edges.map(([a, b]) => {
+  const from = pos(byId.get(a)!), toNode = byId.get(b)!, to = pos(toNode);
+  const left = side(toNode) === 0;
+  const x1 = left ? from.x : from.x + from.w, x2 = left ? to.x + to.w : to.x;
+  const y1 = from.y + H / 2, y2 = to.y + H / 2, mx = (x1 + x2) / 2;
+  return { a, b, kind: left ? 'php' : 'os', d: `M${x1},${y1} C${mx},${y1} ${mx},${y2} ${x2},${y2}` };
+});
+const KIND_TEXT: Record<string, string> = {
+  internal: `Maintained inside php-src. ${fix}`,
+  bundled: `Upstream code copied into php-src. ${fix}`,
+  patched: `Upstream code copied into php-src with local changes. ${fix}`,
+  external: 'OS package. Fixed by a package update, without a new PHP version.',
+};
+const card = (n: Node) => {
+  const others = neighbours.get(n.id)!.map((i) => byId.get(i)!);
+  const ext = n.kind === 'extension';
+  return {
+    title: n.packages?.length || !n.version ? n.label : `${n.label} ${n.version}`,
+    kind: ext ? (n.core ? 'Libraries the php binary links outside any extension.' : n.shared ? 'Extension, loaded as a shared .so.' : 'Extension, compiled into the php binary.') : KIND_TEXT[n.kind],
+    swappable: n.swappable ? 'Can be swapped for a system library at build time.' : null,
+    note: n.note,
+    packages: (n.packages ?? []).map((p) => `${p.name} ${p.version}`),
+    files: n.libs ?? [],
+    relatedLabel: ext ? 'Uses' : 'Used by',
+    related: others.map((o) => o.label).sort((a, b) => a.localeCompare(b, 'en', { sensitivity: 'base' })),
+    url: n.url,
+    copy: n.copy,
+  };
+};
+const hatch = `hatch-${id}`;
+const headers = [
+  { text: 'IN PHP-SRC', x: xs[0] + widths[0], anchor: 'end' },
+  { text: 'EXTENSION', x: xs[1] + widths[1] / 2, anchor: 'middle' },
+  { text: 'OS PACKAGES', x: xs[2], anchor: 'start' },
+];
+---
+<figure class="dep-graph" data-graph>
+  <ul class="dep-legend">
+    <li><i class="sw internal"></i>Internal: maintained in php-src</li>
+    <li><i class="sw bundled"></i>Bundled: upstream copy in php-src</li>
+    <li><i class="sw patched"></i>Patched: bundled with local changes</li>
+    <li><i class="sw extension"></i>Extension, compiled in</li>
+    <li><i class="sw shared"></i>Extension, shared .so</li>
+    <li><i class="sw external"></i>External: OS package</li>
+    <li><b>*</b>can be swapped for a system library at build time</li>
+    <li><b>†</b>upstream archived</li>
+  </ul>
+  <div class="dep-scroll">
+    <svg viewBox={`0 0 ${width} ${height}`} style={`--w: ${width}px`} role="group" aria-label="Dependency graph: code bundled in php-src, the extensions that use it, and the OS packages they link">
+      <defs>
+        <pattern id={hatch} width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+          <line x1="0" y1="0" x2="0" y2="7" class="hatch-line" />
+        </pattern>
+      </defs>
+      {headers.map((h) => <text class="col-label" x={h.x} y={TOP - 16} text-anchor={h.anchor}>{h.text}</text>)}
+      <g class="edges">
+        {edges.map((e) => <path class:list={['e', e.kind]} d={e.d} data-a={e.a} data-b={e.b} />)}
+      </g>
+      {linked.map((n) => {
+        const p = pos(n);
+        return (
+          <g class:list={['n', n.kind, { shared: n.shared, core: n.core }]} data-id={n.id} tabindex="0" role="button" aria-label={card(n).title}>
+            <rect x={p.x} y={p.y} width={p.w} height={H} rx="4" />
+            {n.kind === 'patched' && <rect class="hatch" x={p.x} y={p.y} width={p.w} height={H} rx="4" style={`fill: url(#${hatch})`} />}
+            <text x={p.x + PAD} y={p.y + 17.5}>{label(n)}</text>
+            {shortVersion(n) && <text class="ver" x={p.x + p.w - PAD} y={p.y + 17.5} text-anchor="end">{shortVersion(n)}</text>}
+          </g>
+        );
+      })}
+    </svg>
+  </div>
+  {linked.map((n) => {
+    const c = card(n);
+    return (
+      <div class="card" data-card={n.id} hidden>
+        <strong>{c.title}</strong>
+        <p>{c.kind}</p>
+        {c.swappable && <p>{c.swappable}</p>}
+        {c.note && <p class="warn">{c.note}</p>}
+        {c.packages.length > 0 && <dl><dt>Packages</dt><dd>{c.packages.map((p) => <code>{p}</code>)}</dd></dl>}
+        {c.files.length > 0 && <dl><dt>Files</dt><dd>{c.files.map((f) => <code>{f}</code>)}</dd></dl>}
+        {c.related.length > 0 && <dl><dt>{c.relatedLabel}</dt><dd>{c.related.join(', ')}</dd></dl>}
+        {(c.url || c.copy) && (
+          <p class="links">
+            {c.url && <a href={c.url} target="_blank" rel="noopener">Upstream source ↗</a>}
+            {c.copy && <a href={c.copy} target="_blank" rel="noopener">Copy in php-src ↗</a>}
+          </p>
+        )}
+      </div>
+    );
+  })}
+  {selfContained.length > 0 && (
+    <p class="self-contained"><span>Self-contained extensions ({selfContained.length})</span> {selfContained.map((n) => n.label).sort((a, b) => a.localeCompare(b, 'en', { sensitivity: 'base' })).join(', ')}</p>
+  )}
+  {graph.runtime.length > 0 && (
+    <figcaption>Not drawn: {graph.runtime.map((r) => `${r.name} ${r.version}`).join(', ')}, the C runtime every library loads. Hover or tap a box for details and source links.</figcaption>
+  )}
+</figure>
+
+<script>
+  document.querySelectorAll('[data-graph]').forEach(function (fig) {
+    var edges = fig.querySelectorAll('.e');
+    var nodes = fig.querySelectorAll('.n');
+    var current = null, pinned = false, timer = null;
+    function mark(id) {
+      fig.classList.toggle('focus', Boolean(id));
+      var on = new Set(id ? [id] : []);
+      edges.forEach(function (e) {
+        var hit = id && (e.dataset.a === id || e.dataset.b === id);
+        e.classList.toggle('on', Boolean(hit));
+        if (hit) { on.add(e.dataset.a); on.add(e.dataset.b); }
+      });
+      nodes.forEach(function (n) { n.classList.toggle('on', on.has(n.dataset.id)); });
+    }
+    function cardFor(id) { return fig.querySelector('[data-card="' + CSS.escape(id) + '"]'); }
+    function show(node) {
+      clearTimeout(timer);
+      var id = node.dataset.id;
+      if (current && current !== id) cardFor(current).hidden = true;
+      current = id;
+      mark(id);
+      var card = cardFor(id);
+      card.hidden = false;
+      var f = fig.getBoundingClientRect(), r = node.getBoundingClientRect();
+      var w = card.offsetWidth, h = card.offsetHeight;
+      var left = r.right - f.left + 12;
+      if (left + w > f.width) left = r.left - f.left - w - 12;
+      left = Math.max(0, Math.min(left, f.width - w));
+      var top = Math.max(0, r.top - f.top + r.height / 2 - h / 2);
+      card.style.left = left + 'px';
+      card.style.top = top + 'px';
+    }
+    function hide() {
+      if (current) cardFor(current).hidden = true;
+      current = null;
+      pinned = false;
+      mark(null);
+    }
+    function later() { if (!pinned) timer = setTimeout(hide, 250); }
+    nodes.forEach(function (n) {
+      n.addEventListener('pointerenter', function (e) { if (e.pointerType === 'mouse' && !pinned) show(n); });
+      n.addEventListener('pointerleave', function (e) { if (e.pointerType === 'mouse') later(); });
+      n.addEventListener('focus', function () { if (!pinned) show(n); });
+      n.addEventListener('blur', later);
+      n.addEventListener('click', function (e) {
+        e.stopPropagation();
+        if (pinned && current === n.dataset.id) { hide(); return; }
+        show(n);
+        pinned = true;
+      });
+      n.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); n.dispatchEvent(new MouseEvent('click')); }
+      });
+    });
+    fig.querySelectorAll('.card').forEach(function (c) {
+      c.addEventListener('pointerenter', function () { clearTimeout(timer); });
+      c.addEventListener('pointerleave', later);
+      c.addEventListener('click', function (e) { e.stopPropagation(); });
+    });
+    document.addEventListener('click', function () { if (current) hide(); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && current) hide(); });
+  });
+</script>
+
+<style>
+  .dep-graph {
+    --c-external: #2a78d6;
+    --c-bundled: #eb6834;
+    --c-internal: #1baf7a;
+    position: relative;
+    left: 50%;
+    width: min(1240px, calc(100vw - 32px));
+    margin: 1.5rem 0 2.5rem;
+    transform: translateX(-50%);
+  }
+
+  :global([data-theme="dark"]) .dep-graph {
+    --c-external: #3987e5;
+    --c-bundled: #d95926;
+    --c-internal: #199e70;
+  }
+
+  .dep-legend {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem 1.25rem;
+    margin: 0 0 1.25rem;
+    padding: 0;
+    list-style: none;
+    font-size: 0.85rem;
+    color: var(--ink-mid);
+  }
+
+  .dep-legend li {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+  }
+
+  .dep-legend b {
+    font-family: "JetBrains Mono", monospace;
+    color: var(--ink);
+  }
+
+  .sw {
+    width: 1.25rem;
+    height: 0.85rem;
+    border: 1.5px solid;
+    border-radius: 3px;
+  }
+
+  .sw.extension { border-color: var(--ink-mid); background: var(--bg-subtle); }
+  .sw.shared { border-color: var(--ink-mid); border-style: dashed; background: var(--bg); }
+  .sw.internal { border-color: var(--c-internal); background: color-mix(in srgb, var(--c-internal) 22%, var(--bg)); }
+  .sw.bundled { border-color: var(--c-bundled); background: color-mix(in srgb, var(--c-bundled) 22%, var(--bg)); }
+  .sw.patched {
+    border-color: var(--c-bundled);
+    background: repeating-linear-gradient(45deg, var(--c-bundled) 0 1.5px, color-mix(in srgb, var(--c-bundled) 22%, var(--bg)) 1.5px 4.5px);
+  }
+  .sw.external { border-color: var(--c-external); background: color-mix(in srgb, var(--c-external) 22%, var(--bg)); }
+
+  .dep-scroll {
+    overflow-x: auto;
+    padding-bottom: 0.25rem;
+  }
+
+  /* Scales up to 1.3x on wide screens; on narrow ones keeps its size and scrolls. */
+  .dep-scroll svg {
+    display: block;
+    width: 100%;
+    max-width: calc(var(--w) * 1.3);
+    height: auto;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 760px) {
+    .dep-legend {
+      justify-content: flex-start;
+    }
+
+    .dep-scroll svg {
+      width: var(--w);
+      max-width: none;
+    }
+  }
+
+  svg text {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 13px;
+    fill: var(--ink);
+  }
+
+  svg .ver {
+    font-size: 12px;
+    fill: var(--ink-mid);
+  }
+
+  .col-label {
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    fill: var(--ink-mid);
+  }
+
+  .e {
+    fill: none;
+    stroke-width: 1.5;
+    opacity: 0.55;
+    transition: opacity 0.15s;
+  }
+
+  .e.php { stroke: var(--c-bundled); }
+  .e.os { stroke: var(--c-external); }
+
+  .n { outline: none; transition: opacity 0.15s; }
+  .n rect { stroke-width: 1.5; }
+  .n.extension rect { fill: var(--bg-subtle); stroke: var(--ink-mid); }
+  .n.extension.shared rect { fill: var(--bg); stroke-dasharray: 4 3; }
+  .n.extension.core rect { fill: var(--ink); stroke: var(--ink); }
+  .n.extension.core text { fill: var(--bg); }
+  .n.internal rect { fill: color-mix(in srgb, var(--c-internal) 22%, var(--bg)); stroke: var(--c-internal); }
+  .n.bundled rect,
+  .n.patched rect { fill: color-mix(in srgb, var(--c-bundled) 22%, var(--bg)); stroke: var(--c-bundled); }
+  .n.patched rect.hatch { stroke: none; }
+  .hatch-line { stroke: var(--c-bundled); stroke-width: 1.5; opacity: 0.5; }
+  .n.external rect { fill: color-mix(in srgb, var(--c-external) 22%, var(--bg)); stroke: var(--c-external); }
+
+  .n:focus-visible rect { stroke-width: 3; }
+
+  .focus .e { opacity: 0.08; }
+  .focus .e.on { opacity: 1; stroke-width: 2.25; }
+  .focus .n { opacity: 0.3; }
+  .focus .n.on { opacity: 1; }
+
+  .card {
+    position: absolute;
+    z-index: 5;
+    width: min(340px, calc(100vw - 48px));
+    padding: 0.85rem 1rem;
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    background: var(--bg);
+    box-shadow: 0 6px 24px rgb(0 0 0 / 0.12);
+    font-size: 0.82rem;
+    line-height: 1.45;
+    color: var(--ink);
+  }
+
+  .card[hidden] {
+    display: none;
+  }
+
+  .card strong {
+    display: block;
+    margin-bottom: 0.3rem;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+
+  .card p {
+    margin: 0 0 0.4rem;
+    color: var(--ink-mid);
+  }
+
+  .card .warn {
+    color: var(--accent);
+  }
+
+  .card dl {
+    margin: 0.5rem 0 0;
+  }
+
+  .card dt {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-mid);
+  }
+
+  .card dd {
+    margin: 0.1rem 0 0;
+  }
+
+  .card code {
+    display: block;
+    padding: 0;
+    background: none;
+    font-size: 0.75rem;
+    overflow-wrap: anywhere;
+  }
+
+  .card .links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem 1rem;
+    margin: 0.65rem 0 0;
+  }
+
+  .n { cursor: pointer; }
+
+  .self-contained {
+    max-width: 700px;
+    margin: 1rem auto 0;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.8rem;
+    color: var(--ink-mid);
+    text-align: center;
+  }
+
+  .self-contained span {
+    margin-right: 0.4rem;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  figcaption {
+    margin-top: 0.75rem;
+    font-size: 0.8rem;
+    color: var(--ink-mid);
+    text-align: center;
+  }
+</style>

@@ -1,0 +1,1725 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.6",
+  "serialNumber": "urn:uuid:d9ab69c3-124a-5312-a56c-5c73787bf4ae",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-10-29T00:00:00Z",
+    "tools": {
+      "components": [
+        {
+          "type": "application",
+          "name": "php-sbom",
+          "publisher": "Jorg Sowa"
+        }
+      ]
+    },
+    "component": {
+      "type": "application",
+      "bom-ref": "php",
+      "name": "php",
+      "version": "8.5.12",
+      "description": "Alpine 3.24 (php85 packages), Alpine Linux v3.24, amd64"
+    }
+  },
+  "components": [
+    {
+      "type": "library",
+      "bom-ref": "bundled:timelib",
+      "name": "timelib",
+      "version": "2022.17",
+      "purl": "pkg:generic/timelib@2022.17",
+      "properties": [
+        {
+          "name": "php:bundled-in",
+          "value": "php-src"
+        },
+        {
+          "name": "php:extension",
+          "value": "date"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "bundled:Time zone database",
+      "name": "Time zone database",
+      "version": "2026.5",
+      "purl": "pkg:generic/time-zone-database@2026.5",
+      "properties": [
+        {
+          "name": "php:bundled-in",
+          "value": "php-src"
+        },
+        {
+          "name": "php:extension",
+          "value": "date"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "bundled:Lexbor",
+      "name": "Lexbor",
+      "version": "2.7.0",
+      "purl": "pkg:generic/lexbor@2.7.0",
+      "properties": [
+        {
+          "name": "php:bundled-in",
+          "value": "php-src"
+        },
+        {
+          "name": "php:extension",
+          "value": "lexbor"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "bundled:uriparser",
+      "name": "uriparser",
+      "version": "1.0.2",
+      "purl": "pkg:generic/uriparser@1.0.2",
+      "properties": [
+        {
+          "name": "php:bundled-in",
+          "value": "php-src"
+        },
+        {
+          "name": "php:extension",
+          "value": "uri"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "bundled:libmagic",
+      "name": "libmagic",
+      "version": "5.46",
+      "purl": "pkg:generic/libmagic@5.46",
+      "properties": [
+        {
+          "name": "php:bundled-in",
+          "value": "php-src"
+        },
+        {
+          "name": "php:extension",
+          "value": "fileinfo"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "bundled:libmbfl",
+      "name": "libmbfl",
+      "version": "1.3.2",
+      "purl": "pkg:generic/libmbfl@1.3.2",
+      "properties": [
+        {
+          "name": "php:bundled-in",
+          "value": "php-src"
+        },
+        {
+          "name": "php:extension",
+          "value": "mbstring"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "bundled:libgd (fork)",
+      "name": "libgd (fork)",
+      "purl": "pkg:generic/libgd-(fork)",
+      "properties": [
+        {
+          "name": "php:bundled-in",
+          "value": "php-src"
+        },
+        {
+          "name": "php:extension",
+          "value": "gd"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "bundled:libbcmath",
+      "name": "libbcmath",
+      "purl": "pkg:generic/libbcmath",
+      "properties": [
+        {
+          "name": "php:bundled-in",
+          "value": "php-src"
+        },
+        {
+          "name": "php:extension",
+          "value": "bcmath"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "bundled:IR JIT framework",
+      "name": "IR JIT framework",
+      "purl": "pkg:generic/ir-jit-framework",
+      "properties": [
+        {
+          "name": "php:bundled-in",
+          "value": "php-src"
+        },
+        {
+          "name": "php:extension",
+          "value": "opcache"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "bundled:xxHash",
+      "name": "xxHash",
+      "purl": "pkg:generic/xxhash",
+      "properties": [
+        {
+          "name": "php:bundled-in",
+          "value": "php-src"
+        },
+        {
+          "name": "php:extension",
+          "value": "hash"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "bundled:Keccak (SHA-3)",
+      "name": "Keccak (SHA-3)",
+      "purl": "pkg:generic/keccak-(sha-3)",
+      "properties": [
+        {
+          "name": "php:bundled-in",
+          "value": "php-src"
+        },
+        {
+          "name": "php:extension",
+          "value": "hash"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "bundled:crypt_blowfish",
+      "name": "crypt_blowfish",
+      "purl": "pkg:generic/crypt_blowfish",
+      "properties": [
+        {
+          "name": "php:bundled-in",
+          "value": "php-src"
+        },
+        {
+          "name": "php:extension",
+          "value": "standard"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:apk/alpine/argon2-libs@20190702-r5?arch=x86_64&distro=3.24",
+      "name": "argon2-libs",
+      "version": "20190702-r5",
+      "purl": "pkg:apk/alpine/argon2-libs@20190702-r5?arch=x86_64&distro=3.24",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "argon2"
+        },
+        {
+          "name": "php:soname",
+          "value": "libargon2.so.1"
+        },
+        {
+          "name": "php:direct",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:apk/alpine/freetype@2.14.3-r0?arch=x86_64&distro=3.24",
+      "name": "freetype",
+      "version": "2.14.3-r0",
+      "purl": "pkg:apk/alpine/freetype@2.14.3-r0?arch=x86_64&distro=3.24",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "freetype"
+        },
+        {
+          "name": "php:soname",
+          "value": "libfreetype.so.6"
+        },
+        {
+          "name": "php:direct",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:apk/alpine/icu-libs@78.1-r0?arch=x86_64&distro=3.24",
+      "name": "icu-libs",
+      "version": "78.1-r0",
+      "purl": "pkg:apk/alpine/icu-libs@78.1-r0?arch=x86_64&distro=3.24",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "icu"
+        },
+        {
+          "name": "php:soname",
+          "value": "libicui18n.so.78"
+        },
+        {
+          "name": "php:soname",
+          "value": "libicuio.so.78"
+        },
+        {
+          "name": "php:soname",
+          "value": "libicuuc.so.78"
+        },
+        {
+          "name": "php:soname",
+          "value": "libicudata.so.78"
+        },
+        {
+          "name": "php:direct",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:apk/alpine/libavif@1.4.1-r0?arch=x86_64&distro=3.24",
+      "name": "libavif",
+      "version": "1.4.1-r0",
+      "purl": "pkg:apk/alpine/libavif@1.4.1-r0?arch=x86_64&distro=3.24",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "libavif"
+        },
+        {
+          "name": "php:soname",
+          "value": "libavif.so.16"
+        },
+        {
+          "name": "php:direct",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:apk/alpine/libcrypto3@3.5.9-r0?arch=x86_64&distro=3.24",
+      "name": "libcrypto3",
+      "version": "3.5.9-r0",
+      "purl": "pkg:apk/alpine/libcrypto3@3.5.9-r0?arch=x86_64&distro=3.24",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "openssl"
+        },
+        {
+          "name": "php:soname",
+          "value": "libcrypto.so.3"
+        },
+        {
+          "name": "php:direct",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:apk/alpine/libcurl@8.23.0-r0?arch=x86_64&distro=3.24",
+      "name": "libcurl",
+      "version": "8.23.0-r0",
+      "purl": "pkg:apk/alpine/libcurl@8.23.0-r0?arch=x86_64&distro=3.24",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "curl"
+        },
+        {
+          "name": "php:soname",
+          "value": "libcurl.so.4"
+        },
+        {
+          "name": "php:direct",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:apk/alpine/libedit@20260508.3.1-r1?arch=x86_64&distro=3.24",
+      "name": "libedit",
+      "version": "20260508.3.1-r1",
+      "purl": "pkg:apk/alpine/libedit@20260508.3.1-r1?arch=x86_64&distro=3.24",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "libedit"
+        },
+        {
+          "name": "php:soname",
+          "value": "libedit.so.0"
+        },
+        {
+          "name": "php:direct",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:apk/alpine/libgcc@15.2.0-r5?arch=x86_64&distro=3.24",
+      "name": "libgcc",
+      "version": "15.2.0-r5",
+      "purl": "pkg:apk/alpine/libgcc@15.2.0-r5?arch=x86_64&distro=3.24",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "gcc"
+        },
+        {
+          "name": "php:soname",
+          "value": "libgcc_s.so.1"
+        },
+        {
+          "name": "php:direct",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:apk/alpine/libjpeg-turbo@3.1.3-r0?arch=x86_64&distro=3.24",
+      "name": "libjpeg-turbo",
+      "version": "3.1.3-r0",
+      "purl": "pkg:apk/alpine/libjpeg-turbo@3.1.3-r0?arch=x86_64&distro=3.24",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "libjpeg-turbo"
+        },
+        {
+          "name": "php:soname",
+          "value": "libjpeg.so.8"
+        },
+        {
+          "name": "php:direct",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:apk/alpine/libpng@1.6.59-r0?arch=x86_64&distro=3.24",
+      "name": "libpng",
+      "version": "1.6.59-r0",
+      "purl": "pkg:apk/alpine/libpng@1.6.59-r0?arch=x86_64&distro=3.24",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "libpng"
+        },
+        {
+          "name": "php:soname",
+          "value": "libpng16.so.16"
+        },
+        {
+          "name": "php:direct",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:apk/alpine/libpq@18.6-r0?arch=x86_64&distro=3.24",
+      "name": "libpq",
+      "version": "18.6-r0",
+      "purl": "pkg:apk/alpine/libpq@18.6-r0?arch=x86_64&distro=3.24",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "postgresql18"
+        },
+        {
+          "name": "php:soname",
+          "value": "libpq.so.5"
+        },
+        {
+          "name": "php:direct",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:apk/alpine/libsodium@1.0.22-r0?arch=x86_64&distro=3.24",
+      "name": "libsodium",
+      "version": "1.0.22-r0",
+      "purl": "pkg:apk/alpine/libsodium@1.0.22-r0?arch=x86_64&distro=3.24",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "libsodium"
+        },
+        {
+          "name": "php:soname",
+          "value": "libsodium.so.26"
+        },
+        {
+          "name": "php:direct",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:apk/alpine/libssl3@3.5.9-r0?arch=x86_64&distro=3.24",
+      "name": "libssl3",
+      "version": "3.5.9-r0",
+      "purl": "pkg:apk/alpine/libssl3@3.5.9-r0?arch=x86_64&distro=3.24",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "openssl"
+        },
+        {
+          "name": "php:soname",
+          "value": "libssl.so.3"
+        },
+        {
+          "name": "php:direct",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:apk/alpine/libstdc++@15.2.0-r5?arch=x86_64&distro=3.24",
+      "name": "libstdc++",
+      "version": "15.2.0-r5",
+      "purl": "pkg:apk/alpine/libstdc++@15.2.0-r5?arch=x86_64&distro=3.24",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "gcc"
+        },
+        {
+          "name": "php:soname",
+          "value": "libstdc++.so.6"
+        },
+        {
+          "name": "php:direct",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:apk/alpine/libwebp@1.6.0-r0?arch=x86_64&distro=3.24",
+      "name": "libwebp",
+      "version": "1.6.0-r0",
+      "purl": "pkg:apk/alpine/libwebp@1.6.0-r0?arch=x86_64&distro=3.24",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "libwebp"
+        },
+        {
+          "name": "php:soname",
+          "value": "libwebp.so.7"
+        },
+        {
+          "name": "php:direct",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:apk/alpine/libxml2@2.13.9-r2?arch=x86_64&distro=3.24",
+      "name": "libxml2",
+      "version": "2.13.9-r2",
+      "purl": "pkg:apk/alpine/libxml2@2.13.9-r2?arch=x86_64&distro=3.24",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "libxml2"
+        },
+        {
+          "name": "php:soname",
+          "value": "libxml2.so.2"
+        },
+        {
+          "name": "php:direct",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:apk/alpine/libxpm@3.5.20-r0?arch=x86_64&distro=3.24",
+      "name": "libxpm",
+      "version": "3.5.20-r0",
+      "purl": "pkg:apk/alpine/libxpm@3.5.20-r0?arch=x86_64&distro=3.24",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "libxpm"
+        },
+        {
+          "name": "php:soname",
+          "value": "libXpm.so.4"
+        },
+        {
+          "name": "php:direct",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:apk/alpine/libzip@1.11.4-r2?arch=x86_64&distro=3.24",
+      "name": "libzip",
+      "version": "1.11.4-r2",
+      "purl": "pkg:apk/alpine/libzip@1.11.4-r2?arch=x86_64&distro=3.24",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "libzip"
+        },
+        {
+          "name": "php:soname",
+          "value": "libzip.so.5"
+        },
+        {
+          "name": "php:direct",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:apk/alpine/musl@1.2.6-r3?arch=x86_64&distro=3.24",
+      "name": "musl",
+      "version": "1.2.6-r3",
+      "purl": "pkg:apk/alpine/musl@1.2.6-r3?arch=x86_64&distro=3.24",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "musl"
+        },
+        {
+          "name": "php:soname",
+          "value": "libc.musl-x86_64.so.1"
+        },
+        {
+          "name": "php:direct",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:apk/alpine/oniguruma@6.9.10-r0?arch=x86_64&distro=3.24",
+      "name": "oniguruma",
+      "version": "6.9.10-r0",
+      "purl": "pkg:apk/alpine/oniguruma@6.9.10-r0?arch=x86_64&distro=3.24",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "oniguruma"
+        },
+        {
+          "name": "php:soname",
+          "value": "libonig.so.5"
+        },
+        {
+          "name": "php:direct",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:apk/alpine/pcre2@10.49-r0?arch=x86_64&distro=3.24",
+      "name": "pcre2",
+      "version": "10.49-r0",
+      "purl": "pkg:apk/alpine/pcre2@10.49-r0?arch=x86_64&distro=3.24",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "pcre2"
+        },
+        {
+          "name": "php:soname",
+          "value": "libpcre2-8.so.0"
+        },
+        {
+          "name": "php:direct",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:apk/alpine/sqlite-libs@3.53.4-r0?arch=x86_64&distro=3.24",
+      "name": "sqlite-libs",
+      "version": "3.53.4-r0",
+      "purl": "pkg:apk/alpine/sqlite-libs@3.53.4-r0?arch=x86_64&distro=3.24",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "sqlite"
+        },
+        {
+          "name": "php:soname",
+          "value": "libsqlite3.so.0"
+        },
+        {
+          "name": "php:direct",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:apk/alpine/zlib@1.3.2-r1?arch=x86_64&distro=3.24",
+      "name": "zlib",
+      "version": "1.3.2-r1",
+      "purl": "pkg:apk/alpine/zlib@1.3.2-r1?arch=x86_64&distro=3.24",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "zlib"
+        },
+        {
+          "name": "php:soname",
+          "value": "libz.so.1"
+        },
+        {
+          "name": "php:direct",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:apk/alpine/aom-libs@3.14.1-r0?arch=x86_64&distro=3.24",
+      "name": "aom-libs",
+      "version": "3.14.1-r0",
+      "purl": "pkg:apk/alpine/aom-libs@3.14.1-r0?arch=x86_64&distro=3.24",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "aom"
+        },
+        {
+          "name": "php:soname",
+          "value": "libaom.so.3"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:apk/alpine/brotli-libs@1.2.1-r0?arch=x86_64&distro=3.24",
+      "name": "brotli-libs",
+      "version": "1.2.1-r0",
+      "purl": "pkg:apk/alpine/brotli-libs@1.2.1-r0?arch=x86_64&distro=3.24",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "brotli"
+        },
+        {
+          "name": "php:soname",
+          "value": "libbrotlicommon.so.1"
+        },
+        {
+          "name": "php:soname",
+          "value": "libbrotlidec.so.1"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:apk/alpine/c-ares@1.34.9-r0?arch=x86_64&distro=3.24",
+      "name": "c-ares",
+      "version": "1.34.9-r0",
+      "purl": "pkg:apk/alpine/c-ares@1.34.9-r0?arch=x86_64&distro=3.24",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "c-ares"
+        },
+        {
+          "name": "php:soname",
+          "value": "libcares.so.2"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:apk/alpine/libbsd@0.12.2-r0?arch=x86_64&distro=3.24",
+      "name": "libbsd",
+      "version": "0.12.2-r0",
+      "purl": "pkg:apk/alpine/libbsd@0.12.2-r0?arch=x86_64&distro=3.24",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "libbsd"
+        },
+        {
+          "name": "php:soname",
+          "value": "libbsd.so.0"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:apk/alpine/libbz2@1.0.8-r6?arch=x86_64&distro=3.24",
+      "name": "libbz2",
+      "version": "1.0.8-r6",
+      "purl": "pkg:apk/alpine/libbz2@1.0.8-r6?arch=x86_64&distro=3.24",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "bzip2"
+        },
+        {
+          "name": "php:soname",
+          "value": "libbz2.so.1"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:apk/alpine/libdav1d@1.5.3-r0?arch=x86_64&distro=3.24",
+      "name": "libdav1d",
+      "version": "1.5.3-r0",
+      "purl": "pkg:apk/alpine/libdav1d@1.5.3-r0?arch=x86_64&distro=3.24",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "dav1d"
+        },
+        {
+          "name": "php:soname",
+          "value": "libdav1d.so.7"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:apk/alpine/libidn2@2.3.8-r0?arch=x86_64&distro=3.24",
+      "name": "libidn2",
+      "version": "2.3.8-r0",
+      "purl": "pkg:apk/alpine/libidn2@2.3.8-r0?arch=x86_64&distro=3.24",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "libidn2"
+        },
+        {
+          "name": "php:soname",
+          "value": "libidn2.so.0"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:apk/alpine/libmd@1.2.0-r0?arch=x86_64&distro=3.24",
+      "name": "libmd",
+      "version": "1.2.0-r0",
+      "purl": "pkg:apk/alpine/libmd@1.2.0-r0?arch=x86_64&distro=3.24",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "libmd"
+        },
+        {
+          "name": "php:soname",
+          "value": "libmd.so.0"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:apk/alpine/libncursesw@6.6_p20260516-r0?arch=x86_64&distro=3.24",
+      "name": "libncursesw",
+      "version": "6.6_p20260516-r0",
+      "purl": "pkg:apk/alpine/libncursesw@6.6_p20260516-r0?arch=x86_64&distro=3.24",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "ncurses"
+        },
+        {
+          "name": "php:soname",
+          "value": "libncursesw.so.6"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:apk/alpine/libpsl@0.21.5-r3?arch=x86_64&distro=3.24",
+      "name": "libpsl",
+      "version": "0.21.5-r3",
+      "purl": "pkg:apk/alpine/libpsl@0.21.5-r3?arch=x86_64&distro=3.24",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "libpsl"
+        },
+        {
+          "name": "php:soname",
+          "value": "libpsl.so.5"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:apk/alpine/libsharpyuv@1.6.0-r0?arch=x86_64&distro=3.24",
+      "name": "libsharpyuv",
+      "version": "1.6.0-r0",
+      "purl": "pkg:apk/alpine/libsharpyuv@1.6.0-r0?arch=x86_64&distro=3.24",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "libwebp"
+        },
+        {
+          "name": "php:soname",
+          "value": "libsharpyuv.so.0"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:apk/alpine/libunistring@1.4.2-r0?arch=x86_64&distro=3.24",
+      "name": "libunistring",
+      "version": "1.4.2-r0",
+      "purl": "pkg:apk/alpine/libunistring@1.4.2-r0?arch=x86_64&distro=3.24",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "libunistring"
+        },
+        {
+          "name": "php:soname",
+          "value": "libunistring.so.5"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:apk/alpine/libx11@1.8.14-r0?arch=x86_64&distro=3.24",
+      "name": "libx11",
+      "version": "1.8.14-r0",
+      "purl": "pkg:apk/alpine/libx11@1.8.14-r0?arch=x86_64&distro=3.24",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "libx11"
+        },
+        {
+          "name": "php:soname",
+          "value": "libX11.so.6"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:apk/alpine/libxau@1.0.12-r0?arch=x86_64&distro=3.24",
+      "name": "libxau",
+      "version": "1.0.12-r0",
+      "purl": "pkg:apk/alpine/libxau@1.0.12-r0?arch=x86_64&distro=3.24",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "libxau"
+        },
+        {
+          "name": "php:soname",
+          "value": "libXau.so.6"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:apk/alpine/libxcb@1.17.0-r2?arch=x86_64&distro=3.24",
+      "name": "libxcb",
+      "version": "1.17.0-r2",
+      "purl": "pkg:apk/alpine/libxcb@1.17.0-r2?arch=x86_64&distro=3.24",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "libxcb"
+        },
+        {
+          "name": "php:soname",
+          "value": "libxcb.so.1"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:apk/alpine/libxdmcp@1.1.5-r1?arch=x86_64&distro=3.24",
+      "name": "libxdmcp",
+      "version": "1.1.5-r1",
+      "purl": "pkg:apk/alpine/libxdmcp@1.1.5-r1?arch=x86_64&distro=3.24",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "libxdmcp"
+        },
+        {
+          "name": "php:soname",
+          "value": "libXdmcp.so.6"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:apk/alpine/libyuv@0.0.1928-r0?arch=x86_64&distro=3.24",
+      "name": "libyuv",
+      "version": "0.0.1928-r0",
+      "purl": "pkg:apk/alpine/libyuv@0.0.1928-r0?arch=x86_64&distro=3.24",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "libyuv"
+        },
+        {
+          "name": "php:soname",
+          "value": "libyuv.so"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:apk/alpine/nghttp2-libs@1.70.0-r0?arch=x86_64&distro=3.24",
+      "name": "nghttp2-libs",
+      "version": "1.70.0-r0",
+      "purl": "pkg:apk/alpine/nghttp2-libs@1.70.0-r0?arch=x86_64&distro=3.24",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "nghttp2"
+        },
+        {
+          "name": "php:soname",
+          "value": "libnghttp2.so.14"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:apk/alpine/xz-libs@5.8.4-r0?arch=x86_64&distro=3.24",
+      "name": "xz-libs",
+      "version": "5.8.4-r0",
+      "purl": "pkg:apk/alpine/xz-libs@5.8.4-r0?arch=x86_64&distro=3.24",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "xz"
+        },
+        {
+          "name": "php:soname",
+          "value": "liblzma.so.5"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:apk/alpine/zstd-libs@1.5.7-r2?arch=x86_64&distro=3.24",
+      "name": "zstd-libs",
+      "version": "1.5.7-r2",
+      "purl": "pkg:apk/alpine/zstd-libs@1.5.7-r2?arch=x86_64&distro=3.24",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "zstd"
+        },
+        {
+          "name": "php:soname",
+          "value": "libzstd.so.1"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "extension:bcmath",
+      "name": "php-ext-bcmath",
+      "version": "8.5.12",
+      "properties": [
+        {
+          "name": "php:file",
+          "value": "/usr/lib/php85/modules/bcmath.so"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "extension:ctype",
+      "name": "php-ext-ctype",
+      "version": "8.5.12",
+      "properties": [
+        {
+          "name": "php:file",
+          "value": "/usr/lib/php85/modules/ctype.so"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "extension:curl",
+      "name": "php-ext-curl",
+      "version": "8.5.12",
+      "properties": [
+        {
+          "name": "php:file",
+          "value": "/usr/lib/php85/modules/curl.so"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "extension:dom",
+      "name": "php-ext-dom",
+      "version": "8.5.12",
+      "properties": [
+        {
+          "name": "php:file",
+          "value": "/usr/lib/php85/modules/dom.so"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "extension:fileinfo",
+      "name": "php-ext-fileinfo",
+      "version": "8.5.12",
+      "properties": [
+        {
+          "name": "php:file",
+          "value": "/usr/lib/php85/modules/fileinfo.so"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "extension:gd",
+      "name": "php-ext-gd",
+      "version": "8.5.12",
+      "properties": [
+        {
+          "name": "php:file",
+          "value": "/usr/lib/php85/modules/gd.so"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "extension:iconv",
+      "name": "php-ext-iconv",
+      "version": "8.5.12",
+      "properties": [
+        {
+          "name": "php:file",
+          "value": "/usr/lib/php85/modules/iconv.so"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "extension:intl",
+      "name": "php-ext-intl",
+      "version": "8.5.12",
+      "properties": [
+        {
+          "name": "php:file",
+          "value": "/usr/lib/php85/modules/intl.so"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "extension:mbstring",
+      "name": "php-ext-mbstring",
+      "version": "8.5.12",
+      "properties": [
+        {
+          "name": "php:file",
+          "value": "/usr/lib/php85/modules/mbstring.so"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "extension:mysqli",
+      "name": "php-ext-mysqli",
+      "version": "8.5.12",
+      "properties": [
+        {
+          "name": "php:file",
+          "value": "/usr/lib/php85/modules/mysqli.so"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "extension:mysqlnd",
+      "name": "php-ext-mysqlnd",
+      "version": "8.5.12",
+      "properties": [
+        {
+          "name": "php:file",
+          "value": "/usr/lib/php85/modules/mysqlnd.so"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "extension:openssl",
+      "name": "php-ext-openssl",
+      "version": "8.5.12",
+      "properties": [
+        {
+          "name": "php:file",
+          "value": "/usr/lib/php85/modules/openssl.so"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "extension:PDO",
+      "name": "php-ext-PDO",
+      "version": "8.5.12",
+      "properties": [
+        {
+          "name": "php:file",
+          "value": "/usr/lib/php85/modules/pdo.so"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "extension:pdo_mysql",
+      "name": "php-ext-pdo_mysql",
+      "version": "8.5.12",
+      "properties": [
+        {
+          "name": "php:file",
+          "value": "/usr/lib/php85/modules/pdo_mysql.so"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "extension:pdo_pgsql",
+      "name": "php-ext-pdo_pgsql",
+      "version": "8.5.12",
+      "properties": [
+        {
+          "name": "php:file",
+          "value": "/usr/lib/php85/modules/pdo_pgsql.so"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "extension:pdo_sqlite",
+      "name": "php-ext-pdo_sqlite",
+      "version": "8.5.12",
+      "properties": [
+        {
+          "name": "php:file",
+          "value": "/usr/lib/php85/modules/pdo_sqlite.so"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "extension:pgsql",
+      "name": "php-ext-pgsql",
+      "version": "8.5.12",
+      "properties": [
+        {
+          "name": "php:file",
+          "value": "/usr/lib/php85/modules/pgsql.so"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "extension:Phar",
+      "name": "php-ext-Phar",
+      "version": "8.5.12",
+      "properties": [
+        {
+          "name": "php:file",
+          "value": "/usr/lib/php85/modules/phar.so"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "extension:session",
+      "name": "php-ext-session",
+      "version": "8.5.12",
+      "properties": [
+        {
+          "name": "php:file",
+          "value": "/usr/lib/php85/modules/session.so"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "extension:SimpleXML",
+      "name": "php-ext-SimpleXML",
+      "version": "8.5.12",
+      "properties": [
+        {
+          "name": "php:file",
+          "value": "/usr/lib/php85/modules/simplexml.so"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "extension:sodium",
+      "name": "php-ext-sodium",
+      "version": "8.5.12",
+      "properties": [
+        {
+          "name": "php:file",
+          "value": "/usr/lib/php85/modules/sodium.so"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "extension:sqlite3",
+      "name": "php-ext-sqlite3",
+      "version": "8.5.12",
+      "properties": [
+        {
+          "name": "php:file",
+          "value": "/usr/lib/php85/modules/sqlite3.so"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "extension:tokenizer",
+      "name": "php-ext-tokenizer",
+      "version": "8.5.12",
+      "properties": [
+        {
+          "name": "php:file",
+          "value": "/usr/lib/php85/modules/tokenizer.so"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "extension:xml",
+      "name": "php-ext-xml",
+      "version": "8.5.12",
+      "properties": [
+        {
+          "name": "php:file",
+          "value": "/usr/lib/php85/modules/xml.so"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "extension:xmlreader",
+      "name": "php-ext-xmlreader",
+      "version": "8.5.12",
+      "properties": [
+        {
+          "name": "php:file",
+          "value": "/usr/lib/php85/modules/xmlreader.so"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "extension:xmlwriter",
+      "name": "php-ext-xmlwriter",
+      "version": "8.5.12",
+      "properties": [
+        {
+          "name": "php:file",
+          "value": "/usr/lib/php85/modules/xmlwriter.so"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "extension:zip",
+      "name": "php-ext-zip",
+      "version": "8.5.12",
+      "properties": [
+        {
+          "name": "php:file",
+          "value": "/usr/lib/php85/modules/zip.so"
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "php",
+      "dependsOn": [
+        "bundled:timelib",
+        "bundled:Time zone database",
+        "bundled:Lexbor",
+        "bundled:uriparser",
+        "bundled:libmagic",
+        "bundled:libmbfl",
+        "bundled:libgd (fork)",
+        "bundled:libbcmath",
+        "bundled:IR JIT framework",
+        "bundled:xxHash",
+        "bundled:Keccak (SHA-3)",
+        "bundled:crypt_blowfish",
+        "extension:bcmath",
+        "extension:ctype",
+        "extension:curl",
+        "extension:dom",
+        "extension:fileinfo",
+        "extension:gd",
+        "extension:iconv",
+        "extension:intl",
+        "extension:mbstring",
+        "extension:mysqli",
+        "extension:mysqlnd",
+        "extension:openssl",
+        "extension:PDO",
+        "extension:pdo_mysql",
+        "extension:pdo_pgsql",
+        "extension:pdo_sqlite",
+        "extension:pgsql",
+        "extension:Phar",
+        "extension:session",
+        "extension:SimpleXML",
+        "extension:sodium",
+        "extension:sqlite3",
+        "extension:tokenizer",
+        "extension:xml",
+        "extension:xmlreader",
+        "extension:xmlwriter",
+        "extension:zip",
+        "pkg:apk/alpine/argon2-libs@20190702-r5?arch=x86_64&distro=3.24",
+        "pkg:apk/alpine/musl@1.2.6-r3?arch=x86_64&distro=3.24",
+        "pkg:apk/alpine/libedit@20260508.3.1-r1?arch=x86_64&distro=3.24",
+        "pkg:apk/alpine/pcre2@10.49-r0?arch=x86_64&distro=3.24",
+        "pkg:apk/alpine/libxml2@2.13.9-r2?arch=x86_64&distro=3.24",
+        "pkg:apk/alpine/zlib@1.3.2-r1?arch=x86_64&distro=3.24"
+      ]
+    },
+    {
+      "ref": "extension:bcmath",
+      "dependsOn": [
+        "pkg:apk/alpine/musl@1.2.6-r3?arch=x86_64&distro=3.24"
+      ]
+    },
+    {
+      "ref": "extension:ctype",
+      "dependsOn": [
+        "pkg:apk/alpine/musl@1.2.6-r3?arch=x86_64&distro=3.24"
+      ]
+    },
+    {
+      "ref": "extension:curl",
+      "dependsOn": [
+        "pkg:apk/alpine/musl@1.2.6-r3?arch=x86_64&distro=3.24",
+        "pkg:apk/alpine/libcrypto3@3.5.9-r0?arch=x86_64&distro=3.24",
+        "pkg:apk/alpine/libcurl@8.23.0-r0?arch=x86_64&distro=3.24",
+        "pkg:apk/alpine/libssl3@3.5.9-r0?arch=x86_64&distro=3.24",
+        "pkg:apk/alpine/zlib@1.3.2-r1?arch=x86_64&distro=3.24"
+      ]
+    },
+    {
+      "ref": "extension:dom",
+      "dependsOn": [
+        "pkg:apk/alpine/musl@1.2.6-r3?arch=x86_64&distro=3.24",
+        "pkg:apk/alpine/libxml2@2.13.9-r2?arch=x86_64&distro=3.24",
+        "pkg:apk/alpine/zlib@1.3.2-r1?arch=x86_64&distro=3.24"
+      ]
+    },
+    {
+      "ref": "extension:fileinfo",
+      "dependsOn": [
+        "pkg:apk/alpine/musl@1.2.6-r3?arch=x86_64&distro=3.24"
+      ]
+    },
+    {
+      "ref": "extension:gd",
+      "dependsOn": [
+        "pkg:apk/alpine/libavif@1.4.1-r0?arch=x86_64&distro=3.24",
+        "pkg:apk/alpine/musl@1.2.6-r3?arch=x86_64&distro=3.24",
+        "pkg:apk/alpine/freetype@2.14.3-r0?arch=x86_64&distro=3.24",
+        "pkg:apk/alpine/libgcc@15.2.0-r5?arch=x86_64&distro=3.24",
+        "pkg:apk/alpine/libjpeg-turbo@3.1.3-r0?arch=x86_64&distro=3.24",
+        "pkg:apk/alpine/libpng@1.6.59-r0?arch=x86_64&distro=3.24",
+        "pkg:apk/alpine/libstdc++@15.2.0-r5?arch=x86_64&distro=3.24",
+        "pkg:apk/alpine/libwebp@1.6.0-r0?arch=x86_64&distro=3.24",
+        "pkg:apk/alpine/libxpm@3.5.20-r0?arch=x86_64&distro=3.24",
+        "pkg:apk/alpine/zlib@1.3.2-r1?arch=x86_64&distro=3.24"
+      ]
+    },
+    {
+      "ref": "extension:iconv",
+      "dependsOn": [
+        "pkg:apk/alpine/musl@1.2.6-r3?arch=x86_64&distro=3.24"
+      ]
+    },
+    {
+      "ref": "extension:intl",
+      "dependsOn": [
+        "pkg:apk/alpine/musl@1.2.6-r3?arch=x86_64&distro=3.24",
+        "pkg:apk/alpine/libgcc@15.2.0-r5?arch=x86_64&distro=3.24",
+        "pkg:apk/alpine/icu-libs@78.1-r0?arch=x86_64&distro=3.24",
+        "pkg:apk/alpine/libstdc++@15.2.0-r5?arch=x86_64&distro=3.24"
+      ]
+    },
+    {
+      "ref": "extension:mbstring",
+      "dependsOn": [
+        "pkg:apk/alpine/musl@1.2.6-r3?arch=x86_64&distro=3.24",
+        "pkg:apk/alpine/oniguruma@6.9.10-r0?arch=x86_64&distro=3.24"
+      ]
+    },
+    {
+      "ref": "extension:mysqli",
+      "dependsOn": [
+        "pkg:apk/alpine/musl@1.2.6-r3?arch=x86_64&distro=3.24"
+      ]
+    },
+    {
+      "ref": "extension:mysqlnd",
+      "dependsOn": [
+        "pkg:apk/alpine/musl@1.2.6-r3?arch=x86_64&distro=3.24",
+        "pkg:apk/alpine/libcrypto3@3.5.9-r0?arch=x86_64&distro=3.24",
+        "pkg:apk/alpine/zlib@1.3.2-r1?arch=x86_64&distro=3.24"
+      ]
+    },
+    {
+      "ref": "extension:openssl",
+      "dependsOn": [
+        "pkg:apk/alpine/musl@1.2.6-r3?arch=x86_64&distro=3.24",
+        "pkg:apk/alpine/libcrypto3@3.5.9-r0?arch=x86_64&distro=3.24",
+        "pkg:apk/alpine/libssl3@3.5.9-r0?arch=x86_64&distro=3.24"
+      ]
+    },
+    {
+      "ref": "extension:PDO",
+      "dependsOn": [
+        "pkg:apk/alpine/musl@1.2.6-r3?arch=x86_64&distro=3.24"
+      ]
+    },
+    {
+      "ref": "extension:pdo_mysql",
+      "dependsOn": [
+        "pkg:apk/alpine/musl@1.2.6-r3?arch=x86_64&distro=3.24"
+      ]
+    },
+    {
+      "ref": "extension:pdo_pgsql",
+      "dependsOn": [
+        "pkg:apk/alpine/musl@1.2.6-r3?arch=x86_64&distro=3.24",
+        "pkg:apk/alpine/libcrypto3@3.5.9-r0?arch=x86_64&distro=3.24",
+        "pkg:apk/alpine/libpq@18.6-r0?arch=x86_64&distro=3.24",
+        "pkg:apk/alpine/libssl3@3.5.9-r0?arch=x86_64&distro=3.24"
+      ]
+    },
+    {
+      "ref": "extension:pdo_sqlite",
+      "dependsOn": [
+        "pkg:apk/alpine/musl@1.2.6-r3?arch=x86_64&distro=3.24",
+        "pkg:apk/alpine/sqlite-libs@3.53.4-r0?arch=x86_64&distro=3.24"
+      ]
+    },
+    {
+      "ref": "extension:pgsql",
+      "dependsOn": [
+        "pkg:apk/alpine/musl@1.2.6-r3?arch=x86_64&distro=3.24",
+        "pkg:apk/alpine/libcrypto3@3.5.9-r0?arch=x86_64&distro=3.24",
+        "pkg:apk/alpine/libpq@18.6-r0?arch=x86_64&distro=3.24",
+        "pkg:apk/alpine/libssl3@3.5.9-r0?arch=x86_64&distro=3.24"
+      ]
+    },
+    {
+      "ref": "extension:Phar",
+      "dependsOn": [
+        "pkg:apk/alpine/musl@1.2.6-r3?arch=x86_64&distro=3.24"
+      ]
+    },
+    {
+      "ref": "extension:session",
+      "dependsOn": [
+        "pkg:apk/alpine/musl@1.2.6-r3?arch=x86_64&distro=3.24"
+      ]
+    },
+    {
+      "ref": "extension:SimpleXML",
+      "dependsOn": [
+        "pkg:apk/alpine/musl@1.2.6-r3?arch=x86_64&distro=3.24",
+        "pkg:apk/alpine/libxml2@2.13.9-r2?arch=x86_64&distro=3.24",
+        "pkg:apk/alpine/zlib@1.3.2-r1?arch=x86_64&distro=3.24"
+      ]
+    },
+    {
+      "ref": "extension:sodium",
+      "dependsOn": [
+        "pkg:apk/alpine/musl@1.2.6-r3?arch=x86_64&distro=3.24",
+        "pkg:apk/alpine/libsodium@1.0.22-r0?arch=x86_64&distro=3.24"
+      ]
+    },
+    {
+      "ref": "extension:sqlite3",
+      "dependsOn": [
+        "pkg:apk/alpine/musl@1.2.6-r3?arch=x86_64&distro=3.24",
+        "pkg:apk/alpine/sqlite-libs@3.53.4-r0?arch=x86_64&distro=3.24"
+      ]
+    },
+    {
+      "ref": "extension:tokenizer",
+      "dependsOn": [
+        "pkg:apk/alpine/musl@1.2.6-r3?arch=x86_64&distro=3.24"
+      ]
+    },
+    {
+      "ref": "extension:xml",
+      "dependsOn": [
+        "pkg:apk/alpine/musl@1.2.6-r3?arch=x86_64&distro=3.24",
+        "pkg:apk/alpine/libxml2@2.13.9-r2?arch=x86_64&distro=3.24",
+        "pkg:apk/alpine/zlib@1.3.2-r1?arch=x86_64&distro=3.24"
+      ]
+    },
+    {
+      "ref": "extension:xmlreader",
+      "dependsOn": [
+        "pkg:apk/alpine/musl@1.2.6-r3?arch=x86_64&distro=3.24",
+        "pkg:apk/alpine/libxml2@2.13.9-r2?arch=x86_64&distro=3.24",
+        "pkg:apk/alpine/zlib@1.3.2-r1?arch=x86_64&distro=3.24"
+      ]
+    },
+    {
+      "ref": "extension:xmlwriter",
+      "dependsOn": [
+        "pkg:apk/alpine/musl@1.2.6-r3?arch=x86_64&distro=3.24",
+        "pkg:apk/alpine/libxml2@2.13.9-r2?arch=x86_64&distro=3.24",
+        "pkg:apk/alpine/zlib@1.3.2-r1?arch=x86_64&distro=3.24"
+      ]
+    },
+    {
+      "ref": "extension:zip",
+      "dependsOn": [
+        "pkg:apk/alpine/musl@1.2.6-r3?arch=x86_64&distro=3.24",
+        "pkg:apk/alpine/libcrypto3@3.5.9-r0?arch=x86_64&distro=3.24",
+        "pkg:apk/alpine/zlib@1.3.2-r1?arch=x86_64&distro=3.24",
+        "pkg:apk/alpine/libzip@1.11.4-r2?arch=x86_64&distro=3.24"
+      ]
+    }
+  ]
+}

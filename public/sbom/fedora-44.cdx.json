@@ -1,0 +1,2350 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.6",
+  "serialNumber": "urn:uuid:e3dd98a3-c050-557b-a6a5-19b5a02b7f3a",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-10-29T00:00:00Z",
+    "tools": {
+      "components": [
+        {
+          "type": "application",
+          "name": "php-sbom",
+          "publisher": "Jorg Sowa"
+        }
+      ]
+    },
+    "component": {
+      "type": "application",
+      "bom-ref": "php",
+      "name": "php",
+      "version": "8.5.12",
+      "description": "Fedora 44 (php packages), Fedora Linux 44 (Container Image), amd64"
+    }
+  },
+  "components": [
+    {
+      "type": "library",
+      "bom-ref": "bundled:timelib",
+      "name": "timelib",
+      "version": "2022.17",
+      "purl": "pkg:generic/timelib@2022.17",
+      "properties": [
+        {
+          "name": "php:bundled-in",
+          "value": "php-src"
+        },
+        {
+          "name": "php:extension",
+          "value": "date"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "bundled:Lexbor",
+      "name": "Lexbor",
+      "version": "2.7.0",
+      "purl": "pkg:generic/lexbor@2.7.0",
+      "properties": [
+        {
+          "name": "php:bundled-in",
+          "value": "php-src"
+        },
+        {
+          "name": "php:extension",
+          "value": "lexbor"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "bundled:libmagic",
+      "name": "libmagic",
+      "version": "5.46",
+      "purl": "pkg:generic/libmagic@5.46",
+      "properties": [
+        {
+          "name": "php:bundled-in",
+          "value": "php-src"
+        },
+        {
+          "name": "php:extension",
+          "value": "fileinfo"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "bundled:libmbfl",
+      "name": "libmbfl",
+      "version": "1.3.2",
+      "purl": "pkg:generic/libmbfl@1.3.2",
+      "properties": [
+        {
+          "name": "php:bundled-in",
+          "value": "php-src"
+        },
+        {
+          "name": "php:extension",
+          "value": "mbstring"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "bundled:libbcmath",
+      "name": "libbcmath",
+      "purl": "pkg:generic/libbcmath",
+      "properties": [
+        {
+          "name": "php:bundled-in",
+          "value": "php-src"
+        },
+        {
+          "name": "php:extension",
+          "value": "bcmath"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "bundled:IR JIT framework",
+      "name": "IR JIT framework",
+      "purl": "pkg:generic/ir-jit-framework",
+      "properties": [
+        {
+          "name": "php:bundled-in",
+          "value": "php-src"
+        },
+        {
+          "name": "php:extension",
+          "value": "opcache"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "bundled:xxHash",
+      "name": "xxHash",
+      "purl": "pkg:generic/xxhash",
+      "properties": [
+        {
+          "name": "php:bundled-in",
+          "value": "php-src"
+        },
+        {
+          "name": "php:extension",
+          "value": "hash"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "bundled:Keccak (SHA-3)",
+      "name": "Keccak (SHA-3)",
+      "purl": "pkg:generic/keccak-(sha-3)",
+      "properties": [
+        {
+          "name": "php:bundled-in",
+          "value": "php-src"
+        },
+        {
+          "name": "php:extension",
+          "value": "hash"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "bundled:crypt_blowfish",
+      "name": "crypt_blowfish",
+      "purl": "pkg:generic/crypt_blowfish",
+      "properties": [
+        {
+          "name": "php:bundled-in",
+          "value": "php-src"
+        },
+        {
+          "name": "php:extension",
+          "value": "standard"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:rpm/fedora/bzip2-libs@1.0.8-23.fc44?arch=x86_64&distro=fedora-44",
+      "name": "bzip2-libs",
+      "version": "1.0.8-23.fc44",
+      "purl": "pkg:rpm/fedora/bzip2-libs@1.0.8-23.fc44?arch=x86_64&distro=fedora-44",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "bzip2"
+        },
+        {
+          "name": "php:soname",
+          "value": "libbz2.so.1"
+        },
+        {
+          "name": "php:direct",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:rpm/fedora/capstone@5.0.6-4.fc44?arch=x86_64&distro=fedora-44",
+      "name": "capstone",
+      "version": "5.0.6-4.fc44",
+      "purl": "pkg:rpm/fedora/capstone@5.0.6-4.fc44?arch=x86_64&distro=fedora-44",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "capstone"
+        },
+        {
+          "name": "php:soname",
+          "value": "libcapstone.so.5"
+        },
+        {
+          "name": "php:direct",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:rpm/fedora/gd@2.3.3-21.fc44?arch=x86_64&distro=fedora-44",
+      "name": "gd",
+      "version": "2.3.3-21.fc44",
+      "purl": "pkg:rpm/fedora/gd@2.3.3-21.fc44?arch=x86_64&distro=fedora-44",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "gd"
+        },
+        {
+          "name": "php:soname",
+          "value": "libgd.so.3"
+        },
+        {
+          "name": "php:direct",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:rpm/fedora/glibc@2.43-8.fc44?arch=x86_64&distro=fedora-44",
+      "name": "glibc",
+      "version": "2.43-8.fc44",
+      "purl": "pkg:rpm/fedora/glibc@2.43-8.fc44?arch=x86_64&distro=fedora-44",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "glibc"
+        },
+        {
+          "name": "php:soname",
+          "value": "libc.so.6"
+        },
+        {
+          "name": "php:soname",
+          "value": "libm.so.6"
+        },
+        {
+          "name": "php:soname",
+          "value": "libresolv.so.2"
+        },
+        {
+          "name": "php:direct",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:rpm/fedora/libcurl@8.18.0-8.fc44?arch=x86_64&distro=fedora-44",
+      "name": "libcurl",
+      "version": "8.18.0-8.fc44",
+      "purl": "pkg:rpm/fedora/libcurl@8.18.0-8.fc44?arch=x86_64&distro=fedora-44",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "curl"
+        },
+        {
+          "name": "php:soname",
+          "value": "libcurl.so.4"
+        },
+        {
+          "name": "php:direct",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:rpm/fedora/libedit@3.1-59.20260512cvs.fc44?arch=x86_64&distro=fedora-44",
+      "name": "libedit",
+      "version": "3.1-59.20260512cvs.fc44",
+      "purl": "pkg:rpm/fedora/libedit@3.1-59.20260512cvs.fc44?arch=x86_64&distro=fedora-44",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "libedit"
+        },
+        {
+          "name": "php:soname",
+          "value": "libedit.so.0"
+        },
+        {
+          "name": "php:direct",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:rpm/fedora/libgcc@16.2.1-2.fc44?arch=x86_64&distro=fedora-44",
+      "name": "libgcc",
+      "version": "16.2.1-2.fc44",
+      "purl": "pkg:rpm/fedora/libgcc@16.2.1-2.fc44?arch=x86_64&distro=fedora-44",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "gcc"
+        },
+        {
+          "name": "php:soname",
+          "value": "libgcc_s.so.1"
+        },
+        {
+          "name": "php:direct",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:rpm/fedora/libicu@77.1-3.fc44?arch=x86_64&distro=fedora-44",
+      "name": "libicu",
+      "version": "77.1-3.fc44",
+      "purl": "pkg:rpm/fedora/libicu@77.1-3.fc44?arch=x86_64&distro=fedora-44",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "icu"
+        },
+        {
+          "name": "php:soname",
+          "value": "libicui18n.so.77"
+        },
+        {
+          "name": "php:soname",
+          "value": "libicuio.so.77"
+        },
+        {
+          "name": "php:soname",
+          "value": "libicuuc.so.77"
+        },
+        {
+          "name": "php:soname",
+          "value": "libicudata.so.77"
+        },
+        {
+          "name": "php:direct",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:rpm/fedora/libpq@18.0-4.fc44?arch=x86_64&distro=fedora-44",
+      "name": "libpq",
+      "version": "18.0-4.fc44",
+      "purl": "pkg:rpm/fedora/libpq@18.0-4.fc44?arch=x86_64&distro=fedora-44",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "libpq"
+        },
+        {
+          "name": "php:soname",
+          "value": "libpq.so.5"
+        },
+        {
+          "name": "php:direct",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:rpm/fedora/libsodium@1.0.22-1.fc44?arch=x86_64&distro=fedora-44",
+      "name": "libsodium",
+      "version": "1.0.22-1.fc44",
+      "purl": "pkg:rpm/fedora/libsodium@1.0.22-1.fc44?arch=x86_64&distro=fedora-44",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "libsodium"
+        },
+        {
+          "name": "php:soname",
+          "value": "libsodium.so.26"
+        },
+        {
+          "name": "php:direct",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:rpm/fedora/libstdc++@16.2.1-2.fc44?arch=x86_64&distro=fedora-44",
+      "name": "libstdc++",
+      "version": "16.2.1-2.fc44",
+      "purl": "pkg:rpm/fedora/libstdc++@16.2.1-2.fc44?arch=x86_64&distro=fedora-44",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "gcc"
+        },
+        {
+          "name": "php:soname",
+          "value": "libstdc++.so.6"
+        },
+        {
+          "name": "php:direct",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:rpm/fedora/libxcrypt@4.5.2-3.fc44?arch=x86_64&distro=fedora-44",
+      "name": "libxcrypt",
+      "version": "4.5.2-3.fc44",
+      "purl": "pkg:rpm/fedora/libxcrypt@4.5.2-3.fc44?arch=x86_64&distro=fedora-44",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "libxcrypt"
+        },
+        {
+          "name": "php:soname",
+          "value": "libcrypt.so.2"
+        },
+        {
+          "name": "php:direct",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:rpm/fedora/libxml2@2.12.10-6.fc44?arch=x86_64&distro=fedora-44",
+      "name": "libxml2",
+      "version": "2.12.10-6.fc44",
+      "purl": "pkg:rpm/fedora/libxml2@2.12.10-6.fc44?arch=x86_64&distro=fedora-44",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "libxml2"
+        },
+        {
+          "name": "php:soname",
+          "value": "libxml2.so.2"
+        },
+        {
+          "name": "php:direct",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:rpm/fedora/libxslt@1.1.43-6.fc44?arch=x86_64&distro=fedora-44",
+      "name": "libxslt",
+      "version": "1.1.43-6.fc44",
+      "purl": "pkg:rpm/fedora/libxslt@1.1.43-6.fc44?arch=x86_64&distro=fedora-44",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "libxslt"
+        },
+        {
+          "name": "php:soname",
+          "value": "libexslt.so.0"
+        },
+        {
+          "name": "php:soname",
+          "value": "libxslt.so.1"
+        },
+        {
+          "name": "php:direct",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:rpm/fedora/oniguruma@6.9.10-4.fc44?arch=x86_64&distro=fedora-44",
+      "name": "oniguruma",
+      "version": "6.9.10-4.fc44",
+      "purl": "pkg:rpm/fedora/oniguruma@6.9.10-4.fc44?arch=x86_64&distro=fedora-44",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "oniguruma"
+        },
+        {
+          "name": "php:soname",
+          "value": "libonig.so.5"
+        },
+        {
+          "name": "php:direct",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:rpm/fedora/openssl-libs@3.5.7-2.fc44?arch=x86_64&distro=fedora-44",
+      "name": "openssl-libs",
+      "version": "3.5.7-2.fc44",
+      "purl": "pkg:rpm/fedora/openssl-libs@3.5.7-2.fc44?arch=x86_64&distro=fedora-44",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "openssl"
+        },
+        {
+          "name": "php:soname",
+          "value": "libcrypto.so.3"
+        },
+        {
+          "name": "php:soname",
+          "value": "libssl.so.3"
+        },
+        {
+          "name": "php:direct",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:rpm/fedora/pcre2@10.47-1.fc44.1?arch=x86_64&distro=fedora-44",
+      "name": "pcre2",
+      "version": "10.47-1.fc44.1",
+      "purl": "pkg:rpm/fedora/pcre2@10.47-1.fc44.1?arch=x86_64&distro=fedora-44",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "pcre2"
+        },
+        {
+          "name": "php:soname",
+          "value": "libpcre2-8.so.0"
+        },
+        {
+          "name": "php:direct",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:rpm/fedora/sqlite-libs@3.51.2-2.fc44?arch=x86_64&distro=fedora-44",
+      "name": "sqlite-libs",
+      "version": "3.51.2-2.fc44",
+      "purl": "pkg:rpm/fedora/sqlite-libs@3.51.2-2.fc44?arch=x86_64&distro=fedora-44",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "sqlite"
+        },
+        {
+          "name": "php:soname",
+          "value": "libsqlite3.so.0"
+        },
+        {
+          "name": "php:direct",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:rpm/fedora/tzdata@2026c-1.fc44?arch=x86_64&distro=fedora-44",
+      "name": "tzdata",
+      "version": "2026c-1.fc44",
+      "purl": "pkg:rpm/fedora/tzdata@2026c-1.fc44?arch=x86_64&distro=fedora-44",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "tzdata"
+        },
+        {
+          "name": "php:direct",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:rpm/fedora/uriparser@1.0.2-1.fc44?arch=x86_64&distro=fedora-44",
+      "name": "uriparser",
+      "version": "1.0.2-1.fc44",
+      "purl": "pkg:rpm/fedora/uriparser@1.0.2-1.fc44?arch=x86_64&distro=fedora-44",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "uriparser"
+        },
+        {
+          "name": "php:soname",
+          "value": "liburiparser.so.1"
+        },
+        {
+          "name": "php:direct",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:rpm/fedora/zlib-ng-compat@2.3.3-3.fc44?arch=x86_64&distro=fedora-44",
+      "name": "zlib-ng-compat",
+      "version": "2.3.3-3.fc44",
+      "purl": "pkg:rpm/fedora/zlib-ng-compat@2.3.3-3.fc44?arch=x86_64&distro=fedora-44",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "zlib-ng"
+        },
+        {
+          "name": "php:soname",
+          "value": "libz.so.1"
+        },
+        {
+          "name": "php:direct",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:rpm/fedora/cyrus-sasl-lib@2.1.28-35.fc44?arch=x86_64&distro=fedora-44",
+      "name": "cyrus-sasl-lib",
+      "version": "2.1.28-35.fc44",
+      "purl": "pkg:rpm/fedora/cyrus-sasl-lib@2.1.28-35.fc44?arch=x86_64&distro=fedora-44",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "cyrus-sasl"
+        },
+        {
+          "name": "php:soname",
+          "value": "libsasl2.so.3"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:rpm/fedora/fontconfig@2.17.0-4.fc44?arch=x86_64&distro=fedora-44",
+      "name": "fontconfig",
+      "version": "2.17.0-4.fc44",
+      "purl": "pkg:rpm/fedora/fontconfig@2.17.0-4.fc44?arch=x86_64&distro=fedora-44",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "fontconfig"
+        },
+        {
+          "name": "php:soname",
+          "value": "libfontconfig.so.1"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:rpm/fedora/freetype@2.14.3-1.fc44?arch=x86_64&distro=fedora-44",
+      "name": "freetype",
+      "version": "2.14.3-1.fc44",
+      "purl": "pkg:rpm/fedora/freetype@2.14.3-1.fc44?arch=x86_64&distro=fedora-44",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "freetype"
+        },
+        {
+          "name": "php:soname",
+          "value": "libfreetype.so.6"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:rpm/fedora/glib2@2.88.3-1.fc44?arch=x86_64&distro=fedora-44",
+      "name": "glib2",
+      "version": "2.88.3-1.fc44",
+      "purl": "pkg:rpm/fedora/glib2@2.88.3-1.fc44?arch=x86_64&distro=fedora-44",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "glib2"
+        },
+        {
+          "name": "php:soname",
+          "value": "libglib-2.0.so.0"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:rpm/fedora/graphite2@1.3.14-20.fc44?arch=x86_64&distro=fedora-44",
+      "name": "graphite2",
+      "version": "1.3.14-20.fc44",
+      "purl": "pkg:rpm/fedora/graphite2@1.3.14-20.fc44?arch=x86_64&distro=fedora-44",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "graphite2"
+        },
+        {
+          "name": "php:soname",
+          "value": "libgraphite2.so.3"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:rpm/fedora/harfbuzz@14.1.0-2.fc44?arch=x86_64&distro=fedora-44",
+      "name": "harfbuzz",
+      "version": "14.1.0-2.fc44",
+      "purl": "pkg:rpm/fedora/harfbuzz@14.1.0-2.fc44?arch=x86_64&distro=fedora-44",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "harfbuzz"
+        },
+        {
+          "name": "php:soname",
+          "value": "libharfbuzz.so.0"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:rpm/fedora/jbigkit-libs@2.1-33.fc44?arch=x86_64&distro=fedora-44",
+      "name": "jbigkit-libs",
+      "version": "2.1-33.fc44",
+      "purl": "pkg:rpm/fedora/jbigkit-libs@2.1-33.fc44?arch=x86_64&distro=fedora-44",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "jbigkit"
+        },
+        {
+          "name": "php:soname",
+          "value": "libjbig.so.2.1"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:rpm/fedora/keyutils-libs@1.6.3-7.fc44?arch=x86_64&distro=fedora-44",
+      "name": "keyutils-libs",
+      "version": "1.6.3-7.fc44",
+      "purl": "pkg:rpm/fedora/keyutils-libs@1.6.3-7.fc44?arch=x86_64&distro=fedora-44",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "keyutils"
+        },
+        {
+          "name": "php:soname",
+          "value": "libkeyutils.so.1"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:rpm/fedora/krb5-libs@1.22.2-4.fc44?arch=x86_64&distro=fedora-44",
+      "name": "krb5-libs",
+      "version": "1.22.2-4.fc44",
+      "purl": "pkg:rpm/fedora/krb5-libs@1.22.2-4.fc44?arch=x86_64&distro=fedora-44",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "krb5"
+        },
+        {
+          "name": "php:soname",
+          "value": "libgssapi_krb5.so.2"
+        },
+        {
+          "name": "php:soname",
+          "value": "libk5crypto.so.3"
+        },
+        {
+          "name": "php:soname",
+          "value": "libkrb5.so.3"
+        },
+        {
+          "name": "php:soname",
+          "value": "libkrb5support.so.0"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:rpm/fedora/libaom@3.15.2-1.fc44?arch=x86_64&distro=fedora-44",
+      "name": "libaom",
+      "version": "3.15.2-1.fc44",
+      "purl": "pkg:rpm/fedora/libaom@3.15.2-1.fc44?arch=x86_64&distro=fedora-44",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "aom"
+        },
+        {
+          "name": "php:soname",
+          "value": "libaom.so.3"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:rpm/fedora/libavif@1.3.0-4.fc44?arch=x86_64&distro=fedora-44",
+      "name": "libavif",
+      "version": "1.3.0-4.fc44",
+      "purl": "pkg:rpm/fedora/libavif@1.3.0-4.fc44?arch=x86_64&distro=fedora-44",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "libavif"
+        },
+        {
+          "name": "php:soname",
+          "value": "libavif.so.16"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:rpm/fedora/libbrotli@1.2.0-3.fc44?arch=x86_64&distro=fedora-44",
+      "name": "libbrotli",
+      "version": "1.2.0-3.fc44",
+      "purl": "pkg:rpm/fedora/libbrotli@1.2.0-3.fc44?arch=x86_64&distro=fedora-44",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "brotli"
+        },
+        {
+          "name": "php:soname",
+          "value": "libbrotlicommon.so.1"
+        },
+        {
+          "name": "php:soname",
+          "value": "libbrotlidec.so.1"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:rpm/fedora/libcbor@0.13.0-2.fc44?arch=x86_64&distro=fedora-44",
+      "name": "libcbor",
+      "version": "0.13.0-2.fc44",
+      "purl": "pkg:rpm/fedora/libcbor@0.13.0-2.fc44?arch=x86_64&distro=fedora-44",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "libcbor"
+        },
+        {
+          "name": "php:soname",
+          "value": "libcbor.so.0.13"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:rpm/fedora/libcom_err@1.47.3-4.fc44?arch=x86_64&distro=fedora-44",
+      "name": "libcom_err",
+      "version": "1.47.3-4.fc44",
+      "purl": "pkg:rpm/fedora/libcom_err@1.47.3-4.fc44?arch=x86_64&distro=fedora-44",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "e2fsprogs"
+        },
+        {
+          "name": "php:soname",
+          "value": "libcom_err.so.2"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:rpm/fedora/libdav1d@1.5.4-1.fc44?arch=x86_64&distro=fedora-44",
+      "name": "libdav1d",
+      "version": "1.5.4-1.fc44",
+      "purl": "pkg:rpm/fedora/libdav1d@1.5.4-1.fc44?arch=x86_64&distro=fedora-44",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "dav1d"
+        },
+        {
+          "name": "php:soname",
+          "value": "libdav1d.so.7"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:rpm/fedora/libevent@2.1.12-17.fc44?arch=x86_64&distro=fedora-44",
+      "name": "libevent",
+      "version": "2.1.12-17.fc44",
+      "purl": "pkg:rpm/fedora/libevent@2.1.12-17.fc44?arch=x86_64&distro=fedora-44",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "libevent"
+        },
+        {
+          "name": "php:soname",
+          "value": "libevent-2.1.so.7"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:rpm/fedora/libfido2@1.16.0-5.fc44?arch=x86_64&distro=fedora-44",
+      "name": "libfido2",
+      "version": "1.16.0-5.fc44",
+      "purl": "pkg:rpm/fedora/libfido2@1.16.0-5.fc44?arch=x86_64&distro=fedora-44",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "libfido2"
+        },
+        {
+          "name": "php:soname",
+          "value": "libfido2.so.1"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:rpm/fedora/libidn2@2.3.8-3.fc44?arch=x86_64&distro=fedora-44",
+      "name": "libidn2",
+      "version": "2.3.8-3.fc44",
+      "purl": "pkg:rpm/fedora/libidn2@2.3.8-3.fc44?arch=x86_64&distro=fedora-44",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "libidn2"
+        },
+        {
+          "name": "php:soname",
+          "value": "libidn2.so.0"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:rpm/fedora/libimagequant@4.1.0-2.fc44?arch=x86_64&distro=fedora-44",
+      "name": "libimagequant",
+      "version": "4.1.0-2.fc44",
+      "purl": "pkg:rpm/fedora/libimagequant@4.1.0-2.fc44?arch=x86_64&distro=fedora-44",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "rust-imagequant-sys"
+        },
+        {
+          "name": "php:soname",
+          "value": "libimagequant.so.0"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:rpm/fedora/libjpeg-turbo@3.1.3-1.fc44?arch=x86_64&distro=fedora-44",
+      "name": "libjpeg-turbo",
+      "version": "3.1.3-1.fc44",
+      "purl": "pkg:rpm/fedora/libjpeg-turbo@3.1.3-1.fc44?arch=x86_64&distro=fedora-44",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "libjpeg-turbo"
+        },
+        {
+          "name": "php:soname",
+          "value": "libjpeg.so.62"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:rpm/fedora/liblerc@4.0.0-10.fc44?arch=x86_64&distro=fedora-44",
+      "name": "liblerc",
+      "version": "4.0.0-10.fc44",
+      "purl": "pkg:rpm/fedora/liblerc@4.0.0-10.fc44?arch=x86_64&distro=fedora-44",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "liblerc"
+        },
+        {
+          "name": "php:soname",
+          "value": "libLerc.so.4"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:rpm/fedora/libnghttp2@1.68.0-5.fc44?arch=x86_64&distro=fedora-44",
+      "name": "libnghttp2",
+      "version": "1.68.0-5.fc44",
+      "purl": "pkg:rpm/fedora/libnghttp2@1.68.0-5.fc44?arch=x86_64&distro=fedora-44",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "nghttp2"
+        },
+        {
+          "name": "php:soname",
+          "value": "libnghttp2.so.14"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:rpm/fedora/libnghttp3@1.18.0-1.fc44?arch=x86_64&distro=fedora-44",
+      "name": "libnghttp3",
+      "version": "1.18.0-1.fc44",
+      "purl": "pkg:rpm/fedora/libnghttp3@1.18.0-1.fc44?arch=x86_64&distro=fedora-44",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "nghttp3"
+        },
+        {
+          "name": "php:soname",
+          "value": "libnghttp3.so.9"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:rpm/fedora/libpng@1.6.58-1.fc44?arch=x86_64&distro=fedora-44",
+      "name": "libpng",
+      "version": "1.6.58-1.fc44",
+      "purl": "pkg:rpm/fedora/libpng@1.6.58-1.fc44?arch=x86_64&distro=fedora-44",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "libpng"
+        },
+        {
+          "name": "php:soname",
+          "value": "libpng16.so.16"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:rpm/fedora/libpsl@0.21.5-7.fc44?arch=x86_64&distro=fedora-44",
+      "name": "libpsl",
+      "version": "0.21.5-7.fc44",
+      "purl": "pkg:rpm/fedora/libpsl@0.21.5-7.fc44?arch=x86_64&distro=fedora-44",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "libpsl"
+        },
+        {
+          "name": "php:soname",
+          "value": "libpsl.so.5"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:rpm/fedora/libselinux@3.11-1.fc44?arch=x86_64&distro=fedora-44",
+      "name": "libselinux",
+      "version": "3.11-1.fc44",
+      "purl": "pkg:rpm/fedora/libselinux@3.11-1.fc44?arch=x86_64&distro=fedora-44",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "libselinux"
+        },
+        {
+          "name": "php:soname",
+          "value": "libselinux.so.1"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:rpm/fedora/libssh@0.12.2-1.fc44?arch=x86_64&distro=fedora-44",
+      "name": "libssh",
+      "version": "0.12.2-1.fc44",
+      "purl": "pkg:rpm/fedora/libssh@0.12.2-1.fc44?arch=x86_64&distro=fedora-44",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "libssh"
+        },
+        {
+          "name": "php:soname",
+          "value": "libssh.so.4"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:rpm/fedora/libtiff@4.7.2-3.fc44?arch=x86_64&distro=fedora-44",
+      "name": "libtiff",
+      "version": "4.7.2-3.fc44",
+      "purl": "pkg:rpm/fedora/libtiff@4.7.2-3.fc44?arch=x86_64&distro=fedora-44",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "libtiff"
+        },
+        {
+          "name": "php:soname",
+          "value": "libtiff.so.6"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:rpm/fedora/libunistring@1.1-11.fc44?arch=x86_64&distro=fedora-44",
+      "name": "libunistring",
+      "version": "1.1-11.fc44",
+      "purl": "pkg:rpm/fedora/libunistring@1.1-11.fc44?arch=x86_64&distro=fedora-44",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "libunistring"
+        },
+        {
+          "name": "php:soname",
+          "value": "libunistring.so.5"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:rpm/fedora/libvmaf@3.0.0-5.fc44?arch=x86_64&distro=fedora-44",
+      "name": "libvmaf",
+      "version": "3.0.0-5.fc44",
+      "purl": "pkg:rpm/fedora/libvmaf@3.0.0-5.fc44?arch=x86_64&distro=fedora-44",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "vmaf"
+        },
+        {
+          "name": "php:soname",
+          "value": "libvmaf.so.3"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:rpm/fedora/libwebp@1.6.0-3.fc44?arch=x86_64&distro=fedora-44",
+      "name": "libwebp",
+      "version": "1.6.0-3.fc44",
+      "purl": "pkg:rpm/fedora/libwebp@1.6.0-3.fc44?arch=x86_64&distro=fedora-44",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "libwebp"
+        },
+        {
+          "name": "php:soname",
+          "value": "libsharpyuv.so.0"
+        },
+        {
+          "name": "php:soname",
+          "value": "libwebp.so.7"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:rpm/fedora/libX11@1.8.13-3.fc44?arch=x86_64&distro=fedora-44",
+      "name": "libX11",
+      "version": "1.8.13-3.fc44",
+      "purl": "pkg:rpm/fedora/libX11@1.8.13-3.fc44?arch=x86_64&distro=fedora-44",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "libX11"
+        },
+        {
+          "name": "php:soname",
+          "value": "libX11.so.6"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:rpm/fedora/libXau@1.0.12-4.fc44?arch=x86_64&distro=fedora-44",
+      "name": "libXau",
+      "version": "1.0.12-4.fc44",
+      "purl": "pkg:rpm/fedora/libXau@1.0.12-4.fc44?arch=x86_64&distro=fedora-44",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "libXau"
+        },
+        {
+          "name": "php:soname",
+          "value": "libXau.so.6"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:rpm/fedora/libxcb@1.17.0-7.fc44?arch=x86_64&distro=fedora-44",
+      "name": "libxcb",
+      "version": "1.17.0-7.fc44",
+      "purl": "pkg:rpm/fedora/libxcb@1.17.0-7.fc44?arch=x86_64&distro=fedora-44",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "libxcb"
+        },
+        {
+          "name": "php:soname",
+          "value": "libxcb.so.1"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:rpm/fedora/libXpm@3.5.17-7.fc44?arch=x86_64&distro=fedora-44",
+      "name": "libXpm",
+      "version": "3.5.17-7.fc44",
+      "purl": "pkg:rpm/fedora/libXpm@3.5.17-7.fc44?arch=x86_64&distro=fedora-44",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "libXpm"
+        },
+        {
+          "name": "php:soname",
+          "value": "libXpm.so.4"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:rpm/fedora/libyuv@0-0.61.20260213git6067afd.fc44?arch=x86_64&distro=fedora-44",
+      "name": "libyuv",
+      "version": "0-0.61.20260213git6067afd.fc44",
+      "purl": "pkg:rpm/fedora/libyuv@0-0.61.20260213git6067afd.fc44?arch=x86_64&distro=fedora-44",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "libyuv"
+        },
+        {
+          "name": "php:soname",
+          "value": "libyuv.so.0"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:rpm/fedora/libzstd@1.5.7-5.fc44?arch=x86_64&distro=fedora-44",
+      "name": "libzstd",
+      "version": "1.5.7-5.fc44",
+      "purl": "pkg:rpm/fedora/libzstd@1.5.7-5.fc44?arch=x86_64&distro=fedora-44",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "zstd"
+        },
+        {
+          "name": "php:soname",
+          "value": "libzstd.so.1"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:rpm/fedora/ncurses-libs@6.6-1.fc44?arch=x86_64&distro=fedora-44",
+      "name": "ncurses-libs",
+      "version": "6.6-1.fc44",
+      "purl": "pkg:rpm/fedora/ncurses-libs@6.6-1.fc44?arch=x86_64&distro=fedora-44",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "ncurses"
+        },
+        {
+          "name": "php:soname",
+          "value": "libtinfo.so.6"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:rpm/fedora/ngtcp2@1.22.1-1.fc44?arch=x86_64&distro=fedora-44",
+      "name": "ngtcp2",
+      "version": "1.22.1-1.fc44",
+      "purl": "pkg:rpm/fedora/ngtcp2@1.22.1-1.fc44?arch=x86_64&distro=fedora-44",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "ngtcp2"
+        },
+        {
+          "name": "php:soname",
+          "value": "libngtcp2.so.16"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:rpm/fedora/ngtcp2-crypto-ossl@1.22.1-1.fc44?arch=x86_64&distro=fedora-44",
+      "name": "ngtcp2-crypto-ossl",
+      "version": "1.22.1-1.fc44",
+      "purl": "pkg:rpm/fedora/ngtcp2-crypto-ossl@1.22.1-1.fc44?arch=x86_64&distro=fedora-44",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "ngtcp2"
+        },
+        {
+          "name": "php:soname",
+          "value": "libngtcp2_crypto_ossl.so.0"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:rpm/fedora/openldap@2.6.13-1.fc44?arch=x86_64&distro=fedora-44",
+      "name": "openldap",
+      "version": "2.6.13-1.fc44",
+      "purl": "pkg:rpm/fedora/openldap@2.6.13-1.fc44?arch=x86_64&distro=fedora-44",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "openldap"
+        },
+        {
+          "name": "php:soname",
+          "value": "liblber.so.2"
+        },
+        {
+          "name": "php:soname",
+          "value": "libldap.so.2"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:rpm/fedora/rav1e-libs@0.8.1-3.fc44?arch=x86_64&distro=fedora-44",
+      "name": "rav1e-libs",
+      "version": "0.8.1-3.fc44",
+      "purl": "pkg:rpm/fedora/rav1e-libs@0.8.1-3.fc44?arch=x86_64&distro=fedora-44",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "rust-rav1e"
+        },
+        {
+          "name": "php:soname",
+          "value": "librav1e.so.0"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:rpm/fedora/svt-av1-libs@3.1.2-2.fc44?arch=x86_64&distro=fedora-44",
+      "name": "svt-av1-libs",
+      "version": "3.1.2-2.fc44",
+      "purl": "pkg:rpm/fedora/svt-av1-libs@3.1.2-2.fc44?arch=x86_64&distro=fedora-44",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "svt-av1"
+        },
+        {
+          "name": "php:soname",
+          "value": "libSvtAv1Enc.so.3"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:rpm/fedora/systemd-libs@259.8-1.fc44?arch=x86_64&distro=fedora-44",
+      "name": "systemd-libs",
+      "version": "259.8-1.fc44",
+      "purl": "pkg:rpm/fedora/systemd-libs@259.8-1.fc44?arch=x86_64&distro=fedora-44",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "systemd"
+        },
+        {
+          "name": "php:soname",
+          "value": "libudev.so.1"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:rpm/fedora/xz-libs@5.8.2-2.fc44?arch=x86_64&distro=fedora-44",
+      "name": "xz-libs",
+      "version": "5.8.2-2.fc44",
+      "purl": "pkg:rpm/fedora/xz-libs@5.8.2-2.fc44?arch=x86_64&distro=fedora-44",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "xz"
+        },
+        {
+          "name": "php:soname",
+          "value": "liblzma.so.5"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "extension:bcmath",
+      "name": "php-ext-bcmath",
+      "version": "8.5.12",
+      "properties": [
+        {
+          "name": "php:file",
+          "value": "/usr/lib64/php/modules/bcmath.so"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "extension:bz2",
+      "name": "php-ext-bz2",
+      "version": "8.5.12",
+      "properties": [
+        {
+          "name": "php:file",
+          "value": "/usr/lib64/php/modules/bz2.so"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "extension:calendar",
+      "name": "php-ext-calendar",
+      "version": "8.5.12",
+      "properties": [
+        {
+          "name": "php:file",
+          "value": "/usr/lib64/php/modules/calendar.so"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "extension:ctype",
+      "name": "php-ext-ctype",
+      "version": "8.5.12",
+      "properties": [
+        {
+          "name": "php:file",
+          "value": "/usr/lib64/php/modules/ctype.so"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "extension:curl",
+      "name": "php-ext-curl",
+      "version": "8.5.12",
+      "properties": [
+        {
+          "name": "php:file",
+          "value": "/usr/lib64/php/modules/curl.so"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "extension:dom",
+      "name": "php-ext-dom",
+      "version": "8.5.12",
+      "properties": [
+        {
+          "name": "php:file",
+          "value": "/usr/lib64/php/modules/dom.so"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "extension:exif",
+      "name": "php-ext-exif",
+      "version": "8.5.12",
+      "properties": [
+        {
+          "name": "php:file",
+          "value": "/usr/lib64/php/modules/exif.so"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "extension:fileinfo",
+      "name": "php-ext-fileinfo",
+      "version": "8.5.12",
+      "properties": [
+        {
+          "name": "php:file",
+          "value": "/usr/lib64/php/modules/fileinfo.so"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "extension:ftp",
+      "name": "php-ext-ftp",
+      "version": "8.5.12",
+      "properties": [
+        {
+          "name": "php:file",
+          "value": "/usr/lib64/php/modules/ftp.so"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "extension:gd",
+      "name": "php-ext-gd",
+      "version": "8.5.12",
+      "properties": [
+        {
+          "name": "php:file",
+          "value": "/usr/lib64/php/modules/gd.so"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "extension:gettext",
+      "name": "php-ext-gettext",
+      "version": "8.5.12",
+      "properties": [
+        {
+          "name": "php:file",
+          "value": "/usr/lib64/php/modules/gettext.so"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "extension:iconv",
+      "name": "php-ext-iconv",
+      "version": "8.5.12",
+      "properties": [
+        {
+          "name": "php:file",
+          "value": "/usr/lib64/php/modules/iconv.so"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "extension:intl",
+      "name": "php-ext-intl",
+      "version": "8.5.12",
+      "properties": [
+        {
+          "name": "php:file",
+          "value": "/usr/lib64/php/modules/intl.so"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "extension:mbstring",
+      "name": "php-ext-mbstring",
+      "version": "8.5.12",
+      "properties": [
+        {
+          "name": "php:file",
+          "value": "/usr/lib64/php/modules/mbstring.so"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "extension:mysqli",
+      "name": "php-ext-mysqli",
+      "version": "8.5.12",
+      "properties": [
+        {
+          "name": "php:file",
+          "value": "/usr/lib64/php/modules/mysqli.so"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "extension:mysqlnd",
+      "name": "php-ext-mysqlnd",
+      "version": "8.5.12",
+      "properties": [
+        {
+          "name": "php:file",
+          "value": "/usr/lib64/php/modules/mysqlnd.so"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "extension:PDO",
+      "name": "php-ext-PDO",
+      "version": "8.5.12",
+      "properties": [
+        {
+          "name": "php:file",
+          "value": "/usr/lib64/php/modules/pdo.so"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "extension:pdo_mysql",
+      "name": "php-ext-pdo_mysql",
+      "version": "8.5.12",
+      "properties": [
+        {
+          "name": "php:file",
+          "value": "/usr/lib64/php/modules/pdo_mysql.so"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "extension:pdo_pgsql",
+      "name": "php-ext-pdo_pgsql",
+      "version": "8.5.12",
+      "properties": [
+        {
+          "name": "php:file",
+          "value": "/usr/lib64/php/modules/pdo_pgsql.so"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "extension:pdo_sqlite",
+      "name": "php-ext-pdo_sqlite",
+      "version": "8.5.12",
+      "properties": [
+        {
+          "name": "php:file",
+          "value": "/usr/lib64/php/modules/pdo_sqlite.so"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "extension:pgsql",
+      "name": "php-ext-pgsql",
+      "version": "8.5.12",
+      "properties": [
+        {
+          "name": "php:file",
+          "value": "/usr/lib64/php/modules/pgsql.so"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "extension:Phar",
+      "name": "php-ext-Phar",
+      "version": "8.5.12",
+      "properties": [
+        {
+          "name": "php:file",
+          "value": "/usr/lib64/php/modules/phar.so"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "extension:posix",
+      "name": "php-ext-posix",
+      "version": "8.5.12",
+      "properties": [
+        {
+          "name": "php:file",
+          "value": "/usr/lib64/php/modules/posix.so"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "extension:shmop",
+      "name": "php-ext-shmop",
+      "version": "8.5.12",
+      "properties": [
+        {
+          "name": "php:file",
+          "value": "/usr/lib64/php/modules/shmop.so"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "extension:SimpleXML",
+      "name": "php-ext-SimpleXML",
+      "version": "8.5.12",
+      "properties": [
+        {
+          "name": "php:file",
+          "value": "/usr/lib64/php/modules/simplexml.so"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "extension:sodium",
+      "name": "php-ext-sodium",
+      "version": "8.5.12",
+      "properties": [
+        {
+          "name": "php:file",
+          "value": "/usr/lib64/php/modules/sodium.so"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "extension:sqlite3",
+      "name": "php-ext-sqlite3",
+      "version": "8.5.12",
+      "properties": [
+        {
+          "name": "php:file",
+          "value": "/usr/lib64/php/modules/sqlite3.so"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "extension:sysvmsg",
+      "name": "php-ext-sysvmsg",
+      "version": "8.5.12",
+      "properties": [
+        {
+          "name": "php:file",
+          "value": "/usr/lib64/php/modules/sysvmsg.so"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "extension:sysvsem",
+      "name": "php-ext-sysvsem",
+      "version": "8.5.12",
+      "properties": [
+        {
+          "name": "php:file",
+          "value": "/usr/lib64/php/modules/sysvsem.so"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "extension:sysvshm",
+      "name": "php-ext-sysvshm",
+      "version": "8.5.12",
+      "properties": [
+        {
+          "name": "php:file",
+          "value": "/usr/lib64/php/modules/sysvshm.so"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "extension:tokenizer",
+      "name": "php-ext-tokenizer",
+      "version": "8.5.12",
+      "properties": [
+        {
+          "name": "php:file",
+          "value": "/usr/lib64/php/modules/tokenizer.so"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "extension:xml",
+      "name": "php-ext-xml",
+      "version": "8.5.12",
+      "properties": [
+        {
+          "name": "php:file",
+          "value": "/usr/lib64/php/modules/xml.so"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "extension:xmlreader",
+      "name": "php-ext-xmlreader",
+      "version": "8.5.12",
+      "properties": [
+        {
+          "name": "php:file",
+          "value": "/usr/lib64/php/modules/xmlreader.so"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "extension:xmlwriter",
+      "name": "php-ext-xmlwriter",
+      "version": "8.5.12",
+      "properties": [
+        {
+          "name": "php:file",
+          "value": "/usr/lib64/php/modules/xmlwriter.so"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "extension:xsl",
+      "name": "php-ext-xsl",
+      "version": "8.5.12",
+      "properties": [
+        {
+          "name": "php:file",
+          "value": "/usr/lib64/php/modules/xsl.so"
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "php",
+      "dependsOn": [
+        "bundled:timelib",
+        "bundled:Lexbor",
+        "bundled:libmagic",
+        "bundled:libmbfl",
+        "bundled:libbcmath",
+        "bundled:IR JIT framework",
+        "bundled:xxHash",
+        "bundled:Keccak (SHA-3)",
+        "bundled:crypt_blowfish",
+        "extension:bcmath",
+        "extension:bz2",
+        "extension:calendar",
+        "extension:ctype",
+        "extension:curl",
+        "extension:dom",
+        "extension:exif",
+        "extension:fileinfo",
+        "extension:ftp",
+        "extension:gd",
+        "extension:gettext",
+        "extension:iconv",
+        "extension:intl",
+        "extension:mbstring",
+        "extension:mysqli",
+        "extension:mysqlnd",
+        "extension:PDO",
+        "extension:pdo_mysql",
+        "extension:pdo_pgsql",
+        "extension:pdo_sqlite",
+        "extension:pgsql",
+        "extension:Phar",
+        "extension:posix",
+        "extension:shmop",
+        "extension:SimpleXML",
+        "extension:sodium",
+        "extension:sqlite3",
+        "extension:sysvmsg",
+        "extension:sysvsem",
+        "extension:sysvshm",
+        "extension:tokenizer",
+        "extension:xml",
+        "extension:xmlreader",
+        "extension:xmlwriter",
+        "extension:xsl",
+        "pkg:rpm/fedora/glibc@2.43-8.fc44?arch=x86_64&distro=fedora-44",
+        "pkg:rpm/fedora/capstone@5.0.6-4.fc44?arch=x86_64&distro=fedora-44",
+        "pkg:rpm/fedora/libxcrypt@4.5.2-3.fc44?arch=x86_64&distro=fedora-44",
+        "pkg:rpm/fedora/openssl-libs@3.5.7-2.fc44?arch=x86_64&distro=fedora-44",
+        "pkg:rpm/fedora/libedit@3.1-59.20260512cvs.fc44?arch=x86_64&distro=fedora-44",
+        "pkg:rpm/fedora/libgcc@16.2.1-2.fc44?arch=x86_64&distro=fedora-44",
+        "pkg:rpm/fedora/pcre2@10.47-1.fc44.1?arch=x86_64&distro=fedora-44",
+        "pkg:rpm/fedora/uriparser@1.0.2-1.fc44?arch=x86_64&distro=fedora-44",
+        "pkg:rpm/fedora/libxml2@2.12.10-6.fc44?arch=x86_64&distro=fedora-44",
+        "pkg:rpm/fedora/zlib-ng-compat@2.3.3-3.fc44?arch=x86_64&distro=fedora-44"
+      ]
+    },
+    {
+      "ref": "extension:bcmath",
+      "dependsOn": [
+        "pkg:rpm/fedora/glibc@2.43-8.fc44?arch=x86_64&distro=fedora-44"
+      ]
+    },
+    {
+      "ref": "extension:bz2",
+      "dependsOn": [
+        "pkg:rpm/fedora/bzip2-libs@1.0.8-23.fc44?arch=x86_64&distro=fedora-44",
+        "pkg:rpm/fedora/glibc@2.43-8.fc44?arch=x86_64&distro=fedora-44"
+      ]
+    },
+    {
+      "ref": "extension:calendar",
+      "dependsOn": [
+        "pkg:rpm/fedora/glibc@2.43-8.fc44?arch=x86_64&distro=fedora-44"
+      ]
+    },
+    {
+      "ref": "extension:ctype",
+      "dependsOn": [
+        "pkg:rpm/fedora/glibc@2.43-8.fc44?arch=x86_64&distro=fedora-44"
+      ]
+    },
+    {
+      "ref": "extension:curl",
+      "dependsOn": [
+        "pkg:rpm/fedora/glibc@2.43-8.fc44?arch=x86_64&distro=fedora-44",
+        "pkg:rpm/fedora/libxcrypt@4.5.2-3.fc44?arch=x86_64&distro=fedora-44",
+        "pkg:rpm/fedora/openssl-libs@3.5.7-2.fc44?arch=x86_64&distro=fedora-44",
+        "pkg:rpm/fedora/libcurl@8.18.0-8.fc44?arch=x86_64&distro=fedora-44",
+        "pkg:rpm/fedora/libgcc@16.2.1-2.fc44?arch=x86_64&distro=fedora-44",
+        "pkg:rpm/fedora/pcre2@10.47-1.fc44.1?arch=x86_64&distro=fedora-44",
+        "pkg:rpm/fedora/zlib-ng-compat@2.3.3-3.fc44?arch=x86_64&distro=fedora-44"
+      ]
+    },
+    {
+      "ref": "extension:dom",
+      "dependsOn": [
+        "pkg:rpm/fedora/glibc@2.43-8.fc44?arch=x86_64&distro=fedora-44",
+        "pkg:rpm/fedora/libxml2@2.12.10-6.fc44?arch=x86_64&distro=fedora-44",
+        "pkg:rpm/fedora/zlib-ng-compat@2.3.3-3.fc44?arch=x86_64&distro=fedora-44"
+      ]
+    },
+    {
+      "ref": "extension:exif",
+      "dependsOn": [
+        "pkg:rpm/fedora/glibc@2.43-8.fc44?arch=x86_64&distro=fedora-44"
+      ]
+    },
+    {
+      "ref": "extension:fileinfo",
+      "dependsOn": [
+        "pkg:rpm/fedora/glibc@2.43-8.fc44?arch=x86_64&distro=fedora-44"
+      ]
+    },
+    {
+      "ref": "extension:ftp",
+      "dependsOn": [
+        "pkg:rpm/fedora/glibc@2.43-8.fc44?arch=x86_64&distro=fedora-44",
+        "pkg:rpm/fedora/openssl-libs@3.5.7-2.fc44?arch=x86_64&distro=fedora-44",
+        "pkg:rpm/fedora/zlib-ng-compat@2.3.3-3.fc44?arch=x86_64&distro=fedora-44"
+      ]
+    },
+    {
+      "ref": "extension:gd",
+      "dependsOn": [
+        "pkg:rpm/fedora/bzip2-libs@1.0.8-23.fc44?arch=x86_64&distro=fedora-44",
+        "pkg:rpm/fedora/glibc@2.43-8.fc44?arch=x86_64&distro=fedora-44",
+        "pkg:rpm/fedora/libgcc@16.2.1-2.fc44?arch=x86_64&distro=fedora-44",
+        "pkg:rpm/fedora/gd@2.3.3-21.fc44?arch=x86_64&distro=fedora-44",
+        "pkg:rpm/fedora/pcre2@10.47-1.fc44.1?arch=x86_64&distro=fedora-44",
+        "pkg:rpm/fedora/libstdc++@16.2.1-2.fc44?arch=x86_64&distro=fedora-44",
+        "pkg:rpm/fedora/libxml2@2.12.10-6.fc44?arch=x86_64&distro=fedora-44",
+        "pkg:rpm/fedora/zlib-ng-compat@2.3.3-3.fc44?arch=x86_64&distro=fedora-44"
+      ]
+    },
+    {
+      "ref": "extension:gettext",
+      "dependsOn": [
+        "pkg:rpm/fedora/glibc@2.43-8.fc44?arch=x86_64&distro=fedora-44"
+      ]
+    },
+    {
+      "ref": "extension:iconv",
+      "dependsOn": [
+        "pkg:rpm/fedora/glibc@2.43-8.fc44?arch=x86_64&distro=fedora-44"
+      ]
+    },
+    {
+      "ref": "extension:intl",
+      "dependsOn": [
+        "pkg:rpm/fedora/glibc@2.43-8.fc44?arch=x86_64&distro=fedora-44",
+        "pkg:rpm/fedora/libgcc@16.2.1-2.fc44?arch=x86_64&distro=fedora-44",
+        "pkg:rpm/fedora/libicu@77.1-3.fc44?arch=x86_64&distro=fedora-44",
+        "pkg:rpm/fedora/libstdc++@16.2.1-2.fc44?arch=x86_64&distro=fedora-44"
+      ]
+    },
+    {
+      "ref": "extension:mbstring",
+      "dependsOn": [
+        "pkg:rpm/fedora/glibc@2.43-8.fc44?arch=x86_64&distro=fedora-44",
+        "pkg:rpm/fedora/oniguruma@6.9.10-4.fc44?arch=x86_64&distro=fedora-44"
+      ]
+    },
+    {
+      "ref": "extension:mysqli",
+      "dependsOn": [
+        "pkg:rpm/fedora/glibc@2.43-8.fc44?arch=x86_64&distro=fedora-44"
+      ]
+    },
+    {
+      "ref": "extension:mysqlnd",
+      "dependsOn": [
+        "pkg:rpm/fedora/glibc@2.43-8.fc44?arch=x86_64&distro=fedora-44",
+        "pkg:rpm/fedora/openssl-libs@3.5.7-2.fc44?arch=x86_64&distro=fedora-44",
+        "pkg:rpm/fedora/zlib-ng-compat@2.3.3-3.fc44?arch=x86_64&distro=fedora-44"
+      ]
+    },
+    {
+      "ref": "extension:PDO",
+      "dependsOn": [
+        "pkg:rpm/fedora/glibc@2.43-8.fc44?arch=x86_64&distro=fedora-44"
+      ]
+    },
+    {
+      "ref": "extension:pdo_mysql",
+      "dependsOn": [
+        "pkg:rpm/fedora/glibc@2.43-8.fc44?arch=x86_64&distro=fedora-44"
+      ]
+    },
+    {
+      "ref": "extension:pdo_pgsql",
+      "dependsOn": [
+        "pkg:rpm/fedora/glibc@2.43-8.fc44?arch=x86_64&distro=fedora-44",
+        "pkg:rpm/fedora/libxcrypt@4.5.2-3.fc44?arch=x86_64&distro=fedora-44",
+        "pkg:rpm/fedora/openssl-libs@3.5.7-2.fc44?arch=x86_64&distro=fedora-44",
+        "pkg:rpm/fedora/libgcc@16.2.1-2.fc44?arch=x86_64&distro=fedora-44",
+        "pkg:rpm/fedora/pcre2@10.47-1.fc44.1?arch=x86_64&distro=fedora-44",
+        "pkg:rpm/fedora/libpq@18.0-4.fc44?arch=x86_64&distro=fedora-44",
+        "pkg:rpm/fedora/zlib-ng-compat@2.3.3-3.fc44?arch=x86_64&distro=fedora-44"
+      ]
+    },
+    {
+      "ref": "extension:pdo_sqlite",
+      "dependsOn": [
+        "pkg:rpm/fedora/glibc@2.43-8.fc44?arch=x86_64&distro=fedora-44",
+        "pkg:rpm/fedora/sqlite-libs@3.51.2-2.fc44?arch=x86_64&distro=fedora-44"
+      ]
+    },
+    {
+      "ref": "extension:pgsql",
+      "dependsOn": [
+        "pkg:rpm/fedora/glibc@2.43-8.fc44?arch=x86_64&distro=fedora-44",
+        "pkg:rpm/fedora/libxcrypt@4.5.2-3.fc44?arch=x86_64&distro=fedora-44",
+        "pkg:rpm/fedora/openssl-libs@3.5.7-2.fc44?arch=x86_64&distro=fedora-44",
+        "pkg:rpm/fedora/libgcc@16.2.1-2.fc44?arch=x86_64&distro=fedora-44",
+        "pkg:rpm/fedora/pcre2@10.47-1.fc44.1?arch=x86_64&distro=fedora-44",
+        "pkg:rpm/fedora/libpq@18.0-4.fc44?arch=x86_64&distro=fedora-44",
+        "pkg:rpm/fedora/zlib-ng-compat@2.3.3-3.fc44?arch=x86_64&distro=fedora-44"
+      ]
+    },
+    {
+      "ref": "extension:Phar",
+      "dependsOn": [
+        "pkg:rpm/fedora/glibc@2.43-8.fc44?arch=x86_64&distro=fedora-44"
+      ]
+    },
+    {
+      "ref": "extension:posix",
+      "dependsOn": [
+        "pkg:rpm/fedora/glibc@2.43-8.fc44?arch=x86_64&distro=fedora-44"
+      ]
+    },
+    {
+      "ref": "extension:shmop",
+      "dependsOn": [
+        "pkg:rpm/fedora/glibc@2.43-8.fc44?arch=x86_64&distro=fedora-44"
+      ]
+    },
+    {
+      "ref": "extension:SimpleXML",
+      "dependsOn": [
+        "pkg:rpm/fedora/glibc@2.43-8.fc44?arch=x86_64&distro=fedora-44",
+        "pkg:rpm/fedora/libxml2@2.12.10-6.fc44?arch=x86_64&distro=fedora-44",
+        "pkg:rpm/fedora/zlib-ng-compat@2.3.3-3.fc44?arch=x86_64&distro=fedora-44"
+      ]
+    },
+    {
+      "ref": "extension:sodium",
+      "dependsOn": [
+        "pkg:rpm/fedora/glibc@2.43-8.fc44?arch=x86_64&distro=fedora-44",
+        "pkg:rpm/fedora/libsodium@1.0.22-1.fc44?arch=x86_64&distro=fedora-44"
+      ]
+    },
+    {
+      "ref": "extension:sqlite3",
+      "dependsOn": [
+        "pkg:rpm/fedora/glibc@2.43-8.fc44?arch=x86_64&distro=fedora-44",
+        "pkg:rpm/fedora/sqlite-libs@3.51.2-2.fc44?arch=x86_64&distro=fedora-44"
+      ]
+    },
+    {
+      "ref": "extension:sysvmsg",
+      "dependsOn": [
+        "pkg:rpm/fedora/glibc@2.43-8.fc44?arch=x86_64&distro=fedora-44"
+      ]
+    },
+    {
+      "ref": "extension:sysvsem",
+      "dependsOn": [
+        "pkg:rpm/fedora/glibc@2.43-8.fc44?arch=x86_64&distro=fedora-44"
+      ]
+    },
+    {
+      "ref": "extension:sysvshm",
+      "dependsOn": [
+        "pkg:rpm/fedora/glibc@2.43-8.fc44?arch=x86_64&distro=fedora-44"
+      ]
+    },
+    {
+      "ref": "extension:tokenizer",
+      "dependsOn": [
+        "pkg:rpm/fedora/glibc@2.43-8.fc44?arch=x86_64&distro=fedora-44"
+      ]
+    },
+    {
+      "ref": "extension:xml",
+      "dependsOn": [
+        "pkg:rpm/fedora/glibc@2.43-8.fc44?arch=x86_64&distro=fedora-44",
+        "pkg:rpm/fedora/libxml2@2.12.10-6.fc44?arch=x86_64&distro=fedora-44",
+        "pkg:rpm/fedora/zlib-ng-compat@2.3.3-3.fc44?arch=x86_64&distro=fedora-44"
+      ]
+    },
+    {
+      "ref": "extension:xmlreader",
+      "dependsOn": [
+        "pkg:rpm/fedora/glibc@2.43-8.fc44?arch=x86_64&distro=fedora-44",
+        "pkg:rpm/fedora/libxml2@2.12.10-6.fc44?arch=x86_64&distro=fedora-44",
+        "pkg:rpm/fedora/zlib-ng-compat@2.3.3-3.fc44?arch=x86_64&distro=fedora-44"
+      ]
+    },
+    {
+      "ref": "extension:xmlwriter",
+      "dependsOn": [
+        "pkg:rpm/fedora/glibc@2.43-8.fc44?arch=x86_64&distro=fedora-44",
+        "pkg:rpm/fedora/libxml2@2.12.10-6.fc44?arch=x86_64&distro=fedora-44",
+        "pkg:rpm/fedora/zlib-ng-compat@2.3.3-3.fc44?arch=x86_64&distro=fedora-44"
+      ]
+    },
+    {
+      "ref": "extension:xsl",
+      "dependsOn": [
+        "pkg:rpm/fedora/glibc@2.43-8.fc44?arch=x86_64&distro=fedora-44",
+        "pkg:rpm/fedora/libxslt@1.1.43-6.fc44?arch=x86_64&distro=fedora-44",
+        "pkg:rpm/fedora/libxml2@2.12.10-6.fc44?arch=x86_64&distro=fedora-44",
+        "pkg:rpm/fedora/zlib-ng-compat@2.3.3-3.fc44?arch=x86_64&distro=fedora-44"
+      ]
+    }
+  ]
+}

@@ -31,6 +31,13 @@ export const projects = [
       "Find type errors, dead code, and taint vulnerabilities before they reach production. Built in Rust for speed, incremental by default, inspired by Psalm.",
   },
   {
+    slug: "php-sbom",
+    name: "PHP SBOM",
+    lang: "Data",
+    desc: "Software bill of materials for six PHP 8.5 builds: who builds each, the code bundled in php-src, and the OS packages it links. CycloneDX download.",
+    page: true,
+  },
+  {
     slug: "mir-labs",
     name: "Mir Labs",
     lang: "PHP",

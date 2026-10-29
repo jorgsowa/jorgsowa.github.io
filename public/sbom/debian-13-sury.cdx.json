@@ -1,0 +1,2691 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.6",
+  "serialNumber": "urn:uuid:d34e1a60-22b0-5a6b-ad25-1b4e9eb4b0dc",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-10-29T00:00:00Z",
+    "tools": {
+      "components": [
+        {
+          "type": "application",
+          "name": "php-sbom",
+          "publisher": "Jorg Sowa"
+        }
+      ]
+    },
+    "component": {
+      "type": "application",
+      "bom-ref": "php",
+      "name": "php",
+      "version": "8.5.12",
+      "description": "Debian 13 + packages.sury.org (php8.5 packages), Debian GNU/Linux 13 (trixie), amd64"
+    }
+  },
+  "components": [
+    {
+      "type": "library",
+      "bom-ref": "bundled:timelib",
+      "name": "timelib",
+      "version": "2022.17",
+      "purl": "pkg:generic/timelib@2022.17",
+      "properties": [
+        {
+          "name": "php:bundled-in",
+          "value": "php-src"
+        },
+        {
+          "name": "php:extension",
+          "value": "date"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "bundled:Lexbor",
+      "name": "Lexbor",
+      "version": "2.7.0",
+      "purl": "pkg:generic/lexbor@2.7.0",
+      "properties": [
+        {
+          "name": "php:bundled-in",
+          "value": "php-src"
+        },
+        {
+          "name": "php:extension",
+          "value": "lexbor"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "bundled:uriparser",
+      "name": "uriparser",
+      "version": "1.0.2",
+      "purl": "pkg:generic/uriparser@1.0.2",
+      "properties": [
+        {
+          "name": "php:bundled-in",
+          "value": "php-src"
+        },
+        {
+          "name": "php:extension",
+          "value": "uri"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "bundled:libmagic",
+      "name": "libmagic",
+      "version": "5.46",
+      "purl": "pkg:generic/libmagic@5.46",
+      "properties": [
+        {
+          "name": "php:bundled-in",
+          "value": "php-src"
+        },
+        {
+          "name": "php:extension",
+          "value": "fileinfo"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "bundled:libmbfl",
+      "name": "libmbfl",
+      "version": "1.3.2",
+      "purl": "pkg:generic/libmbfl@1.3.2",
+      "properties": [
+        {
+          "name": "php:bundled-in",
+          "value": "php-src"
+        },
+        {
+          "name": "php:extension",
+          "value": "mbstring"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "bundled:libbcmath",
+      "name": "libbcmath",
+      "purl": "pkg:generic/libbcmath",
+      "properties": [
+        {
+          "name": "php:bundled-in",
+          "value": "php-src"
+        },
+        {
+          "name": "php:extension",
+          "value": "bcmath"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "bundled:IR JIT framework",
+      "name": "IR JIT framework",
+      "purl": "pkg:generic/ir-jit-framework",
+      "properties": [
+        {
+          "name": "php:bundled-in",
+          "value": "php-src"
+        },
+        {
+          "name": "php:extension",
+          "value": "opcache"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "bundled:xxHash",
+      "name": "xxHash",
+      "purl": "pkg:generic/xxhash",
+      "properties": [
+        {
+          "name": "php:bundled-in",
+          "value": "php-src"
+        },
+        {
+          "name": "php:extension",
+          "value": "hash"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "bundled:Keccak (SHA-3)",
+      "name": "Keccak (SHA-3)",
+      "purl": "pkg:generic/keccak-(sha-3)",
+      "properties": [
+        {
+          "name": "php:bundled-in",
+          "value": "php-src"
+        },
+        {
+          "name": "php:extension",
+          "value": "hash"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "bundled:crypt_blowfish",
+      "name": "crypt_blowfish",
+      "purl": "pkg:generic/crypt_blowfish",
+      "properties": [
+        {
+          "name": "php:bundled-in",
+          "value": "php-src"
+        },
+        {
+          "name": "php:extension",
+          "value": "standard"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:deb/debian/libargon2-1@0~20190702%2Bdfsg-4%2Bb2?arch=amd64&distro=debian-13",
+      "name": "libargon2-1",
+      "version": "0~20190702+dfsg-4+b2",
+      "purl": "pkg:deb/debian/libargon2-1@0~20190702%2Bdfsg-4%2Bb2?arch=amd64&distro=debian-13",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "argon2"
+        },
+        {
+          "name": "php:soname",
+          "value": "libargon2.so.1"
+        },
+        {
+          "name": "php:direct",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:deb/debian/libc6@2.41-12%2Bdeb13u4?arch=amd64&distro=debian-13",
+      "name": "libc6",
+      "version": "2.41-12+deb13u4",
+      "purl": "pkg:deb/debian/libc6@2.41-12%2Bdeb13u4?arch=amd64&distro=debian-13",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "glibc"
+        },
+        {
+          "name": "php:soname",
+          "value": "libc.so.6"
+        },
+        {
+          "name": "php:soname",
+          "value": "libm.so.6"
+        },
+        {
+          "name": "php:soname",
+          "value": "libresolv.so.2"
+        },
+        {
+          "name": "php:direct",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:deb/debian/libcurl4t64@8.14.1-2%2Bdeb13u7?arch=amd64&distro=debian-13",
+      "name": "libcurl4t64",
+      "version": "8.14.1-2+deb13u7",
+      "purl": "pkg:deb/debian/libcurl4t64@8.14.1-2%2Bdeb13u7?arch=amd64&distro=debian-13",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "curl"
+        },
+        {
+          "name": "php:soname",
+          "value": "libcurl.so.4"
+        },
+        {
+          "name": "php:direct",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:deb/debian/libedit2@3.1-20250104-1?arch=amd64&distro=debian-13",
+      "name": "libedit2",
+      "version": "3.1-20250104-1",
+      "purl": "pkg:deb/debian/libedit2@3.1-20250104-1?arch=amd64&distro=debian-13",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "libedit"
+        },
+        {
+          "name": "php:soname",
+          "value": "libedit.so.2"
+        },
+        {
+          "name": "php:direct",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:deb/debian/libffi8@3.4.8-2?arch=amd64&distro=debian-13",
+      "name": "libffi8",
+      "version": "3.4.8-2",
+      "purl": "pkg:deb/debian/libffi8@3.4.8-2?arch=amd64&distro=debian-13",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "libffi"
+        },
+        {
+          "name": "php:soname",
+          "value": "libffi.so.8"
+        },
+        {
+          "name": "php:direct",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:deb/debian/libgcc-s1@14.2.0-19?arch=amd64&distro=debian-13",
+      "name": "libgcc-s1",
+      "version": "14.2.0-19",
+      "purl": "pkg:deb/debian/libgcc-s1@14.2.0-19?arch=amd64&distro=debian-13",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "gcc-14"
+        },
+        {
+          "name": "php:soname",
+          "value": "libgcc_s.so.1"
+        },
+        {
+          "name": "php:direct",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:deb/debian/libgd3@2.3.3-14%2B0~20260731.21%2Bdebian13~1.gbp938f32?arch=amd64&distro=debian-13",
+      "name": "libgd3",
+      "version": "2.3.3-14+0~20260731.21+debian13~1.gbp938f32",
+      "purl": "pkg:deb/debian/libgd3@2.3.3-14%2B0~20260731.21%2Bdebian13~1.gbp938f32?arch=amd64&distro=debian-13",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "libgd2"
+        },
+        {
+          "name": "php:soname",
+          "value": "libgd.so.3"
+        },
+        {
+          "name": "php:direct",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:deb/debian/libicu76@76.1-4?arch=amd64&distro=debian-13",
+      "name": "libicu76",
+      "version": "76.1-4",
+      "purl": "pkg:deb/debian/libicu76@76.1-4?arch=amd64&distro=debian-13",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "icu"
+        },
+        {
+          "name": "php:soname",
+          "value": "libicui18n.so.76"
+        },
+        {
+          "name": "php:soname",
+          "value": "libicuio.so.76"
+        },
+        {
+          "name": "php:soname",
+          "value": "libicuuc.so.76"
+        },
+        {
+          "name": "php:soname",
+          "value": "libicudata.so.76"
+        },
+        {
+          "name": "php:direct",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:deb/debian/libonig5@6.9.9-1%2Bb1?arch=amd64&distro=debian-13",
+      "name": "libonig5",
+      "version": "6.9.9-1+b1",
+      "purl": "pkg:deb/debian/libonig5@6.9.9-1%2Bb1?arch=amd64&distro=debian-13",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "libonig"
+        },
+        {
+          "name": "php:soname",
+          "value": "libonig.so.5"
+        },
+        {
+          "name": "php:direct",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:deb/debian/libpcre2-8-0@10.46-1~deb13u3?arch=amd64&distro=debian-13",
+      "name": "libpcre2-8-0",
+      "version": "10.46-1~deb13u3",
+      "purl": "pkg:deb/debian/libpcre2-8-0@10.46-1~deb13u3?arch=amd64&distro=debian-13",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "pcre2"
+        },
+        {
+          "name": "php:soname",
+          "value": "libpcre2-8.so.0"
+        },
+        {
+          "name": "php:direct",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:deb/debian/libpq5@17.11-0%2Bdeb13u1?arch=amd64&distro=debian-13",
+      "name": "libpq5",
+      "version": "17.11-0+deb13u1",
+      "purl": "pkg:deb/debian/libpq5@17.11-0%2Bdeb13u1?arch=amd64&distro=debian-13",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "postgresql-17"
+        },
+        {
+          "name": "php:soname",
+          "value": "libpq.so.5"
+        },
+        {
+          "name": "php:direct",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:deb/debian/libsodium23@1.0.18-1%2Bdeb13u1?arch=amd64&distro=debian-13",
+      "name": "libsodium23",
+      "version": "1.0.18-1+deb13u1",
+      "purl": "pkg:deb/debian/libsodium23@1.0.18-1%2Bdeb13u1?arch=amd64&distro=debian-13",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "libsodium"
+        },
+        {
+          "name": "php:soname",
+          "value": "libsodium.so.23"
+        },
+        {
+          "name": "php:direct",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:deb/debian/libsqlite3-0@3.46.1-7%2Bdeb13u2?arch=amd64&distro=debian-13",
+      "name": "libsqlite3-0",
+      "version": "3.46.1-7+deb13u2",
+      "purl": "pkg:deb/debian/libsqlite3-0@3.46.1-7%2Bdeb13u2?arch=amd64&distro=debian-13",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "sqlite3"
+        },
+        {
+          "name": "php:soname",
+          "value": "libsqlite3.so.0"
+        },
+        {
+          "name": "php:direct",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:deb/debian/libssl3t64@3.5.7-1~deb13u3?arch=amd64&distro=debian-13",
+      "name": "libssl3t64",
+      "version": "3.5.7-1~deb13u3",
+      "purl": "pkg:deb/debian/libssl3t64@3.5.7-1~deb13u3?arch=amd64&distro=debian-13",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "openssl"
+        },
+        {
+          "name": "php:soname",
+          "value": "libcrypto.so.3"
+        },
+        {
+          "name": "php:soname",
+          "value": "libssl.so.3"
+        },
+        {
+          "name": "php:direct",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:deb/debian/libstdc++6@14.2.0-19?arch=amd64&distro=debian-13",
+      "name": "libstdc++6",
+      "version": "14.2.0-19",
+      "purl": "pkg:deb/debian/libstdc++6@14.2.0-19?arch=amd64&distro=debian-13",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "gcc-14"
+        },
+        {
+          "name": "php:soname",
+          "value": "libstdc++.so.6"
+        },
+        {
+          "name": "php:direct",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:deb/debian/libxml2@2.12.7%2Bdfsg%2Breally2.9.14-2.1%2Bdeb13u3?arch=amd64&distro=debian-13",
+      "name": "libxml2",
+      "version": "2.12.7+dfsg+really2.9.14-2.1+deb13u3",
+      "purl": "pkg:deb/debian/libxml2@2.12.7%2Bdfsg%2Breally2.9.14-2.1%2Bdeb13u3?arch=amd64&distro=debian-13",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "libxml2"
+        },
+        {
+          "name": "php:soname",
+          "value": "libxml2.so.2"
+        },
+        {
+          "name": "php:direct",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:deb/debian/libxslt1.1@1.1.35-1.2%2Bdeb13u3?arch=amd64&distro=debian-13",
+      "name": "libxslt1.1",
+      "version": "1.1.35-1.2+deb13u3",
+      "purl": "pkg:deb/debian/libxslt1.1@1.1.35-1.2%2Bdeb13u3?arch=amd64&distro=debian-13",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "libxslt"
+        },
+        {
+          "name": "php:soname",
+          "value": "libexslt.so.0"
+        },
+        {
+          "name": "php:soname",
+          "value": "libxslt.so.1"
+        },
+        {
+          "name": "php:direct",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:deb/debian/libzip5@1.11.3-2?arch=amd64&distro=debian-13",
+      "name": "libzip5",
+      "version": "1.11.3-2",
+      "purl": "pkg:deb/debian/libzip5@1.11.3-2?arch=amd64&distro=debian-13",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "libzip"
+        },
+        {
+          "name": "php:soname",
+          "value": "libzip.so.5"
+        },
+        {
+          "name": "php:direct",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:deb/debian/tzdata@2026e-0%2Bdeb13u1?arch=amd64&distro=debian-13",
+      "name": "tzdata",
+      "version": "2026e-0+deb13u1",
+      "purl": "pkg:deb/debian/tzdata@2026e-0%2Bdeb13u1?arch=amd64&distro=debian-13",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "tzdata"
+        },
+        {
+          "name": "php:direct",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:deb/debian/zlib1g@1%3A1.3.dfsg%2Breally1.3.1-1%2Bb1?arch=amd64&distro=debian-13",
+      "name": "zlib1g",
+      "version": "1:1.3.dfsg+really1.3.1-1+b1",
+      "purl": "pkg:deb/debian/zlib1g@1%3A1.3.dfsg%2Breally1.3.1-1%2Bb1?arch=amd64&distro=debian-13",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "zlib"
+        },
+        {
+          "name": "php:soname",
+          "value": "libz.so.1"
+        },
+        {
+          "name": "php:direct",
+          "value": "true"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:deb/debian/libabsl20240722@20240722.0-4?arch=amd64&distro=debian-13",
+      "name": "libabsl20240722",
+      "version": "20240722.0-4",
+      "purl": "pkg:deb/debian/libabsl20240722@20240722.0-4?arch=amd64&distro=debian-13",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "abseil"
+        },
+        {
+          "name": "php:soname",
+          "value": "libabsl_base.so.20240722"
+        },
+        {
+          "name": "php:soname",
+          "value": "libabsl_debugging_internal.so.20240722"
+        },
+        {
+          "name": "php:soname",
+          "value": "libabsl_decode_rust_punycode.so.20240722"
+        },
+        {
+          "name": "php:soname",
+          "value": "libabsl_demangle_internal.so.20240722"
+        },
+        {
+          "name": "php:soname",
+          "value": "libabsl_demangle_rust.so.20240722"
+        },
+        {
+          "name": "php:soname",
+          "value": "libabsl_graphcycles_internal.so.20240722"
+        },
+        {
+          "name": "php:soname",
+          "value": "libabsl_kernel_timeout_internal.so.20240722"
+        },
+        {
+          "name": "php:soname",
+          "value": "libabsl_malloc_internal.so.20240722"
+        },
+        {
+          "name": "php:soname",
+          "value": "libabsl_raw_logging_internal.so.20240722"
+        },
+        {
+          "name": "php:soname",
+          "value": "libabsl_spinlock_wait.so.20240722"
+        },
+        {
+          "name": "php:soname",
+          "value": "libabsl_stacktrace.so.20240722"
+        },
+        {
+          "name": "php:soname",
+          "value": "libabsl_string_view.so.20240722"
+        },
+        {
+          "name": "php:soname",
+          "value": "libabsl_strings_internal.so.20240722"
+        },
+        {
+          "name": "php:soname",
+          "value": "libabsl_strings.so.20240722"
+        },
+        {
+          "name": "php:soname",
+          "value": "libabsl_symbolize.so.20240722"
+        },
+        {
+          "name": "php:soname",
+          "value": "libabsl_synchronization.so.20240722"
+        },
+        {
+          "name": "php:soname",
+          "value": "libabsl_throw_delegate.so.20240722"
+        },
+        {
+          "name": "php:soname",
+          "value": "libabsl_time_zone.so.20240722"
+        },
+        {
+          "name": "php:soname",
+          "value": "libabsl_time.so.20240722"
+        },
+        {
+          "name": "php:soname",
+          "value": "libabsl_utf8_for_code_point.so.20240722"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:deb/debian/libaom3@3.12.1-1%2Bdeb13u1?arch=amd64&distro=debian-13",
+      "name": "libaom3",
+      "version": "3.12.1-1+deb13u1",
+      "purl": "pkg:deb/debian/libaom3@3.12.1-1%2Bdeb13u1?arch=amd64&distro=debian-13",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "aom"
+        },
+        {
+          "name": "php:soname",
+          "value": "libaom.so.3"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:deb/debian/libavif16@1.2.1-1.2?arch=amd64&distro=debian-13",
+      "name": "libavif16",
+      "version": "1.2.1-1.2",
+      "purl": "pkg:deb/debian/libavif16@1.2.1-1.2?arch=amd64&distro=debian-13",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "libavif"
+        },
+        {
+          "name": "php:soname",
+          "value": "libavif.so.16"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:deb/debian/libbrotli1@1.1.0-2%2Bdeb13u1?arch=amd64&distro=debian-13",
+      "name": "libbrotli1",
+      "version": "1.1.0-2+deb13u1",
+      "purl": "pkg:deb/debian/libbrotli1@1.1.0-2%2Bdeb13u1?arch=amd64&distro=debian-13",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "brotli"
+        },
+        {
+          "name": "php:soname",
+          "value": "libbrotlicommon.so.1"
+        },
+        {
+          "name": "php:soname",
+          "value": "libbrotlidec.so.1"
+        },
+        {
+          "name": "php:soname",
+          "value": "libbrotlienc.so.1"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:deb/debian/libbsd0@0.12.2-2?arch=amd64&distro=debian-13",
+      "name": "libbsd0",
+      "version": "0.12.2-2",
+      "purl": "pkg:deb/debian/libbsd0@0.12.2-2?arch=amd64&distro=debian-13",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "libbsd"
+        },
+        {
+          "name": "php:soname",
+          "value": "libbsd.so.0"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:deb/debian/libbz2-1.0@1.0.8-6?arch=amd64&distro=debian-13",
+      "name": "libbz2-1.0",
+      "version": "1.0.8-6",
+      "purl": "pkg:deb/debian/libbz2-1.0@1.0.8-6?arch=amd64&distro=debian-13",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "bzip2"
+        },
+        {
+          "name": "php:soname",
+          "value": "libbz2.so.1.0"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:deb/debian/libcom-err2@1.47.2-3%2Bb12?arch=amd64&distro=debian-13",
+      "name": "libcom-err2",
+      "version": "1.47.2-3+b12",
+      "purl": "pkg:deb/debian/libcom-err2@1.47.2-3%2Bb12?arch=amd64&distro=debian-13",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "e2fsprogs"
+        },
+        {
+          "name": "php:soname",
+          "value": "libcom_err.so.2"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:deb/debian/libdav1d7@1.5.1-1?arch=amd64&distro=debian-13",
+      "name": "libdav1d7",
+      "version": "1.5.1-1",
+      "purl": "pkg:deb/debian/libdav1d7@1.5.1-1?arch=amd64&distro=debian-13",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "dav1d"
+        },
+        {
+          "name": "php:soname",
+          "value": "libdav1d.so.7"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:deb/debian/libdeflate0@1.23-2?arch=amd64&distro=debian-13",
+      "name": "libdeflate0",
+      "version": "1.23-2",
+      "purl": "pkg:deb/debian/libdeflate0@1.23-2?arch=amd64&distro=debian-13",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "libdeflate"
+        },
+        {
+          "name": "php:soname",
+          "value": "libdeflate.so.0"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:deb/debian/libexpat1@2.9.0-1~deb13u1?arch=amd64&distro=debian-13",
+      "name": "libexpat1",
+      "version": "2.9.0-1~deb13u1",
+      "purl": "pkg:deb/debian/libexpat1@2.9.0-1~deb13u1?arch=amd64&distro=debian-13",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "expat"
+        },
+        {
+          "name": "php:soname",
+          "value": "libexpat.so.1"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:deb/debian/libfontconfig1@2.15.0-2.3?arch=amd64&distro=debian-13",
+      "name": "libfontconfig1",
+      "version": "2.15.0-2.3",
+      "purl": "pkg:deb/debian/libfontconfig1@2.15.0-2.3?arch=amd64&distro=debian-13",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "fontconfig"
+        },
+        {
+          "name": "php:soname",
+          "value": "libfontconfig.so.1"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:deb/debian/libfreetype6@2.13.3%2Bdfsg-1%2Bdeb13u1?arch=amd64&distro=debian-13",
+      "name": "libfreetype6",
+      "version": "2.13.3+dfsg-1+deb13u1",
+      "purl": "pkg:deb/debian/libfreetype6@2.13.3%2Bdfsg-1%2Bdeb13u1?arch=amd64&distro=debian-13",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "freetype"
+        },
+        {
+          "name": "php:soname",
+          "value": "libfreetype.so.6"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:deb/debian/libgav1-1@0.19.0-3%2Bb1?arch=amd64&distro=debian-13",
+      "name": "libgav1-1",
+      "version": "0.19.0-3+b1",
+      "purl": "pkg:deb/debian/libgav1-1@0.19.0-3%2Bb1?arch=amd64&distro=debian-13",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "libgav1"
+        },
+        {
+          "name": "php:soname",
+          "value": "libgav1.so.1"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:deb/debian/libgcrypt20@1.11.0-7%2Bdeb13u1?arch=amd64&distro=debian-13",
+      "name": "libgcrypt20",
+      "version": "1.11.0-7+deb13u1",
+      "purl": "pkg:deb/debian/libgcrypt20@1.11.0-7%2Bdeb13u1?arch=amd64&distro=debian-13",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "libgcrypt20"
+        },
+        {
+          "name": "php:soname",
+          "value": "libgcrypt.so.20"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:deb/debian/libgmp10@2%3A6.3.0%2Bdfsg-3?arch=amd64&distro=debian-13",
+      "name": "libgmp10",
+      "version": "2:6.3.0+dfsg-3",
+      "purl": "pkg:deb/debian/libgmp10@2%3A6.3.0%2Bdfsg-3?arch=amd64&distro=debian-13",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "gmp"
+        },
+        {
+          "name": "php:soname",
+          "value": "libgmp.so.10"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:deb/debian/libgnutls30t64@3.8.9-3%2Bdeb13u4?arch=amd64&distro=debian-13",
+      "name": "libgnutls30t64",
+      "version": "3.8.9-3+deb13u4",
+      "purl": "pkg:deb/debian/libgnutls30t64@3.8.9-3%2Bdeb13u4?arch=amd64&distro=debian-13",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "gnutls28"
+        },
+        {
+          "name": "php:soname",
+          "value": "libgnutls.so.30"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:deb/debian/libgomp1@14.2.0-19?arch=amd64&distro=debian-13",
+      "name": "libgomp1",
+      "version": "14.2.0-19",
+      "purl": "pkg:deb/debian/libgomp1@14.2.0-19?arch=amd64&distro=debian-13",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "gcc-14"
+        },
+        {
+          "name": "php:soname",
+          "value": "libgomp.so.1"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:deb/debian/libgpg-error0@1.51-4?arch=amd64&distro=debian-13",
+      "name": "libgpg-error0",
+      "version": "1.51-4",
+      "purl": "pkg:deb/debian/libgpg-error0@1.51-4?arch=amd64&distro=debian-13",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "libgpg-error"
+        },
+        {
+          "name": "php:soname",
+          "value": "libgpg-error.so.0"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:deb/debian/libgssapi-krb5-2@1.21.3-5%2Bdeb13u1?arch=amd64&distro=debian-13",
+      "name": "libgssapi-krb5-2",
+      "version": "1.21.3-5+deb13u1",
+      "purl": "pkg:deb/debian/libgssapi-krb5-2@1.21.3-5%2Bdeb13u1?arch=amd64&distro=debian-13",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "krb5"
+        },
+        {
+          "name": "php:soname",
+          "value": "libgssapi_krb5.so.2"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:deb/debian/libheif1@1.23.6-2~deb13u1?arch=amd64&distro=debian-13",
+      "name": "libheif1",
+      "version": "1.23.6-2~deb13u1",
+      "purl": "pkg:deb/debian/libheif1@1.23.6-2~deb13u1?arch=amd64&distro=debian-13",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "libheif"
+        },
+        {
+          "name": "php:soname",
+          "value": "libheif.so.1"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:deb/debian/libhogweed6t64@3.10.1-1?arch=amd64&distro=debian-13",
+      "name": "libhogweed6t64",
+      "version": "3.10.1-1",
+      "purl": "pkg:deb/debian/libhogweed6t64@3.10.1-1?arch=amd64&distro=debian-13",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "nettle"
+        },
+        {
+          "name": "php:soname",
+          "value": "libhogweed.so.6"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:deb/debian/libidn2-0@2.3.8-2?arch=amd64&distro=debian-13",
+      "name": "libidn2-0",
+      "version": "2.3.8-2",
+      "purl": "pkg:deb/debian/libidn2-0@2.3.8-2?arch=amd64&distro=debian-13",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "libidn2"
+        },
+        {
+          "name": "php:soname",
+          "value": "libidn2.so.0"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:deb/debian/libimagequant0@2.18.0-1%2Bb2?arch=amd64&distro=debian-13",
+      "name": "libimagequant0",
+      "version": "2.18.0-1+b2",
+      "purl": "pkg:deb/debian/libimagequant0@2.18.0-1%2Bb2?arch=amd64&distro=debian-13",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "libimagequant"
+        },
+        {
+          "name": "php:soname",
+          "value": "libimagequant.so.0"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:deb/debian/libjbig0@2.1-6.1%2Bb2?arch=amd64&distro=debian-13",
+      "name": "libjbig0",
+      "version": "2.1-6.1+b2",
+      "purl": "pkg:deb/debian/libjbig0@2.1-6.1%2Bb2?arch=amd64&distro=debian-13",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "jbigkit"
+        },
+        {
+          "name": "php:soname",
+          "value": "libjbig.so.0"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:deb/debian/libjpeg62-turbo@1%3A2.1.5-4?arch=amd64&distro=debian-13",
+      "name": "libjpeg62-turbo",
+      "version": "1:2.1.5-4",
+      "purl": "pkg:deb/debian/libjpeg62-turbo@1%3A2.1.5-4?arch=amd64&distro=debian-13",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "libjpeg-turbo"
+        },
+        {
+          "name": "php:soname",
+          "value": "libjpeg.so.62"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:deb/debian/libk5crypto3@1.21.3-5%2Bdeb13u1?arch=amd64&distro=debian-13",
+      "name": "libk5crypto3",
+      "version": "1.21.3-5+deb13u1",
+      "purl": "pkg:deb/debian/libk5crypto3@1.21.3-5%2Bdeb13u1?arch=amd64&distro=debian-13",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "krb5"
+        },
+        {
+          "name": "php:soname",
+          "value": "libk5crypto.so.3"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:deb/debian/libkeyutils1@1.6.3-6?arch=amd64&distro=debian-13",
+      "name": "libkeyutils1",
+      "version": "1.6.3-6",
+      "purl": "pkg:deb/debian/libkeyutils1@1.6.3-6?arch=amd64&distro=debian-13",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "keyutils"
+        },
+        {
+          "name": "php:soname",
+          "value": "libkeyutils.so.1"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:deb/debian/libkrb5-3@1.21.3-5%2Bdeb13u1?arch=amd64&distro=debian-13",
+      "name": "libkrb5-3",
+      "version": "1.21.3-5+deb13u1",
+      "purl": "pkg:deb/debian/libkrb5-3@1.21.3-5%2Bdeb13u1?arch=amd64&distro=debian-13",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "krb5"
+        },
+        {
+          "name": "php:soname",
+          "value": "libkrb5.so.3"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:deb/debian/libkrb5support0@1.21.3-5%2Bdeb13u1?arch=amd64&distro=debian-13",
+      "name": "libkrb5support0",
+      "version": "1.21.3-5+deb13u1",
+      "purl": "pkg:deb/debian/libkrb5support0@1.21.3-5%2Bdeb13u1?arch=amd64&distro=debian-13",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "krb5"
+        },
+        {
+          "name": "php:soname",
+          "value": "libkrb5support.so.0"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:deb/debian/libldap2@2.6.10%2Bdfsg-1?arch=amd64&distro=debian-13",
+      "name": "libldap2",
+      "version": "2.6.10+dfsg-1",
+      "purl": "pkg:deb/debian/libldap2@2.6.10%2Bdfsg-1?arch=amd64&distro=debian-13",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "openldap"
+        },
+        {
+          "name": "php:soname",
+          "value": "liblber.so.2"
+        },
+        {
+          "name": "php:soname",
+          "value": "libldap.so.2"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:deb/debian/liblerc4@4.0.0%2Bds-5?arch=amd64&distro=debian-13",
+      "name": "liblerc4",
+      "version": "4.0.0+ds-5",
+      "purl": "pkg:deb/debian/liblerc4@4.0.0%2Bds-5?arch=amd64&distro=debian-13",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "lerc"
+        },
+        {
+          "name": "php:soname",
+          "value": "libLerc.so.4"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:deb/debian/liblzma5@5.8.1-1%2Bdeb13u2?arch=amd64&distro=debian-13",
+      "name": "liblzma5",
+      "version": "5.8.1-1+deb13u2",
+      "purl": "pkg:deb/debian/liblzma5@5.8.1-1%2Bdeb13u2?arch=amd64&distro=debian-13",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "xz-utils"
+        },
+        {
+          "name": "php:soname",
+          "value": "liblzma.so.5"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:deb/debian/libmd0@1.1.0-2%2Bb1?arch=amd64&distro=debian-13",
+      "name": "libmd0",
+      "version": "1.1.0-2+b1",
+      "purl": "pkg:deb/debian/libmd0@1.1.0-2%2Bb1?arch=amd64&distro=debian-13",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "libmd"
+        },
+        {
+          "name": "php:soname",
+          "value": "libmd.so.0"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:deb/debian/libnettle8t64@3.10.1-1?arch=amd64&distro=debian-13",
+      "name": "libnettle8t64",
+      "version": "3.10.1-1",
+      "purl": "pkg:deb/debian/libnettle8t64@3.10.1-1?arch=amd64&distro=debian-13",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "nettle"
+        },
+        {
+          "name": "php:soname",
+          "value": "libnettle.so.8"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:deb/debian/libnghttp2-14@1.64.0-1.1%2Bdeb13u1?arch=amd64&distro=debian-13",
+      "name": "libnghttp2-14",
+      "version": "1.64.0-1.1+deb13u1",
+      "purl": "pkg:deb/debian/libnghttp2-14@1.64.0-1.1%2Bdeb13u1?arch=amd64&distro=debian-13",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "nghttp2"
+        },
+        {
+          "name": "php:soname",
+          "value": "libnghttp2.so.14"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:deb/debian/libnghttp3-9@1.8.0-1?arch=amd64&distro=debian-13",
+      "name": "libnghttp3-9",
+      "version": "1.8.0-1",
+      "purl": "pkg:deb/debian/libnghttp3-9@1.8.0-1?arch=amd64&distro=debian-13",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "nghttp3"
+        },
+        {
+          "name": "php:soname",
+          "value": "libnghttp3.so.9"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:deb/debian/libp11-kit0@0.25.5-3?arch=amd64&distro=debian-13",
+      "name": "libp11-kit0",
+      "version": "0.25.5-3",
+      "purl": "pkg:deb/debian/libp11-kit0@0.25.5-3?arch=amd64&distro=debian-13",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "p11-kit"
+        },
+        {
+          "name": "php:soname",
+          "value": "libp11-kit.so.0"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:deb/debian/libpng16-16t64@1.6.48-1%2Bdeb13u6?arch=amd64&distro=debian-13",
+      "name": "libpng16-16t64",
+      "version": "1.6.48-1+deb13u6",
+      "purl": "pkg:deb/debian/libpng16-16t64@1.6.48-1%2Bdeb13u6?arch=amd64&distro=debian-13",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "libpng1.6"
+        },
+        {
+          "name": "php:soname",
+          "value": "libpng16.so.16"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:deb/debian/libpsl5t64@0.21.2-1.1%2Bb1?arch=amd64&distro=debian-13",
+      "name": "libpsl5t64",
+      "version": "0.21.2-1.1+b1",
+      "purl": "pkg:deb/debian/libpsl5t64@0.21.2-1.1%2Bb1?arch=amd64&distro=debian-13",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "libpsl"
+        },
+        {
+          "name": "php:soname",
+          "value": "libpsl.so.5"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:deb/debian/librav1e0.7@0.7.1-9%2Bb2?arch=amd64&distro=debian-13",
+      "name": "librav1e0.7",
+      "version": "0.7.1-9+b2",
+      "purl": "pkg:deb/debian/librav1e0.7@0.7.1-9%2Bb2?arch=amd64&distro=debian-13",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "rust-rav1e"
+        },
+        {
+          "name": "php:soname",
+          "value": "librav1e.so.0.7"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:deb/debian/librtmp1@2.4%2B20151223.gitfa8646d.1-2%2Bb5?arch=amd64&distro=debian-13",
+      "name": "librtmp1",
+      "version": "2.4+20151223.gitfa8646d.1-2+b5",
+      "purl": "pkg:deb/debian/librtmp1@2.4%2B20151223.gitfa8646d.1-2%2Bb5?arch=amd64&distro=debian-13",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "rtmpdump"
+        },
+        {
+          "name": "php:soname",
+          "value": "librtmp.so.1"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:deb/debian/libsasl2-2@2.1.28%2Bdfsg1-9?arch=amd64&distro=debian-13",
+      "name": "libsasl2-2",
+      "version": "2.1.28+dfsg1-9",
+      "purl": "pkg:deb/debian/libsasl2-2@2.1.28%2Bdfsg1-9?arch=amd64&distro=debian-13",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "cyrus-sasl2"
+        },
+        {
+          "name": "php:soname",
+          "value": "libsasl2.so.2"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:deb/debian/libsharpyuv0@1.5.0-0.1?arch=amd64&distro=debian-13",
+      "name": "libsharpyuv0",
+      "version": "1.5.0-0.1",
+      "purl": "pkg:deb/debian/libsharpyuv0@1.5.0-0.1?arch=amd64&distro=debian-13",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "libwebp"
+        },
+        {
+          "name": "php:soname",
+          "value": "libsharpyuv.so.0"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:deb/debian/libssh2-1t64@1.11.1-1%2Bdeb13u2?arch=amd64&distro=debian-13",
+      "name": "libssh2-1t64",
+      "version": "1.11.1-1+deb13u2",
+      "purl": "pkg:deb/debian/libssh2-1t64@1.11.1-1%2Bdeb13u2?arch=amd64&distro=debian-13",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "libssh2"
+        },
+        {
+          "name": "php:soname",
+          "value": "libssh2.so.1"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:deb/debian/libsvtav1enc2@2.3.0%2Bdfsg-1?arch=amd64&distro=debian-13",
+      "name": "libsvtav1enc2",
+      "version": "2.3.0+dfsg-1",
+      "purl": "pkg:deb/debian/libsvtav1enc2@2.3.0%2Bdfsg-1?arch=amd64&distro=debian-13",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "svt-av1"
+        },
+        {
+          "name": "php:soname",
+          "value": "libSvtAv1Enc.so.2"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:deb/debian/libtasn1-6@4.20.0-2%2Bdeb13u1?arch=amd64&distro=debian-13",
+      "name": "libtasn1-6",
+      "version": "4.20.0-2+deb13u1",
+      "purl": "pkg:deb/debian/libtasn1-6@4.20.0-2%2Bdeb13u1?arch=amd64&distro=debian-13",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "libtasn1-6"
+        },
+        {
+          "name": "php:soname",
+          "value": "libtasn1.so.6"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:deb/debian/libtiff6@4.7.0-3%2Bdeb13u3?arch=amd64&distro=debian-13",
+      "name": "libtiff6",
+      "version": "4.7.0-3+deb13u3",
+      "purl": "pkg:deb/debian/libtiff6@4.7.0-3%2Bdeb13u3?arch=amd64&distro=debian-13",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "tiff"
+        },
+        {
+          "name": "php:soname",
+          "value": "libtiff.so.6"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:deb/debian/libtinfo6@6.5%2B20250216-2?arch=amd64&distro=debian-13",
+      "name": "libtinfo6",
+      "version": "6.5+20250216-2",
+      "purl": "pkg:deb/debian/libtinfo6@6.5%2B20250216-2?arch=amd64&distro=debian-13",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "ncurses"
+        },
+        {
+          "name": "php:soname",
+          "value": "libtinfo.so.6"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:deb/debian/libunistring5@1.3-2?arch=amd64&distro=debian-13",
+      "name": "libunistring5",
+      "version": "1.3-2",
+      "purl": "pkg:deb/debian/libunistring5@1.3-2?arch=amd64&distro=debian-13",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "libunistring"
+        },
+        {
+          "name": "php:soname",
+          "value": "libunistring.so.5"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:deb/debian/libwebp7@1.5.0-0.1?arch=amd64&distro=debian-13",
+      "name": "libwebp7",
+      "version": "1.5.0-0.1",
+      "purl": "pkg:deb/debian/libwebp7@1.5.0-0.1?arch=amd64&distro=debian-13",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "libwebp"
+        },
+        {
+          "name": "php:soname",
+          "value": "libwebp.so.7"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:deb/debian/libx11-6@2%3A1.8.12-1?arch=amd64&distro=debian-13",
+      "name": "libx11-6",
+      "version": "2:1.8.12-1",
+      "purl": "pkg:deb/debian/libx11-6@2%3A1.8.12-1?arch=amd64&distro=debian-13",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "libx11"
+        },
+        {
+          "name": "php:soname",
+          "value": "libX11.so.6"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:deb/debian/libxau6@1%3A1.0.11-1?arch=amd64&distro=debian-13",
+      "name": "libxau6",
+      "version": "1:1.0.11-1",
+      "purl": "pkg:deb/debian/libxau6@1%3A1.0.11-1?arch=amd64&distro=debian-13",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "libxau"
+        },
+        {
+          "name": "php:soname",
+          "value": "libXau.so.6"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:deb/debian/libxcb1@1.17.0-2%2Bb1?arch=amd64&distro=debian-13",
+      "name": "libxcb1",
+      "version": "1.17.0-2+b1",
+      "purl": "pkg:deb/debian/libxcb1@1.17.0-2%2Bb1?arch=amd64&distro=debian-13",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "libxcb"
+        },
+        {
+          "name": "php:soname",
+          "value": "libxcb.so.1"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:deb/debian/libxdmcp6@1%3A1.1.5-1?arch=amd64&distro=debian-13",
+      "name": "libxdmcp6",
+      "version": "1:1.1.5-1",
+      "purl": "pkg:deb/debian/libxdmcp6@1%3A1.1.5-1?arch=amd64&distro=debian-13",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "libxdmcp"
+        },
+        {
+          "name": "php:soname",
+          "value": "libXdmcp.so.6"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:deb/debian/libxpm4@1%3A3.5.17-1%2Bdeb13u1?arch=amd64&distro=debian-13",
+      "name": "libxpm4",
+      "version": "1:3.5.17-1+deb13u1",
+      "purl": "pkg:deb/debian/libxpm4@1%3A3.5.17-1%2Bdeb13u1?arch=amd64&distro=debian-13",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "libxpm"
+        },
+        {
+          "name": "php:soname",
+          "value": "libXpm.so.4"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:deb/debian/libyuv0@0.0.1904.20250204-1?arch=amd64&distro=debian-13",
+      "name": "libyuv0",
+      "version": "0.0.1904.20250204-1",
+      "purl": "pkg:deb/debian/libyuv0@0.0.1904.20250204-1?arch=amd64&distro=debian-13",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "libyuv"
+        },
+        {
+          "name": "php:soname",
+          "value": "libyuv.so.0"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "pkg:deb/debian/libzstd1@1.5.7%2Bdfsg-1?arch=amd64&distro=debian-13",
+      "name": "libzstd1",
+      "version": "1.5.7+dfsg-1",
+      "purl": "pkg:deb/debian/libzstd1@1.5.7%2Bdfsg-1?arch=amd64&distro=debian-13",
+      "properties": [
+        {
+          "name": "php:source-package",
+          "value": "libzstd"
+        },
+        {
+          "name": "php:soname",
+          "value": "libzstd.so.1"
+        },
+        {
+          "name": "php:direct",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "extension:bcmath",
+      "name": "php-ext-bcmath",
+      "version": "8.5.12",
+      "properties": [
+        {
+          "name": "php:file",
+          "value": "/usr/lib/php/20250925/bcmath.so"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "extension:calendar",
+      "name": "php-ext-calendar",
+      "version": "8.5.12",
+      "properties": [
+        {
+          "name": "php:file",
+          "value": "/usr/lib/php/20250925/calendar.so"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "extension:ctype",
+      "name": "php-ext-ctype",
+      "version": "8.5.12",
+      "properties": [
+        {
+          "name": "php:file",
+          "value": "/usr/lib/php/20250925/ctype.so"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "extension:curl",
+      "name": "php-ext-curl",
+      "version": "8.5.12",
+      "properties": [
+        {
+          "name": "php:file",
+          "value": "/usr/lib/php/20250925/curl.so"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "extension:dom",
+      "name": "php-ext-dom",
+      "version": "8.5.12",
+      "properties": [
+        {
+          "name": "php:file",
+          "value": "/usr/lib/php/20250925/dom.so"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "extension:exif",
+      "name": "php-ext-exif",
+      "version": "8.5.12",
+      "properties": [
+        {
+          "name": "php:file",
+          "value": "/usr/lib/php/20250925/exif.so"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "extension:FFI",
+      "name": "php-ext-FFI",
+      "version": "8.5.12",
+      "properties": [
+        {
+          "name": "php:file",
+          "value": "/usr/lib/php/20250925/ffi.so"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "extension:fileinfo",
+      "name": "php-ext-fileinfo",
+      "version": "8.5.12",
+      "properties": [
+        {
+          "name": "php:file",
+          "value": "/usr/lib/php/20250925/fileinfo.so"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "extension:ftp",
+      "name": "php-ext-ftp",
+      "version": "8.5.12",
+      "properties": [
+        {
+          "name": "php:file",
+          "value": "/usr/lib/php/20250925/ftp.so"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "extension:gd",
+      "name": "php-ext-gd",
+      "version": "8.5.12",
+      "properties": [
+        {
+          "name": "php:file",
+          "value": "/usr/lib/php/20250925/gd.so"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "extension:gettext",
+      "name": "php-ext-gettext",
+      "version": "8.5.12",
+      "properties": [
+        {
+          "name": "php:file",
+          "value": "/usr/lib/php/20250925/gettext.so"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "extension:iconv",
+      "name": "php-ext-iconv",
+      "version": "8.5.12",
+      "properties": [
+        {
+          "name": "php:file",
+          "value": "/usr/lib/php/20250925/iconv.so"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "extension:intl",
+      "name": "php-ext-intl",
+      "version": "8.5.12",
+      "properties": [
+        {
+          "name": "php:file",
+          "value": "/usr/lib/php/20250925/intl.so"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "extension:mbstring",
+      "name": "php-ext-mbstring",
+      "version": "8.5.12",
+      "properties": [
+        {
+          "name": "php:file",
+          "value": "/usr/lib/php/20250925/mbstring.so"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "extension:mysqli",
+      "name": "php-ext-mysqli",
+      "version": "8.5.12",
+      "properties": [
+        {
+          "name": "php:file",
+          "value": "/usr/lib/php/20250925/mysqli.so"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "extension:mysqlnd",
+      "name": "php-ext-mysqlnd",
+      "version": "8.5.12",
+      "properties": [
+        {
+          "name": "php:file",
+          "value": "/usr/lib/php/20250925/mysqlnd.so"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "extension:PDO",
+      "name": "php-ext-PDO",
+      "version": "8.5.12",
+      "properties": [
+        {
+          "name": "php:file",
+          "value": "/usr/lib/php/20250925/pdo.so"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "extension:pdo_mysql",
+      "name": "php-ext-pdo_mysql",
+      "version": "8.5.12",
+      "properties": [
+        {
+          "name": "php:file",
+          "value": "/usr/lib/php/20250925/pdo_mysql.so"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "extension:pdo_pgsql",
+      "name": "php-ext-pdo_pgsql",
+      "version": "8.5.12",
+      "properties": [
+        {
+          "name": "php:file",
+          "value": "/usr/lib/php/20250925/pdo_pgsql.so"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "extension:pdo_sqlite",
+      "name": "php-ext-pdo_sqlite",
+      "version": "8.5.12",
+      "properties": [
+        {
+          "name": "php:file",
+          "value": "/usr/lib/php/20250925/pdo_sqlite.so"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "extension:pgsql",
+      "name": "php-ext-pgsql",
+      "version": "8.5.12",
+      "properties": [
+        {
+          "name": "php:file",
+          "value": "/usr/lib/php/20250925/pgsql.so"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "extension:Phar",
+      "name": "php-ext-Phar",
+      "version": "8.5.12",
+      "properties": [
+        {
+          "name": "php:file",
+          "value": "/usr/lib/php/20250925/phar.so"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "extension:posix",
+      "name": "php-ext-posix",
+      "version": "8.5.12",
+      "properties": [
+        {
+          "name": "php:file",
+          "value": "/usr/lib/php/20250925/posix.so"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "extension:readline",
+      "name": "php-ext-readline",
+      "version": "8.5.12",
+      "properties": [
+        {
+          "name": "php:file",
+          "value": "/usr/lib/php/20250925/readline.so"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "extension:shmop",
+      "name": "php-ext-shmop",
+      "version": "8.5.12",
+      "properties": [
+        {
+          "name": "php:file",
+          "value": "/usr/lib/php/20250925/shmop.so"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "extension:SimpleXML",
+      "name": "php-ext-SimpleXML",
+      "version": "8.5.12",
+      "properties": [
+        {
+          "name": "php:file",
+          "value": "/usr/lib/php/20250925/simplexml.so"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "extension:sockets",
+      "name": "php-ext-sockets",
+      "version": "8.5.12",
+      "properties": [
+        {
+          "name": "php:file",
+          "value": "/usr/lib/php/20250925/sockets.so"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "extension:sqlite3",
+      "name": "php-ext-sqlite3",
+      "version": "8.5.12",
+      "properties": [
+        {
+          "name": "php:file",
+          "value": "/usr/lib/php/20250925/sqlite3.so"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "extension:sysvmsg",
+      "name": "php-ext-sysvmsg",
+      "version": "8.5.12",
+      "properties": [
+        {
+          "name": "php:file",
+          "value": "/usr/lib/php/20250925/sysvmsg.so"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "extension:sysvsem",
+      "name": "php-ext-sysvsem",
+      "version": "8.5.12",
+      "properties": [
+        {
+          "name": "php:file",
+          "value": "/usr/lib/php/20250925/sysvsem.so"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "extension:sysvshm",
+      "name": "php-ext-sysvshm",
+      "version": "8.5.12",
+      "properties": [
+        {
+          "name": "php:file",
+          "value": "/usr/lib/php/20250925/sysvshm.so"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "extension:tokenizer",
+      "name": "php-ext-tokenizer",
+      "version": "8.5.12",
+      "properties": [
+        {
+          "name": "php:file",
+          "value": "/usr/lib/php/20250925/tokenizer.so"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "extension:xml",
+      "name": "php-ext-xml",
+      "version": "8.5.12",
+      "properties": [
+        {
+          "name": "php:file",
+          "value": "/usr/lib/php/20250925/xml.so"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "extension:xmlreader",
+      "name": "php-ext-xmlreader",
+      "version": "8.5.12",
+      "properties": [
+        {
+          "name": "php:file",
+          "value": "/usr/lib/php/20250925/xmlreader.so"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "extension:xmlwriter",
+      "name": "php-ext-xmlwriter",
+      "version": "8.5.12",
+      "properties": [
+        {
+          "name": "php:file",
+          "value": "/usr/lib/php/20250925/xmlwriter.so"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "extension:xsl",
+      "name": "php-ext-xsl",
+      "version": "8.5.12",
+      "properties": [
+        {
+          "name": "php:file",
+          "value": "/usr/lib/php/20250925/xsl.so"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "bom-ref": "extension:zip",
+      "name": "php-ext-zip",
+      "version": "8.5.12",
+      "properties": [
+        {
+          "name": "php:file",
+          "value": "/usr/lib/php/20250925/zip.so"
+        }
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "ref": "php",
+      "dependsOn": [
+        "bundled:timelib",
+        "bundled:Lexbor",
+        "bundled:uriparser",
+        "bundled:libmagic",
+        "bundled:libmbfl",
+        "bundled:libbcmath",
+        "bundled:IR JIT framework",
+        "bundled:xxHash",
+        "bundled:Keccak (SHA-3)",
+        "bundled:crypt_blowfish",
+        "extension:bcmath",
+        "extension:calendar",
+        "extension:ctype",
+        "extension:curl",
+        "extension:dom",
+        "extension:exif",
+        "extension:FFI",
+        "extension:fileinfo",
+        "extension:ftp",
+        "extension:gd",
+        "extension:gettext",
+        "extension:iconv",
+        "extension:intl",
+        "extension:mbstring",
+        "extension:mysqli",
+        "extension:mysqlnd",
+        "extension:PDO",
+        "extension:pdo_mysql",
+        "extension:pdo_pgsql",
+        "extension:pdo_sqlite",
+        "extension:pgsql",
+        "extension:Phar",
+        "extension:posix",
+        "extension:readline",
+        "extension:shmop",
+        "extension:SimpleXML",
+        "extension:sockets",
+        "extension:sqlite3",
+        "extension:sysvmsg",
+        "extension:sysvsem",
+        "extension:sysvshm",
+        "extension:tokenizer",
+        "extension:xml",
+        "extension:xmlreader",
+        "extension:xmlwriter",
+        "extension:xsl",
+        "extension:zip",
+        "pkg:deb/debian/libargon2-1@0~20190702%2Bdfsg-4%2Bb2?arch=amd64&distro=debian-13",
+        "pkg:deb/debian/libc6@2.41-12%2Bdeb13u4?arch=amd64&distro=debian-13",
+        "pkg:deb/debian/libssl3t64@3.5.7-1~deb13u3?arch=amd64&distro=debian-13",
+        "pkg:deb/debian/libgcc-s1@14.2.0-19?arch=amd64&distro=debian-13",
+        "pkg:deb/debian/libpcre2-8-0@10.46-1~deb13u3?arch=amd64&distro=debian-13",
+        "pkg:deb/debian/libsodium23@1.0.18-1%2Bdeb13u1?arch=amd64&distro=debian-13",
+        "pkg:deb/debian/libxml2@2.12.7%2Bdfsg%2Breally2.9.14-2.1%2Bdeb13u3?arch=amd64&distro=debian-13",
+        "pkg:deb/debian/zlib1g@1%3A1.3.dfsg%2Breally1.3.1-1%2Bb1?arch=amd64&distro=debian-13"
+      ]
+    },
+    {
+      "ref": "extension:bcmath",
+      "dependsOn": [
+        "pkg:deb/debian/libc6@2.41-12%2Bdeb13u4?arch=amd64&distro=debian-13"
+      ]
+    },
+    {
+      "ref": "extension:calendar",
+      "dependsOn": [
+        "pkg:deb/debian/libc6@2.41-12%2Bdeb13u4?arch=amd64&distro=debian-13"
+      ]
+    },
+    {
+      "ref": "extension:ctype",
+      "dependsOn": [
+        "pkg:deb/debian/libc6@2.41-12%2Bdeb13u4?arch=amd64&distro=debian-13"
+      ]
+    },
+    {
+      "ref": "extension:curl",
+      "dependsOn": [
+        "pkg:deb/debian/libc6@2.41-12%2Bdeb13u4?arch=amd64&distro=debian-13",
+        "pkg:deb/debian/libssl3t64@3.5.7-1~deb13u3?arch=amd64&distro=debian-13",
+        "pkg:deb/debian/libcurl4t64@8.14.1-2%2Bdeb13u7?arch=amd64&distro=debian-13",
+        "pkg:deb/debian/libffi8@3.4.8-2?arch=amd64&distro=debian-13",
+        "pkg:deb/debian/zlib1g@1%3A1.3.dfsg%2Breally1.3.1-1%2Bb1?arch=amd64&distro=debian-13"
+      ]
+    },
+    {
+      "ref": "extension:dom",
+      "dependsOn": [
+        "pkg:deb/debian/libc6@2.41-12%2Bdeb13u4?arch=amd64&distro=debian-13",
+        "pkg:deb/debian/libxml2@2.12.7%2Bdfsg%2Breally2.9.14-2.1%2Bdeb13u3?arch=amd64&distro=debian-13",
+        "pkg:deb/debian/zlib1g@1%3A1.3.dfsg%2Breally1.3.1-1%2Bb1?arch=amd64&distro=debian-13"
+      ]
+    },
+    {
+      "ref": "extension:exif",
+      "dependsOn": [
+        "pkg:deb/debian/libc6@2.41-12%2Bdeb13u4?arch=amd64&distro=debian-13"
+      ]
+    },
+    {
+      "ref": "extension:FFI",
+      "dependsOn": [
+        "pkg:deb/debian/libc6@2.41-12%2Bdeb13u4?arch=amd64&distro=debian-13",
+        "pkg:deb/debian/libffi8@3.4.8-2?arch=amd64&distro=debian-13"
+      ]
+    },
+    {
+      "ref": "extension:fileinfo",
+      "dependsOn": [
+        "pkg:deb/debian/libc6@2.41-12%2Bdeb13u4?arch=amd64&distro=debian-13"
+      ]
+    },
+    {
+      "ref": "extension:ftp",
+      "dependsOn": [
+        "pkg:deb/debian/libc6@2.41-12%2Bdeb13u4?arch=amd64&distro=debian-13",
+        "pkg:deb/debian/libssl3t64@3.5.7-1~deb13u3?arch=amd64&distro=debian-13",
+        "pkg:deb/debian/zlib1g@1%3A1.3.dfsg%2Breally1.3.1-1%2Bb1?arch=amd64&distro=debian-13"
+      ]
+    },
+    {
+      "ref": "extension:gd",
+      "dependsOn": [
+        "pkg:deb/debian/libc6@2.41-12%2Bdeb13u4?arch=amd64&distro=debian-13",
+        "pkg:deb/debian/libgcc-s1@14.2.0-19?arch=amd64&distro=debian-13",
+        "pkg:deb/debian/libgd3@2.3.3-14%2B0~20260731.21%2Bdebian13~1.gbp938f32?arch=amd64&distro=debian-13",
+        "pkg:deb/debian/libstdc++6@14.2.0-19?arch=amd64&distro=debian-13",
+        "pkg:deb/debian/zlib1g@1%3A1.3.dfsg%2Breally1.3.1-1%2Bb1?arch=amd64&distro=debian-13"
+      ]
+    },
+    {
+      "ref": "extension:gettext",
+      "dependsOn": [
+        "pkg:deb/debian/libc6@2.41-12%2Bdeb13u4?arch=amd64&distro=debian-13"
+      ]
+    },
+    {
+      "ref": "extension:iconv",
+      "dependsOn": [
+        "pkg:deb/debian/libc6@2.41-12%2Bdeb13u4?arch=amd64&distro=debian-13"
+      ]
+    },
+    {
+      "ref": "extension:intl",
+      "dependsOn": [
+        "pkg:deb/debian/libc6@2.41-12%2Bdeb13u4?arch=amd64&distro=debian-13",
+        "pkg:deb/debian/libgcc-s1@14.2.0-19?arch=amd64&distro=debian-13",
+        "pkg:deb/debian/libicu76@76.1-4?arch=amd64&distro=debian-13",
+        "pkg:deb/debian/libstdc++6@14.2.0-19?arch=amd64&distro=debian-13"
+      ]
+    },
+    {
+      "ref": "extension:mbstring",
+      "dependsOn": [
+        "pkg:deb/debian/libc6@2.41-12%2Bdeb13u4?arch=amd64&distro=debian-13",
+        "pkg:deb/debian/libonig5@6.9.9-1%2Bb1?arch=amd64&distro=debian-13"
+      ]
+    },
+    {
+      "ref": "extension:mysqli",
+      "dependsOn": [
+        "pkg:deb/debian/libc6@2.41-12%2Bdeb13u4?arch=amd64&distro=debian-13"
+      ]
+    },
+    {
+      "ref": "extension:mysqlnd",
+      "dependsOn": [
+        "pkg:deb/debian/libc6@2.41-12%2Bdeb13u4?arch=amd64&distro=debian-13",
+        "pkg:deb/debian/libssl3t64@3.5.7-1~deb13u3?arch=amd64&distro=debian-13",
+        "pkg:deb/debian/zlib1g@1%3A1.3.dfsg%2Breally1.3.1-1%2Bb1?arch=amd64&distro=debian-13"
+      ]
+    },
+    {
+      "ref": "extension:PDO",
+      "dependsOn": [
+        "pkg:deb/debian/libc6@2.41-12%2Bdeb13u4?arch=amd64&distro=debian-13"
+      ]
+    },
+    {
+      "ref": "extension:pdo_mysql",
+      "dependsOn": [
+        "pkg:deb/debian/libc6@2.41-12%2Bdeb13u4?arch=amd64&distro=debian-13"
+      ]
+    },
+    {
+      "ref": "extension:pdo_pgsql",
+      "dependsOn": [
+        "pkg:deb/debian/libc6@2.41-12%2Bdeb13u4?arch=amd64&distro=debian-13",
+        "pkg:deb/debian/libssl3t64@3.5.7-1~deb13u3?arch=amd64&distro=debian-13",
+        "pkg:deb/debian/libpq5@17.11-0%2Bdeb13u1?arch=amd64&distro=debian-13",
+        "pkg:deb/debian/zlib1g@1%3A1.3.dfsg%2Breally1.3.1-1%2Bb1?arch=amd64&distro=debian-13"
+      ]
+    },
+    {
+      "ref": "extension:pdo_sqlite",
+      "dependsOn": [
+        "pkg:deb/debian/libc6@2.41-12%2Bdeb13u4?arch=amd64&distro=debian-13",
+        "pkg:deb/debian/libsqlite3-0@3.46.1-7%2Bdeb13u2?arch=amd64&distro=debian-13"
+      ]
+    },
+    {
+      "ref": "extension:pgsql",
+      "dependsOn": [
+        "pkg:deb/debian/libc6@2.41-12%2Bdeb13u4?arch=amd64&distro=debian-13",
+        "pkg:deb/debian/libssl3t64@3.5.7-1~deb13u3?arch=amd64&distro=debian-13",
+        "pkg:deb/debian/libpq5@17.11-0%2Bdeb13u1?arch=amd64&distro=debian-13",
+        "pkg:deb/debian/zlib1g@1%3A1.3.dfsg%2Breally1.3.1-1%2Bb1?arch=amd64&distro=debian-13"
+      ]
+    },
+    {
+      "ref": "extension:Phar",
+      "dependsOn": [
+        "pkg:deb/debian/libc6@2.41-12%2Bdeb13u4?arch=amd64&distro=debian-13"
+      ]
+    },
+    {
+      "ref": "extension:posix",
+      "dependsOn": [
+        "pkg:deb/debian/libc6@2.41-12%2Bdeb13u4?arch=amd64&distro=debian-13"
+      ]
+    },
+    {
+      "ref": "extension:readline",
+      "dependsOn": [
+        "pkg:deb/debian/libc6@2.41-12%2Bdeb13u4?arch=amd64&distro=debian-13",
+        "pkg:deb/debian/libedit2@3.1-20250104-1?arch=amd64&distro=debian-13"
+      ]
+    },
+    {
+      "ref": "extension:shmop",
+      "dependsOn": [
+        "pkg:deb/debian/libc6@2.41-12%2Bdeb13u4?arch=amd64&distro=debian-13"
+      ]
+    },
+    {
+      "ref": "extension:SimpleXML",
+      "dependsOn": [
+        "pkg:deb/debian/libc6@2.41-12%2Bdeb13u4?arch=amd64&distro=debian-13",
+        "pkg:deb/debian/libxml2@2.12.7%2Bdfsg%2Breally2.9.14-2.1%2Bdeb13u3?arch=amd64&distro=debian-13",
+        "pkg:deb/debian/zlib1g@1%3A1.3.dfsg%2Breally1.3.1-1%2Bb1?arch=amd64&distro=debian-13"
+      ]
+    },
+    {
+      "ref": "extension:sockets",
+      "dependsOn": [
+        "pkg:deb/debian/libc6@2.41-12%2Bdeb13u4?arch=amd64&distro=debian-13"
+      ]
+    },
+    {
+      "ref": "extension:sqlite3",
+      "dependsOn": [
+        "pkg:deb/debian/libc6@2.41-12%2Bdeb13u4?arch=amd64&distro=debian-13",
+        "pkg:deb/debian/libsqlite3-0@3.46.1-7%2Bdeb13u2?arch=amd64&distro=debian-13"
+      ]
+    },
+    {
+      "ref": "extension:sysvmsg",
+      "dependsOn": [
+        "pkg:deb/debian/libc6@2.41-12%2Bdeb13u4?arch=amd64&distro=debian-13"
+      ]
+    },
+    {
+      "ref": "extension:sysvsem",
+      "dependsOn": [
+        "pkg:deb/debian/libc6@2.41-12%2Bdeb13u4?arch=amd64&distro=debian-13"
+      ]
+    },
+    {
+      "ref": "extension:sysvshm",
+      "dependsOn": [
+        "pkg:deb/debian/libc6@2.41-12%2Bdeb13u4?arch=amd64&distro=debian-13"
+      ]
+    },
+    {
+      "ref": "extension:tokenizer",
+      "dependsOn": [
+        "pkg:deb/debian/libc6@2.41-12%2Bdeb13u4?arch=amd64&distro=debian-13"
+      ]
+    },
+    {
+      "ref": "extension:xml",
+      "dependsOn": [
+        "pkg:deb/debian/libc6@2.41-12%2Bdeb13u4?arch=amd64&distro=debian-13",
+        "pkg:deb/debian/libxml2@2.12.7%2Bdfsg%2Breally2.9.14-2.1%2Bdeb13u3?arch=amd64&distro=debian-13",
+        "pkg:deb/debian/zlib1g@1%3A1.3.dfsg%2Breally1.3.1-1%2Bb1?arch=amd64&distro=debian-13"
+      ]
+    },
+    {
+      "ref": "extension:xmlreader",
+      "dependsOn": [
+        "pkg:deb/debian/libc6@2.41-12%2Bdeb13u4?arch=amd64&distro=debian-13",
+        "pkg:deb/debian/libxml2@2.12.7%2Bdfsg%2Breally2.9.14-2.1%2Bdeb13u3?arch=amd64&distro=debian-13",
+        "pkg:deb/debian/zlib1g@1%3A1.3.dfsg%2Breally1.3.1-1%2Bb1?arch=amd64&distro=debian-13"
+      ]
+    },
+    {
+      "ref": "extension:xmlwriter",
+      "dependsOn": [
+        "pkg:deb/debian/libc6@2.41-12%2Bdeb13u4?arch=amd64&distro=debian-13",
+        "pkg:deb/debian/libxml2@2.12.7%2Bdfsg%2Breally2.9.14-2.1%2Bdeb13u3?arch=amd64&distro=debian-13",
+        "pkg:deb/debian/zlib1g@1%3A1.3.dfsg%2Breally1.3.1-1%2Bb1?arch=amd64&distro=debian-13"
+      ]
+    },
+    {
+      "ref": "extension:xsl",
+      "dependsOn": [
+        "pkg:deb/debian/libc6@2.41-12%2Bdeb13u4?arch=amd64&distro=debian-13",
+        "pkg:deb/debian/libxslt1.1@1.1.35-1.2%2Bdeb13u3?arch=amd64&distro=debian-13",
+        "pkg:deb/debian/libxml2@2.12.7%2Bdfsg%2Breally2.9.14-2.1%2Bdeb13u3?arch=amd64&distro=debian-13",
+        "pkg:deb/debian/zlib1g@1%3A1.3.dfsg%2Breally1.3.1-1%2Bb1?arch=amd64&distro=debian-13"
+      ]
+    },
+    {
+      "ref": "extension:zip",
+      "dependsOn": [
+        "pkg:deb/debian/libc6@2.41-12%2Bdeb13u4?arch=amd64&distro=debian-13",
+        "pkg:deb/debian/libssl3t64@3.5.7-1~deb13u3?arch=amd64&distro=debian-13",
+        "pkg:deb/debian/zlib1g@1%3A1.3.dfsg%2Breally1.3.1-1%2Bb1?arch=amd64&distro=debian-13",
+        "pkg:deb/debian/libzip5@1.11.3-2?arch=amd64&distro=debian-13"
+      ]
+    }
+  ]
+}
