@@ -5,7 +5,7 @@
   --bg-subtle:  #efece6;
   --ink:        #1a1916;
   --ink-mid:    #6b6660;
-  --ink-dim:    #b0aba2;
+  --ink-dim:    #75706a;
   --rule:       #e3dfd7;
   --accent:     #b35309;
   --accent-alt: #92400e;
@@ -16,7 +16,7 @@
   --bg-subtle:  #1d1b18;
   --ink:        #f0ebe0;
   --ink-mid:    #9e9790;
-  --ink-dim:    #524d47;
+  --ink-dim:    #8a847c;
   --rule:       #2c2820;
   --accent:     #f59e0b;
   --accent-alt: #fbbf24;
@@ -141,7 +141,7 @@ a {
 
 .site-header nav a.active,
 .site-header nav a:hover {
-  color: var(--ink-mid);
+  color: var(--ink);
 }
 
 /* ── Theme toggle ─────────────────────────────────── */
