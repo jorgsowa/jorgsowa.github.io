@@ -1,10 +1,21 @@
 export const projects = [
   {
+    slug: "php-src",
+    name: "php/php-src",
+    repo: "php/php-src",
+    url: "https://github.com/php/php-src/pulls?q=is%3Apr+author%3Ajorgsowa",
+    lang: "C",
+    desc: "Co-maintainer of the session extension and RFC author. Session security hardening, BCMath performance and bug fixes across the core.",
+    detail:
+      "Contributing since 2022. RFC author (session security defaults, rounding modes). The commits below are a selection.",
+  },
+  {
     slug: "php-lsp",
     name: "php-lsp",
     url: "https://github.com/jorgsowa/php-lsp",
     lang: "Rust",
     desc: "A fast language server for PHP, written in Rust.",
+    detail: "Implements LSP 3.17 and embeds mir for in-editor diagnostics.",
     extensions: [
       {
         name: "VS Code",
@@ -26,9 +37,25 @@ export const projects = [
     name: "mir",
     url: "https://github.com/jorgsowa/mir",
     lang: "Rust",
-    desc: "A fast, incremental PHP static analyzer written in Rust. Many diagnostics rules covering types, dead code, and taint analysis.",
+    desc: "A fast, incremental PHP static analyzer written in Rust, with 140+ diagnostic rules covering types, dead code and taint analysis.",
     detail:
-      "Find type errors, dead code, and taint vulnerabilities before they reach production. Built in Rust for speed, incremental by default, inspired by Psalm.",
+      "Finds type errors, dead code and taint vulnerabilities before they reach production. Inspired by Psalm and still in active development.",
+  },
+  {
+    slug: "rust-php-parser",
+    name: "rust-php-parser",
+    url: "https://github.com/jorgsowa/rust-php-parser",
+    lang: "Rust",
+    desc: "A fault-tolerant PHP parser implemented in Rust, the foundation for php-lsp and mir.",
+    detail:
+      "About 27–41x faster than nikic/php-parser in the April 2026 benchmark, using arena allocation.",
+  },
+  {
+    slug: "ir",
+    name: "dstogov/ir",
+    url: "https://github.com/dstogov/ir/pulls?q=is%3Apr+author%3Ajorgsowa",
+    lang: "C",
+    desc: "The framework behind PHP's JIT compiler. Fixes to AArch64 and x86-64 code generation and to the optimizer.",
   },
   {
     slug: "php-sbom",
@@ -40,25 +67,8 @@ export const projects = [
   {
     slug: "mir-labs",
     name: "Mir Labs",
-    lang: "PHP",
+    lang: "Security",
     desc: "Organization supporting the software supply chain security of non-profit organizations.",
-    detail: "More details coming soon.",
-  },
-  {
-    slug: "rust-php-parser",
-    name: "rust-php-parser",
-    url: "https://github.com/jorgsowa/rust-php-parser",
-    lang: "Rust",
-    desc: "A PHP parser implemented in Rust, the foundation for the tooling above.",
-    detail: "The fastest and most feature-complete PHP parser available.",
-  },
-  {
-    slug: "php-src",
-    name: "php/php-src",
-    repo: "php/php-src",
-    url: "https://github.com/php/php-src/pulls?q=is%3Apr+author%3Ajorgsowa",
-    lang: "C",
-    desc: "Various contribution spanning from session security improvements, improving performance of BCMath or trying to fix as many bugs as possible.",
   },
   {
     slug: "php-parser",
@@ -66,9 +76,9 @@ export const projects = [
     repo: "glayzzle/php-parser",
     url: "https://github.com/glayzzle/php-parser/pulls?q=is%3Apr+author%3Ajorgsowa",
     lang: "JavaScript",
-    desc: "PHP Parser written in Javascript.",
+    desc: "PHP parser written in JavaScript.",
     detail:
-      "Helping catch up the JavaScript parser to the newest PHP versions.",
+      "Added support for newer PHP syntax, including PHP 8.4 property hooks, and fixed CVE-2024-57071.",
   },
   {
     slug: "plugin-php",
@@ -77,17 +87,15 @@ export const projects = [
     url: "https://github.com/prettier/plugin-php/pulls?q=is%3Apr+author%3Ajorgsowa",
     lang: "JavaScript",
     desc: "PHP plugin for the Prettier code formatter.",
-    detail:
-      "Helping maintainers catch up version compatibility with the newest PHP versions.",
+    detail: "Helping the maintainers keep up with the newest PHP versions.",
   },
   {
     slug: "stackoverflow",
     name: "Stack Overflow",
     url: "https://stackoverflow.com/users/7082164/jsowa",
     lang: "Q&A",
-    desc: "Answers on PHP, javascript etc.",
-    detail:
-      "Extensively helped new joiners in the PHP world — answering questions on language internals, usage and Laravel. A side effect of this work is feeding the newest AI systems with up-to-date PHP knowledge. This was the time when I stopped my contributions.",
+    desc: "Nearly 11,000 reputation and 7 gold badges, from answers on PHP and JavaScript.",
+    detail: "Answers on language internals, everyday PHP usage and Laravel.",
   },
 ];
 
