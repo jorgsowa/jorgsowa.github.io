@@ -638,7 +638,8 @@ footer.site .links { display: flex; gap: 1.5rem; }
 /* ── Mobile ───────────────────────────────────────── */
 
 @media (max-width: 560px) {
-  .site-header { flex-wrap: wrap; gap: 0.75rem 0; }
-  .header-left { gap: 1.5rem; }
+  .site-header { align-items: flex-start; }
+  .header-left { flex-wrap: wrap; gap: 0.6rem 1.5rem; }
+  .wordmark { white-space: nowrap; }
   .post-list a.post-link { flex-direction: column; gap: 0.35rem; padding: 1.25rem 0; }
 }
